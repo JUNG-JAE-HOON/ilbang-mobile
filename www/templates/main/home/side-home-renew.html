@@ -1,0 +1,261 @@
+<ion-view view-title="일방" ng-controller="mainRecentCtrl">
+    <ion-nav-buttons side="right">
+        <img src="{{msgImagePath}}" ui-sref="message" class="main-msg">
+    </ion-nav-buttons>
+    <ion-content class="content has-header main-page" style="background-color: #eb5f43;"  scroll="true" has-bouncing="false" ng-controller="slideListCtrl">
+        <style media="screen">
+            .overflow-scroll .scroll { height: auto; }
+            .bar .title + .buttons { right: -0.5em !important; }
+        </style>
+        <ion-slide-box ng-if="slideList.length" does-continue="true" auto-play="true" slide-interval="2000">
+        <!-- <ion-slide-box ng-if="slideList.length" does-continue="true"> -->
+            <ion-slide  ng-repeat="slist in slideList" >
+               <div class="box box6 mainBanner tc oh pr" ui-sref="{{slist.go}}">
+                       <img src="http://il-bang.com/mobile/slide_img/{{slist.name}}"/>
+               </div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <!-- <ion-slide-box does-continue="true" auto-play="true" class="main-slide">
+            <ion-slide>
+                <div class="box box6" ui-sref="inform-ilbang">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/informIlbang-top.jpeg" width="100%" style="top: 0px;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box9 oh" ui-sref="slideCoffee">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/slide-coffee.jpeg" width="100%" style="top: 0px;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box10 oh" ui-sref="slidePoint">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/slide-point.jpeg" width="100%" style="top: 0px;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <style>
+                    .box { height: 100%; }
+                </style>
+                <div class="box">
+                    <div ui-sref="onlineRc" class="bar-ilbang mainBanner tc oh pr">
+                        <img class="pa" src="img/main_cheyong.jpg" style="width: 100%;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box1">
+                    <div class="bar-ilbang mainBanner tc oh pr">
+                        <img class="pa" src="img/main_10.png" style="width: 110%; margin-left: 50%; left: -55%; top: 5%;" />
+                    </div>
+              </div>
+           </ion-slide>
+           <ion-slide>
+               <div class="box box2">
+                   <div class="hanaWrap oh" ui-sref="hana">
+                       <img class="pa" src="img/main-ban3.png" width="100%" />
+                   </div>
+               </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box3" ui-sref="admoney">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/twosome-top.jpg" width="100%" style="top: 0;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box4" ui-sref="admoney">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/hosigi-top.jpg"width="100%" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box5" ui-sref="admoney">
+                    <div class="hanaWrap oh">
+                        <img class="pa" src="img/ghouse-top.jpg"width="100%" style="top: 0;" />
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box7">
+                    <div class="hanaWrap oh">
+                        <a ui-sref="giga" class="oh">
+                            <img class="pa" src="img/gigaAd.jpg"width="100%" style="top: 0;" />
+                        </a>
+                    </div>
+                </div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box box8">
+                    <div class="wandoWrap oh">
+                        <a ui-sref="wando" class="oh">
+                            <img class="pa" src="img/wando-main.jpg"width="100%" style="top: 0;" />
+                        </a>
+                    </div>
+                </div>
+            </ion-slide>
+        </ion-slide-box> -->
+        <div class="bg_wh oh pt3" scroll="true">
+            <div class="tc oh w50 fl" style="padding: 3px 1.5px 3px 3px">
+                <a  ng-click="kindCheck()" class="di">
+                    <img src="img/main-btn1.png" width="100%" />
+                </a>
+            </div>
+            <div class="tc oh w50 fl" style="padding: 3px 3px 3px 1.5px">
+                <a class="di" ng-controller="gujikCtrl" ng-click="gujikCheck()">
+                    <img src="img/main-btn2.png" width="100%" />
+                </a>
+            </div>
+        </div>
+        <!-- <div class="sotong-bann-area fl">
+            <div class="w50 fl" style="padding: 5px 2.5px 5px 5px">
+                <a ui-sref="onlineRc" class="oh">
+                    <img src="img/sotong/sotong-main1.png" width="99%" />
+                </a>
+            </div>
+            <div class="w50 fl fl" style="padding: 5px 5px 5px 2.5px">
+                <a ui-sref="sotong" class="oh">
+                    <img src="img/sotong/sotong-main2.png" width="100%" />
+                </a>
+            </div>
+        </div> -->
+        <div class="bg bt" style="text-align: left;">
+            <div class="row">
+                <div class="col tc">
+                    <div class="di bigCir" id="bigCir" ui-sref="erTabs.erTab1">
+                        <h6 class="noMargin">{{ mainCountTitle1 }}</h6>
+                        <h4 class="red_font noMargin" id="gujikCount"></h4>
+                    </div>
+                </div>
+                <div class="mt15" style="border-right: 1px solid #ddd; height: 60px;"></div>
+                <div class="col tc">
+                    <div class="di bigCir" id="bigCir" ng-controller="gujikCtrl" ng-click="gujikCheck()">
+                        <h6 class="noMargin">{{ mainCountTitle2 }}</h6>
+                        <h4 class="red_font noMargin" id="guinCount"></h4>
+                    </div>
+                </div>
+                <div class="mt15" style="border-right: 1px solid #ddd; height: 60px;"></div>
+                <div class="col tc">
+                    <div class="di bigCir" id="bigCir">
+                        <h6 class="noMargin">{{ mainCountTitle3 }}</h6>
+                        <h4 class="red_font noMargin" id="totaljoinCount"></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="sotong-bann-area fl margin-vertical oh row">
+              <div class="fl sotong-bann oh tc">
+                <a ui-sref="onlineRc" class="oh di">
+                  <img src="img/sotong/sotong-main-1.png" alt="" width="100%">
+                </a>
+              </div>
+              <div class="fl sotong-bann oh tc">
+                <a ui-sref="startup" class="oh di">
+                  <img src="img/sotong/sotong-main-2.png" alt="" width="100%">
+                </a>
+              </div>
+              <div class="fl sotong-bann oh tc">
+                <a ui-sref="sotong" class="oh di">
+                  <img src="img/sotong/sotong-main-3.png" alt="" width="100%">
+                </a>
+              </div>
+            </div>
+            <!-- <a class="bann">
+                <img ui-sref="admoney" class="Rand_Banner bt bb padding w100" src="img/gubne_mid.jpg" alt="">
+                <img ui-sref="admoney" class="Rand_Banner bt bb padding w100" src="img/sulbing_mid.jpg" alt="">
+                <img ui-sref="onlineRc" class="bt bb padding w100" src="img/main_cheyongMid.jpeg" alt="">
+            </a> -->
+            <!-- 최근본 구직자 -->
+            <div class="list padding oh" style="margin-bottom: 0px">
+                <div class="item ilbangItem">
+                    <p class="dark noMargin f16 bold">{{ recentTitle }}</p>
+                    <!--<a ui-sref="#" class="dark f12 pa moreBtn">더보기&nbsp;
+                         <img src="img/moreRed.png" class="vm" width="12px">
+                    </a>-->
+                </div>
+                <div ng-if="isCompany" class="item ilbangItem" ng-repeat="x in recentList" item="x">
+                    <a ui-sref="guinViewTab1({ no: {{ x.no }}})">
+                        <span class="badge badge-light ilbangBadge2 mr5 f10">{{ x.work_2nd }}</span>
+                        <span class="ls f12 dark recent_list_main di">{{ x.title }}</span>
+                        <img src="img/newBadge.png" width="15em" class="vm ml5" />
+                        <span class="f10 fr date recentResume">{{ x.wdate }}</span>
+                    </a>
+                </div>
+                <div ng-if="isGeneral" class="item ilbangItem" ng-repeat="x in recentList" item="x">
+                    <a ui-sref="gujikViewTab1({ no: {{ x.no }}})">
+                        <span class="badge badge-light ilbangBadge2 mr5 f10">{{ x.work_2nd }}</span>
+                        <span class="ls f12 dark recent_list_main di">{{ x.title }}</span>
+                        <img src="img/newBadge.png" width="15em" class="vm ml5">
+                        <span class="f10 fr date">{{ x.wdate }}</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 일방 뉴스 -->
+            <div class="list padding" ng-controller="mainNoticeCtrl">
+                <div class="item ilbangItem">
+                    <p class="dark noMargin f16"><b>일방 뉴스</b></p>
+                    <a ui-sref="notice" class="dark f12 pa moreBtn">더보기&nbsp;
+                        <img src="img/moreRed.png" class="vm" width="12px" />
+                    </a>
+                </div>
+                <div class="item ilbangItem">
+                    <a ui-sref="noticeView({ no : {{ noticeNumber }}})">
+                        <img src="img/news_img.png" width="100%" />
+                    </a>
+                </div>
+                <div class="item ilbangItem" ng-repeat="item in items" item="item">
+                    <a ui-sref="noticeView({ no: {{ item.no }}})">
+                        <span class="f12 dark recent_list2 di">{{ item.title }}</span>
+                        <img src="img/newBadge.png" width="15em" class="vm ml5" ng-show="item.isNew" />
+                        <span class="f10 fr date">{{ item.date }}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="main-video list padding">
+              <div class="item ilbangItem">
+                동영상
+              </div>
+              <div class="item main-video">
+                <ol class="main-video-ol">
+                  <li class="main-video-li" ui-sref="video">
+                    <img src="img/main-video.png" alt="" width="100%">
+                  </li>
+                  <li class="main-video-li" ui-sref="video">
+                    <img src="img/main-video.png" alt="" width="100%">
+                  </li>
+                  <li class="main-video-li" ui-sref="video">
+                    <img src="img/main-video.png" alt="" width="100%">
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <a class="bann oh" ng-controller="randBanCtrl">
+                <img ui-sref="adTabs.banner({no:{{bannerNo}}})" class="Rand_Banner bt bb padding w100" src="{{ bannerPath }}" />
+            </a>
+            <!-- <div class="tc fb" ng-controller="JoinModalCtrl">
+              <a href="#" ng-click="agModal(1)" class="f12 ls fb">이용약관</a><span style="margin-left:.5em !important">|</span>
+              <a href="#" ng-click="agModal(2)" class="f12 ls fb">개인정보취급방침</a><span style="margin-left:.5em !important">|</span>
+              <a href="#" ng-click="agModal(3)" class="f12 ls fb">일일노동약관</a><span style="margin-left:.5em !important">|</span>
+              <a href="#" ng-click="agModal(4)" class="f12 ls fb">위치기반서비스</a>
+            </div> -->
+        </div>
+        <meta name="format-detection" content="telephone=no">
+            <div class="footer fw tc f10 ls" style="padding: 20px 0; background-color: #444f63;">
+                <ul class="mb10">
+                    <li ui-sref="service" class="border-white di padding-horizontal mr10">서비스소개</li>
+                    <li ng-controller="inAppbrowserCtrl" ng-click="golink('http://il-bang.com/pc_renewal/index.php')" class="border-white di padding-horizontal mr10">pc버전</li>
+                    <li ng-click="mainLogout()" ng-controller="logoutCtrl" class="border-white di padding-horizontal">로그아웃</li>
+                </ul>
+                (주)엠엠씨피플      대표 유희종        사업자등록번호 :  662-86-00291 <br>
+                통신판매신고번호 : 제2016-서울금천-0012호     직업정보제공사업신고 : J1206020160006<br>
+                주소:서울특별시 금천구 가산동 가산디지털1로 168, B동 311호(가산동, 우림라이온스밸리)<br>
+            </div>
+        </meta>
+    </ion-content>
+</ion-view>

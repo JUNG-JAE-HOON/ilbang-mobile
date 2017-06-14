@@ -1,0 +1,39 @@
+<ion-view>
+    <ion-content>
+        <div class="bg">
+            <img src="img/stepBar2.png" class="wid100 mg5" />
+            <div class="join_form">
+                <div class="modify_ment mg5">
+                  <h4>희망 작업일</h4>
+                </div> 
+                <button class="button ilbang-button indexView back-text" ng-click="openDatePicker()">날짜선택</button>
+                <input type="text" class="m0a mt10 border2 w100" ng-model="work_date" style="border: 1px solid #ddd !important;"  value="" readonly/>
+                <div class="modify_ment">근무 시간</div>
+                <div class="list TimeCtrl padding mt20" ng-controller="TimeCtrl">
+                      <!--<ion-checkbox class="timeSel di noBorder f12" ng-repeat="time in timeList" ng-model="time.checked" ng-click="updateSelection($index, timeList, item.title)">
+                          {{ time.text }}
+                      </ion-checkbox>-->
+                    <div class="wid100 flow times">
+                        <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'1'">오전</ion-radio>
+                        <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'2'">오후</ion-radio>
+                        <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'3'">저녁</ion-radio>
+                    </div>
+                    <div class="wid100 flow times">
+                        <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'4'">새벽</ion-radio>
+                        <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'5'">오전 ~ 오후</ion-radio>
+                        <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'6'">오후 ~ 저녁</ion-radio>
+                    </div>
+                    <div class="wid100 flow times">
+                        <ion-radio class="timeRadio f12" name="time" ng-model="guinForm.time" ng-value="'7'">저녁 ~ 새벽</ion-radio>
+                        <ion-radio class="timeRadio f12" name="time" ng-model="guinForm.time" ng-value="'8'">새벽 ~ 오전</ion-radio>
+                        <ion-radio class="wid33 noMargin f12" name="time" ng-model="guinForm.time" ng-value="'9'">풀타임</ion-radio>
+                    </div>
+                </div>
+                <div class="join_btn_wrap mb20">
+                    <a ng-click="emergencyFormStep1Back()" class="button btn red_btn">이전</a>
+                    <a ng-click="emergencyFormStep2()" class="button btn white_btn">다음</a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

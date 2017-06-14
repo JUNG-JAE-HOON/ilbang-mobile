@@ -1,0 +1,22 @@
+<style>
+    .item-input { padding: 0 0 3px 10px; }
+    textarea { padding-top: 8px; }
+</style>
+<ion-view view-title="{{ title }} 일방 글쓰기" ng-controller="sotongWriteCtrl" has-bouncing="false">
+    <ion-content class="content has-header has-footer">
+        <div style="padding: 15px;">
+			<div class="f16 mb5">제목</div>
+			<div class="list">
+				<label class="item item-input">
+					<input type="text" ng-model="board.title" placeholder="제목을 입력해주세요." />
+				</label>
+			</div>
+            <div class="f16 mb5">내용</div>
+			<div class="list">
+				<label class="item item-input">
+					<textarea ng-model="board.content" rows="10" placeholder="내용을 입력해주세요."></textarea>
+				</label>
+			</div>
+		</div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="&nbsp;&nbsp;약관 동의 및 인증하기" class="bg_fa">
+    <ion-content class="padding mb30" ng-controller="JoinValidCtrl" has-bouncing="false">
+          <h4>기업회원 약관 동의</h4>
+          <div class="rd15">
+              <div class="item validItem noPadding">
+                  <ion-checkbox class="validCheck w100 pt16 f10_m f10 noBorder di" ng-model="checkValue1" ng-checked="all" ng-disabled="all" ng-init="checkValue1=false">
+                      기업회원 약관에 동의 <font color="#eb5f43">(필수)</font>
+                  </ion-checkbox>
+                  <a  ng-controller="JoinModalCtrl" class="fr fg f10_m f10 showAll pa"><b ng-click="agModalComp(1)">전문보기 </b><b class="vm di mt_6">></b></a>
+              </div>
+              <div class="item validItem noPadding">
+                  <ion-checkbox class="validCheck w100 pt16 f10_m f10 noBorder di" ng-model="checkValue2" ng-checked="all" ng-disabled="all" ng-init="checkValue2=false">
+                      개인정보 수집 및 이용에 동의 <font color="#eb5f43">(필수)</font>
+                  </ion-checkbox>
+                  <a  ng-controller="JoinModalCtrl" class="fr fg f10_m f10 showAll pa"><b ng-click="agModalComp(2)">전문보기 </b><b class="vm di mt_6">></b></a>
+              </div>
+              <div class="item validItem noPadding">
+                  <ion-checkbox class="validCheck w100 pt16 f10_m f10 noBorder di" ng-model="checkValue3" ng-checked="all" ng-disabled="all" ng-init="checkValue3=false" style="letter-spacing:-1px">
+                      개인정보 제 3자 제공 및 위탁사항 이용 약관 <font color="#eb5f43">(필수)</font>
+                  </ion-checkbox>
+                  <a  ng-controller="JoinModalCtrl" class="fr fg f10_m f10 showAll pa"><b ng-click="agModalComp(3)">전문보기 </b><b class="vm di mt_6">></b></a>
+              </div>
+              <div class="item validItem noPadding">
+                  <ion-checkbox class="validCheck w100 pt16 f10_m f10 noBorder di" ng-model="checkValue4" ng-checked="all" ng-disabled="all" ng-init="checkValue4=false">
+                      위치기반 서비스 이용 약관 <font color="#eb5f43">(필수)</font>
+                  </ion-checkbox>
+                  <a  ng-controller="JoinModalCtrl" class="fr fg f10_m f10 showAll pa"><b ng-click="agModalComp(4)">전문보기 </b><b class="vm di mt_6">></b></a>
+              </div>
+              <div class="tc">
+                  <ion-checkbox class="validCheck w100 agreeAll pt16" ng-model="all"> 모두 동의</ion-checkbox>
+              </div>
+          </div>
+          <div class="">
+              <h4 class="mt30_m mg5">회원 가입</h4>
+                <style>
+                  .validCheck{padding-left: 35px !important}
+                  .item-checkbox .checkbox{left:0px}
+                </style>
+                <input class="button button-block button-ilbang2 rd15 border" type="button" ng-click="submitForm('company')"  value="가입 하기" />
+              <!-- <input class="button button-block button-ilbang2 rd15 border" type="button" ng-click="checkboxCheck()" value="본인 인증하기" /> -->
+              <p class="fo f10"><b>* 휴대폰 본인 인증시 수집된 개인정보 (성명, 생년월일, 성별, 휴대폰번호는 개인정보 수집 이용 정책과 같이 활용됩니다.)</b></p>
+              <p><ion-checkbox class="validCheck f10 f10_m" style="padding-top:14px" ng-model="checkValue5" ng-init="checkValue5=false">인증 정보를 일방 어플리케이션에 제공하는 것에 동의합니다.</ion-checkbox></p>
+          </div>
+      </ion-content>
+  </ion-view>

@@ -1,0 +1,50 @@
+<ion-view view-title="가맹몰 결제 이용내역" class="fw" ng-controller="gaMengUserLogCtrl">
+  <ion-nav-bar class="bar-ilbang">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <!-- <ion-nav-buttons side="right">
+          <a ui-sref="main.home"><img src="img/home-icon.png" width="60%" style="padding: 5px 0;"></a>
+      </ion-nav-buttons> -->
+  </ion-nav-bar>
+
+  <ion-content class="has-footer has-header bg_fa gameng-footer" style="color:black" has-bouncing="false">
+    <div class="bg_fa" ng-repeat = "item in items" item = "item">
+      <!-- <div class="list mb10" ng-repeat = "item in items" item = "item" ng-click="viewResume({{item.no}})"> -->
+      <div class="list mb10"><!-- ng-click="viewResume1({{item.no}})"-->
+        <div class="item pbn h100px">
+          <div>
+            <p class="f10 fo pt5">{{item.wdate}}</p>
+            <span class="gameng-title textCut f13">
+                <b class="ls">{{item.name}} ({{item.minusPoint}}P)</b>
+
+            </span>
+            <img ng-if ="item.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+          </div>
+          <div class="oh" ng-click="viewGameng({{ item.no }})">
+            <span class="mb_7 vm di f12 font-grey">{{item.address}}</span>
+            <!-- <span class="mb_7 vm di f12 font-grey">{{ item.area_1st_nm }} {{ item.area_2nd_nm }} {{ item.address }}</span> -->
+            <!-- <span class="badge badge-light ilbangBadge smBadge mr10 f10">{{ item.test3 }}</span> -->
+            <div class="mt5">
+              <p class="f12 fl mr10 font-grey dc-rate">
+              <span class="f10">{{item.distance}}</span>
+              <!-- <span>{{ item.distance }}</span> -->
+
+              </p>
+              <span class="fl f12 font-grey">|</span>
+              <span class="ml10 f10 fl font-grey">
+                TEL : {{item.phone}}
+              </span>
+              <!-- <span class="ml10 f12 fl font-grey">
+                {{item.phone}}
+              </span> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+  </ion-content>
+  <div class="bar bar-footer bar-ilbang noPadding tc" ui-sref="gameng">
+    <div class="title fw" ng-click="test=true">메인으로</div>
+  </div>
+</ion-view>

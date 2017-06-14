@@ -1,0 +1,109 @@
+<ion-view view-title="내 일자리 목록">
+	<ion-content class="content has-header finPage bg_fa has-footer iosmtZero pb70" ng-controller="ruidMatchingCompleteCtrl" has-bouncing="false">
+		<div class="padding pt30 iosmtZero">
+			<div class="list mb10" ng-repeat = "item in items" item = "item">
+				<!-- 긴급구인 (반투명 붉은배경)은 urgent2클래스로 컨트롤합니다  -->
+				<div class="border2 oh">
+					<a class="noBorder item item-circle urgent2" ui-sref="gujikViewTab4({no:{{item.no}},work_date:'{{item.work_date}}',work_join_list_no:{{item.work_join_list_no}}})">
+						<h2 style="border-bottom:.3px solid #ccc; padding:.5em 0 .5em">
+							<span class="border pa circle f12">
+								<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+							</span>
+							<span class="w85 di f12 recent_list">{{item.company}}</span> <!-- class="recent_list" 긴급구인-->
+							<span class="fr mt_4 dateMobile2">
+								<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+								<span class="mb_7 vm di f10">{{item.work_date}}</span>
+							</span>
+						</h2>
+						<div class="padding-top">
+							<span class="badge badge-light ilbangBadge smBadge mr10 f10">{{item.work_2nd_nm}}</span>
+							<span class="f12 ls vm di" style="margin-top:-6px">{{item.area_1st_nm}} - {{item.area_2nd_nm}}</span>
+							<p class="padding-top f12">
+								<b>{{item.work_1st_nm}}</b>
+								<span> > {{item.work_2nd_nm}}</span>
+							</p>
+							<p class="f12">
+								<b>{{item.area_1st_nm}}</b>
+								<span> > {{item.area_2nd_nm}}</span>
+							</p>
+						</div>
+					<!--	<p class="pa mapIcon2">
+							<img class="di vm" src="img/mapIcon.png" alt="" width="12px" /> 1.23KM
+						</p>
+					-->
+					</a>
+					<div class="padding oh bg_fa bg_wh">
+						<p class="ee_pee costPa2 f12 noMargin fr"><b class="fo f14">{{item.pay}} </b>원</p>
+					</div>
+					<div class="tc pb10 bg_white">
+						<a ui-sref="employReview({work_join_list_no:{{item.work_join_list_no}}})" class="di button-ilbang tc f16 wid90 marginAuto" style="line-height: 40px; border-radius:5px">평가 남기기</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="pt50 tc">
+				<img src="img/ee-fin-01.png" ng-if="allPostCount=='0'||ruid==undefined" width="70%" class="pt100">
+			</div>
+			<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+
+			<!-- 나중에 지워야 할 데이터 -->
+<!--			<div class="list mb10">-->
+								<!-- 긴급구인 (반투명 붉은배경)은 urgent2클래스로 컨트롤합니다 -->
+
+<!--								<div class="border2 oh">
+									 <a class="noBorder item item-circle urgent2" ui-sref="infoEmployer">
+
+								      <h2 style="border-bottom:.3px solid #ccc; padding:.5em 0 .5em">
+												<span class="border pa circle f12">
+
+<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+
+												</span>
+								      	  <span class="recent_list w85 di f12">엠엠씨피플
+									      </span>
+-->
+									      <!-- <img src="img/newBadge.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/> -->
+<!--
+												<span class="fr finDate dateMobile">
+									      	<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+									      		<span class="mb_7 vm di f12">1시간 전</span>
+									      </span>
+								      </h2>
+
+
+								      <div class="padding-top finCont">
+												<span class="badge badge-light ilbangBadge smBadge mr10 f10">건설일방</span>
+												<span class="f12 ls vm di" style="margin-top:-6px">서울특별시 - 금천구</span>
+												<p class="padding-top f12">
+													<b>특성별</b> > <span>건설일방</span>
+												</p>
+												<p class="f12">
+													<b>지역별</b> > <span>건설일방</span>
+												</p>
+										</div>
+										<p class="pa mapIcon2">
+											<img class="di vm" src="img/mapIcon.png" alt="" width="12px"> 1.23KM
+										</p>
+										<p class="pa ee_pee costPa2 f12"><b class="fo f14" style="margin-right:3px">30,000 </b>원 </p>
+								    </a>
+								    <div class="tc padding-vertical bg_wh" ng-controller="PopCtrl">
+								    	<a ui-sref="estimationEr" ng-click="confirmStar()" class="di button-ilbang tc f16" style="width:90%; margin:0 auto; line-height: 40px; border-radius:5px">
+								    	  평가 남기기
+								    	</a>
+								    </div>
+								</div>
+							</div>
+									<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()" ></ion-infinite-scroll>
+									<div class="padding-vertical noPadding mb10">
+										<a ui-sref="admoney">
+											<img src="img/empBan1.png" alt="" width="100%" />
+										</a>
+									</div>
+								</div>
+						</div>
+			</div>
+-->
+
+		</ion-content>
+</ion-view>
+<!--  -->

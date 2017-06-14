@@ -1,0 +1,68 @@
+<ion-view view-title="구인 신청서 쓰기">
+    <ion-content>
+        <div class="bg">
+            <img src="img/stepBar3.png" class="wid100 mg5" />
+            <div class="join_form">
+                <div class="list list-inset wid93 mb10" style="margin-top: 30px;">
+                    <label class="item item-input">
+                        <input type="text" id="business" ng-model="guinForm.business" placeholder="담당 업무 내용을 입력해주세요." />
+                    </label>
+                </div>
+                <div class="list flow pdLeft10 mb10">
+                    <label class="item item-input item-select left pdTop40 wid48">
+                        <select class="ionicSel" ng-model="guinForm.people_num" ng-options="o.no as o.list_name for o in selboxData.people_num">
+                            <option selected>모집 인원</option>
+                        </select>
+                    </label>
+                    <!--<label class="item item-input item-select left pdTop40 wid48">
+                        <select class="ionicSel" ng-model="guinForm.pay" ng-options="o.no as o.list_name for o in selboxData.pay">
+                            <option selected>일급</option>
+                        </select>
+                    </label>-->
+                </div>
+                <div class="list list-inset wid93 mb10" style="margin-top: 10px; margin-left:9px">
+                    <label class="item item-input">
+                        <input type="number" id="pay" ng-model="guinForm.pay" placeholder="일급" />
+                    </label>
+                </div>
+                <style media="screen">
+                    .item-content{text-overflow: inherit !important;}
+                </style>
+                <div class="list marginAuto wid95 mb10 step3Gender">
+                    <ion-radio class="left wid33 f12" ng-model="guinForm.sex" ng-value="'nothing'">무관</ion-radio>
+                    <ion-radio class="left wid33 f12" ng-model="guinForm.sex" ng-value="'man'">남성</ion-radio>
+                    <ion-radio class="wid33 f12" ng-model="guinForm.sex" ng-value="'woman'">여성</ion-radio>
+                </div>
+
+                <div class="list mb10 flow pdLeft10">
+                    <label class="item item-input item-select left pdTop40 wid48">
+                        <select class="ionicSel" ng-model="guinForm.age_1st" ng-options="o.no as o.list_name for o in selboxData.age_1st">
+                            <option selected>최소 연령 선택</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid48">
+                        <select class="ionicSel" ng-model="guinForm.age_2nd" ng-options="o.no as o.list_name for o in selboxData.age_2nd">
+                            <option selected>최대 연령 선택</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="list mb10 flow pdLeft10">
+                    <label class="item item-input item-select left pdTop40 wid95">
+                        <select class="ionicSel" ng-model="guinForm.career" ng-options="o.no as o.list_name for o in selboxData.career">
+                            <option selected>필요 경력</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="list wid95 marginAuto">
+                    <label class="item item-input wid98" style="max-width: 100%">
+                        <textarea rows="8" id="content" ng-model="guinForm.content" placeholder="상세 모집 내용을 입력해주세요."></textarea>
+                    </label>
+                </div>
+            </div>
+            <div class="join_btn_wrap mb20">
+                <a ng-click="emergencyFormStep2Back()" class="button btn red_btn">이전</a>
+                <a ng-click="emergencyFormStep3(guinForm)" ui-sref="infoEmployer" class="button btn white_btn">완료</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,91 @@
+<ion-view>
+    <ion-content class="content has-header has-footer" ng-controller="generalFullCtrl" has-bouncing="false">
+        <div class="bg">
+            <div class="join_form">
+              <div class="pic_circle_wrap">
+                  <div class="white_pic_circle">일방</div>
+                  <div class="red_pic_circle">회원 가입</div>
+              </div>
+                <!-- <div class="pic_circle_wrap">
+                    <div class="white_pic_circle">사진</div>
+                    <div class="red_pic_circle">사진 변경</div>
+                </div> -->
+                <div class="list list-inset bgTrans">
+                    <label class="item item-input wid70 left">
+                        <input type="text" ng-model="uid" placeholder="아이디를 입력해주세요." />
+                    </label>
+                    <input type="button" value="중복 체크" ng-click="checkID()" class="white_btn check_btn" />
+                </div>
+                <div class="list list-inset bgTrans">
+                    <label class="item item-input"><input type="password" placeholder="패스워드를 입력해주세요." ng-model="pwd1" /></label>
+                    <label class="item item-input"><input type="password" placeholder="패스워드를 재입력 해주세요." ng-model="pwd2" /></label>
+                    <div class="no_pass" ng-if="pwd1.length < 6 && pwd1 != ''">* 패스워드가 너무 짧습니다 (6자 이상)</div>
+                    <div class="no_pass" ng-if="pwd1 != '' && pwd2 != '' && pwd1 != pwd2">* 패스워드가 일치하지 않습니다.</div>
+                </div>
+                <div class="list list-inset marginAuto bgTrans wid95" >
+                    <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" ng-model="emailone" placeholder="ilbang" />
+                    </label>
+                    <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" ng-model="emailtwo" placeholder="naver.com" />
+                    </label>
+                    <!--
+                    <label class="item item-input item-select left pdTop40 wid33">
+                        <select class="ionicSel" ng-model="emailList" ng-options="email.emailName for email in emails track by email.id">
+                            <option ng-value="email" ng-repeat="email in eamils">{{ email.emailName }}</option>
+                        </select>
+                    </label>-->
+                        <label class="item item-input item-select wid33 pdTop40">
+                            <select class="ionicSel" ng-model="emailList" ng-change="changeEmail(emailList)" ng-options="data as data for data in selboxData.email"></select>
+                        </label>
+
+                </div>
+                <div class="list list-inset">
+                    <label class="item item-input"><input type="text" ng-model="name" placeholder="이름을 입력해주세요." /></label>
+                </div>
+                <div class="list pdLeft10 oh">
+                    <label class="item item-input item-select left pdTop40 wid33">
+                        <select class="ionicSel" ng-model="SelectedYear" ng-options="year for year in Years">
+                                <option value="">년</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid33">
+                        <select class="ionicSel" ng-model="SelectedMonth" ng-options="label for label in Months">
+                            <option value="">월</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid32">
+                        <select class="ionicSel"  ng-model="SelectedDays" ng-options="label for label in Days">
+                            <option value="">일</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="com_step_ment" style="">핸드폰 번호</div>
+                <div class="list list-inset bgTrans wid95">
+
+                    <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" ng-model="phone1" placeholder="010" />
+                    </label>
+                    <label class="item item-input wid33 left NoborderRight">
+                        <input type="text" class="pdRight10" ng-model="phone2" placeholder="1234" />
+                    </label>
+                    <label class="item item-input wid33 left">
+                        <input type="text" class="pdRight10" ng-model="phone3" placeholder="5678" />
+                    </label>
+                </div>
+                <div class="list marginAuto wid94">
+                    <ion-radio class="left wid50" name="sex" ng-click="sexCheck('male')" ng-value="'male'" style="font-size: 12px;">남성</ion-radio>
+                    <ion-radio class="wid50" name="sex"   ng-click="sexCheck('female')" ng-value="'female'" style="font-size: 12px;">여성</ion-radio>
+                </div>
+                <div class="list marginAuto wid94 mg5">
+                    <ion-radio class="left wid50" name="obstacle" ng-click="obstacleCheck('no')" ng-value="'no'" style="font-size: 12px;">비장애</ion-radio>
+                    <ion-radio class="wid50" name="obstacle"  ng-click="obstacleCheck('yes')" ng-value="'yes'" style="font-size: 12px;">장애</ion-radio>
+                </div>
+                <div class="list list-inset">
+                    <label class="item item-input"><input type="text" ng-model="ruid" placeholder="추천인 입력해주세요." /></label>
+                </div>
+                <a><div class="red_btn white_font pa15_btn mg10" ng-click="addNewMember()" >회원가입 완료</div></a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

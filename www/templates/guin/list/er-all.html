@@ -1,0 +1,76 @@
+<ion-view view-title="모든 이력서 보기">
+	<ion-content class="content has-header allPage" ng-controller="guinListCtrl" style="bottom: 44px !important;" has-bouncing="false">
+		<div class="button-bar">
+			<div class="button noRadius noMargin bg_wh" ng-click="siButton()" style="border-right: 1px solid #ddd;">{{ siName }}
+				<img class="fr mt15" src="img/mat_arrow.png" alt="" width="10px">
+			</div>
+			<div class="button noRadius noMargin bg_wh" ng-click="guButton()">{{ guName }}
+				<img class="fr mt15" src="img/mat_arrow.png" alt="" width="10px">
+			</div>
+		</div>
+		<div ng-show="showSi" class="siguWrap">
+			<div class="row list noPadding di col-33 siguitem" ng-repeat="x in siList">
+				<div class="item tc local padding-vertical" ng-click="siSelect({{x.number}},'{{x.value}}')">{{ x.value }}</div>
+			</div>
+		</div>
+		<div ng-show="showGu" class="siguWrap">
+			<div class="row list noPadding di col-33 siguitem" ng-repeat="gu in guList">
+				<div class="item tc local padding-vertical" ng-click="guSelect({{gu.guNo}},'{{gu.guName}}')">{{ gu.guName }}</div>
+			</div>
+		</div>
+		<div class="button-bar bt" style="border-bottom: 1px solid #ddd;">
+			<div class="button noRadius bg_wh" ng-click="ilbangButton()">{{ ilbangName }}
+				<img class="fr mt15" src="img/mat_arrow.png" alt="" width="10px">
+			</div>
+		</div>
+		<div ng-show="showIlbangList">
+			<div class="row list noPadding di col-33 ilbangList" ng-repeat="x in ilbangList">
+				<div class="item tc bg_fa padding-vertical f12 category" ng-click="ilbangSelect({{x.number}},'{{x.value}}')">{{ x.value }}</div>
+			</div>
+		</div>
+		<div class="padding bg_fa">
+			<div class="list mb10" ng-repeat = "item in items" item = "item" ng-click="viewResume({{item.no}})">
+				<a class="item item-circle pbn">
+					<h2 style="border-bottom:1px solid #ccc; padding:.5em 0 .5em">
+						<span class="border pa circle f12">
+							<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+						</span>
+						<!--
+						<div class="red_circle1 pa">
+										<span>매칭<br>진행</span>
+						</div>
+						<div class="green_circle pa">
+    					<span>매칭<br>완료</span>
+    				</div>
+					-->
+						<!-- <div class="green_circle pa">
+    					<span>매칭<br>완료</span>
+    				</div> -->
+						<span class="erTlt1 textCut f12 w85 di"><b>{{ item.title }}</b></span>
+						<img ng-if ="item.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+						<span class="fr">
+							<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+							<span class="mb_7 vm di f12">{{ item.edit_date }}</span>
+						</span>
+					</h2>
+					<div class="padding-top">
+						<span class="badge badge-light ilbangBadge smBadge mr10 f10">{{ item.work_2nd_nm }}</span>
+						<span class="f12 ls vm di" style="margin-top:-6px">{{ item.career }}</span>
+						<p class="padding-top f12">
+							<b>{{ item.work_1st_nm }}</b>
+							<span> > {{ item.work_2nd_nm }}</span>
+						</p>
+						<p class="f12">
+							<b>지역</b>
+							<span> > {{ item.area_1st_nm }} > {{ item.area_2nd_nm }}</span>
+						</p>
+					</div>
+
+						<p class="di ee_pee fr mb10"><b class="fo di vm" style="margin:-2px 3px 0 0">{{ item.pay }}</b>원</p>
+
+				</a>
+			</div>
+		</div>
+		<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

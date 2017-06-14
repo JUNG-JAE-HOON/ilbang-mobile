@@ -1,0 +1,66 @@
+<ion-view view-title="E-머니 충전하기">
+	<ion-content class="content has-header" has-bouncing="false">
+    	<div class="list bb3 bg_fa mb10">
+      		<div class="item bg_fa chargeInfo">
+				<span class="mr10 f14">나의 E-머니</span>
+				<span class="red_font f18">5,700 P</span>
+        		<a ui-sref="logTab.logTab1" class="fr f14 red_font" style="font-weight: normal;">E-머니 이용내역 ></a>
+      		</div>
+          	<div class="item bg_fa chargeInfo">
+            	<p class="fl" style="line-height:28px">충전 금액</p>
+            	<p class="fr">
+                <select class="chargeSel">
+                  <option>1,000원</option>
+                  <option selected>2,000원</option>
+                  <option>3,000원</option>
+                </select>
+            </p>
+          </div>
+          <div class="padding">
+            <h5>결제방법</h5>
+            <label for="" class="block padding-top padding-bottom">
+              <input type="radio" name="name" value="" class="vm mr10">휴대폰결제
+            </label>
+            <label for="" class="block padding-top padding-bottom">
+              <input type="radio" name="name" value="" class="vm mr10">신용카드
+            </label>
+            <label for="" class="block padding-top padding-bottom">
+              <input type="radio" name="name" value="" class="vm mr10">실시간 계좌이체
+            </label>
+            <label for="" class="block padding-top padding-bottom">
+              <input type="radio" name="name" value="" class="vm mr10">문화상품권
+            </label>
+            <label for="" class="block padding-top padding-bottom">
+              <input type="radio" name="name" value="" class="vm mr10">E-머니
+            </label>
+          </div>
+
+
+    </div>
+    <div class="row padding di tc">
+        <div class="di">
+            <p class="noMargin"> 요청금액 </p>
+            <p> <b>5,700원</b> </p>
+        </div>
+        <div class="vm di plusIcon" style="margin-top:-20px;">
+          <img src="img/plus.png" alt="" width="60%">
+        </div>
+        <div class="di">
+            <p class="noMargin"> 요청금액 </p>
+            <p> <b>5,700원</b> </p>
+        </div>
+        <div class="vm di plusIcon" style="margin-top:-20px;">
+          <img src="img/plus.png" alt="" width="60%">
+        </div>
+        <div class="di">
+            <p class="noMargin"> 최종금액 </p>
+            <p> <b class="assertive">5,700원</b> </p>
+        </div>
+    </div>
+    <div class="padding-horizontal">
+      <a ui-sref="emoneyPay" class="button button-block button-ilbang2 border rd50" style="margin:0 0 15px 0 !important">
+        충전하기
+      </a>
+    </div>
+	</ion-content>
+</ion-view>

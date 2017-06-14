@@ -1,0 +1,157 @@
+<ion-side-menus enable-menu-with-back-views="false" style="top:0 !important" ng-controller="LoginCtrl" cache-view="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-ilbang">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+</ion-side-menu-content>
+<ion-side-menu side="left">
+    <ion-content class="mb20 bg" style="text-align: left; top: 0 !important;" has-bouncing="false">
+       <ion-list class="panelList panelWrap">
+           <ion-list class="panelList"  ng-controller="mainAdMoneyCtrl">
+               <div class="bar-ilbang panelHead block pr" style="margin-top:-2px">
+                   <a menu-toggle ui-sref="main.home" class="panelHomeBtn padding">
+                       <img src="img/home-icon.png" class="" alt="" width="55%"/>
+                   </a>
+                   <div class="removeAttr">
+                       <p class="pa rd50 tc side-lock" style="background-color:rgba(255,255,255,.2); width:50px; height:50px; left:1em; top:3.9em">
+                           <img src="img/lock.png" alt="" width="50%" style="margin-top: 20%;">
+                       </p>
+                       <p class="fw f18 pa panelName wid70" ng-show="!showInfo" ui-sref="login">
+                           <span>
+                               <a class="fw"><span class="pnInner">로그인 하기</span></a>
+                               <span class="vm di mt_4 arrowRight"></span><br />
+                           </span>
+                           <span class="fw f12">구인구직을 부탁해! 일방</span>
+                       </p>
+                       <p class="fw f18 pa panelName wid70" ng-show="showInfo">
+                           <span class="pnInner">{{ id }}님 환영합니다.<br /></span>
+                           <span class="fw f12">구인구직을 부탁해! 일방</span>
+                       </p>
+                       <p class="pa pnSmBtnWrap" ng-show="showInfo">
+                           <a ui-sref="infoModify" class="pnSmBtn">정보 수정</a>
+                           <a ng-click="logout()" ng-controller="logoutCtrl" class="pnSmBtn">로그아웃</a>
+                       </p>
+                   </div>
+               </div>
+               <div class="item item-complex">
+                   <div class="padding5 bg" style="text-align: left;">
+                       <a ui-sref="admoney" class="item noPadding bg_eb f16" style="padding: 10px 0 !important;">
+                           <span class="ml20 red_font">나의 AD머니</span>
+                           <b class="fo fr mr20">&nbsp;P ></b>
+                           <b class="fo fr ul">{{ adMoney }}</b>
+                       </a>
+                       <span class="item noPadding bg_eb f12" style="padding: 5px 0 !important;">
+                           <span ui-sref="myItem" class="ml20 di goItemShop"><b>아이템 내역확인</b></span>
+                           <b ui-sref="itemshop" class="fr mr20">아이템상품 구매하기 ></b>
+                       </span>
+                   </div>
+               </div>
+               <!-- <div class="item item-complex panelCnt" style="margin-bottom: 5px;" ng-controller="CountCtrl">
+                   <div class="row f12 noPadding">
+                       <a style="color: #3e3e3e !important;">
+                           <span class="ls">오늘의 채용</span>
+                           <p class="bold f16 fo">{{todayguinCount}}</p>
+                       </a>
+                       <a style="color: #3e3e3e !important;">
+                           <span class="ls">전체 채용</span>
+                           <p class="bold f16 fo">{{totalGuinCount}}</p>
+                       </a>
+                       <a style="color: #3e3e3e !important;">
+                           <span class="ls">매칭 건수</span>
+                           <p class="bold f16 fo">{{totaljoinCount}}</p>
+                       </a>
+                   </div>
+               </div> -->
+               <div class="item item-complex noPadding" ng-controller="PopCtrl">
+                   <div class="row noPadding iconRow">
+                        <a ui-sref="service" class="fl pnIcon">
+                            <img class="vm di" src="img/intro-service.png" alt="" width="30%"><br>
+                            <span class="f10 dark pre-line">서비스소개 및 이용요금 안내</span>
+                        </a>
+                        <!-- <a ui-sref="costInfo" class="fl pnIcon">
+                            <img class="vm di" src="img/pn02.png" alt="" width="25%"><br>
+                            <p class="dark" style="line-height:1; padding-top: 5px; font-size: 7px;">이용 및<br> 요금안내</p>
+                        </a> -->
+                        <a ng-controller="shareCtrl" ng-click="kakao()" class="fl pnIcon">
+                            <img class="vm di" src="img/pn03.png" alt="" width="20%"><br>
+                            <span class="f10 dark">알리기</span>
+                        </a>
+                        <a ui-sref="recomm" class="fl pnIcon">
+                            <img class="vm di" src="img/pn04.png" alt="" width="40%"><br>
+                            <span class="f10 dark">친구보기</span>
+                        </a>
+                        <a ui-sref="csCenter" class="fl pnIcon">
+                            <img class="vm di" src="img/pn05_9.png" alt="" width="30%"><br>
+                            <span class="f10 dark">고객센터</span>
+                        </a>
+                    </div>
+                    <div class="row noPadding iconRow" >
+
+                        <a ui-sref="FAQList" class="fl pnIcon">
+                            <img class="vm di" src="img/faq.png" alt="" width="40%"><br>
+                            <span class="f10 dark">자주 묻는 질문</span>
+                        </a>
+                        <a ui-sref="itemshop" class="fl pnIcon">
+                            <img class="vm di" src="img/item.png" alt="" width="30%"><br>
+                            <span class="f10 dark">아이템샵</span>
+                        </a>
+                        <a class="fl pnIcon" ui-sref="estimate" >
+                            <img class="vm di" src="img/estimation.png" alt="" width="30%"><br>
+                            <span class="f10 dark">내 평가보기</span>
+                        </a>
+                        <a ui-sref="cooperate" class="fl pnIcon">
+                              <img class="vm di" src="img/coo.png" alt="" width="30%"><br>
+                              <span class="f10 dark">업무 제휴</span>
+                          </a>
+
+
+                        <!-- <a ui-sref="gameng" class="fl pnIcon">
+                            <img class="vm di" src="img/pn07_11.png" alt="" width="30%"><br>
+                            <span class="f10 dark">가맹몰</span>
+                        </a> -->
+                        <!-- ng-click="estimation()"  내평가보기 url?-->
+
+                    </div>
+                    <div class="row noPadding iconRow" style="border-bottom: 0;">
+
+                        <a ui-sref="urgentSlct" class="fl pnIcon">
+                            <img class="vm di" src="img/emer.png" alt="" width="28%"><br>
+                            <span class="f10 dark">긴급 구인</span>
+                        </a>
+                        <a ui-sref="gameng" class="fl pnIcon">
+                            <img class="vm di" src="img/gameng-icon.png" alt="" width="35%"><br>
+                            <span class="f10 dark">가맹몰</span>
+                        </a>
+                        <a ui-sref="admoney" class="fl pnIcon">
+                            <img class="vm di" src="img/pn12.png" alt="" width="30%"><br>
+                            <span class="f10 dark">AD머니</span>
+                        </a>
+                        <a ng-click="loginCheck()" class="fl pnIcon">
+                            <img class="vm di" src="img/pn07_11.png" alt="" width="30%"><br>
+                            <span class="f10 dark">포인트몰</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel-banner">
+                  <div class="row noPadding mt5 oh banner1" ui-sref="raw">
+                      <img src="img/raw-small.png" alt="" width="100%" height="95%">
+                  </div>
+                  <div class="mt5 banner2" ng-click="coushot()">
+                      <img src="img/cushot.png" alt="" width="100%" height="95%">
+                  </div>
+                </div>
+
+                <div class="item item-complex panelBotBtn">
+                    <div class="row noPadding">
+                        <a ui-sref="notice" class="item col-50 button br2 bg_wh f12" style="min-height: 44px !important;">공지사항</a>
+                        <a ui-sref="csCenter" class="col-50 button noMargin noPadding bg_wh f12" style="min-height: 44px !important;">고객센터</a>
+                    </div>
+                </div>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

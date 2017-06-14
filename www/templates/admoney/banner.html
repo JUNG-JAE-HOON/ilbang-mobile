@@ -1,0 +1,29 @@
+<ion-view view-title="AD 적립" ng-controller="BannerCtrl" style="top:125px" class="tete">
+    <ion-content class="padding mb10" style="top: 0 !important; bottom: 125px !important;" has-bouncing="false">
+        <p class="f12 fg">친구에게 공유해보세요!</p>
+        <div ng-repeat="item in items" class="adWrap pr border2" style="padding:5px" ng-click="playBanner({{ item.no }})">
+              <div class="{{item.views}}">
+                <img src="img/play.png" class="adPlay"/>
+                <div class="adTitle wid70 adBannTlt" style="top:78%; text-align:left">{{ item.title }}</div>
+                <div class="adPoint" style="top:78%">
+                    <img src="img/point.png" class="left" style="width: 20px; margin-right: 5px;" />
+                    <div class="red_font">{{ item.add_point }}</div>
+                </div>
+                <!-- <hr class="adHr" /> -->
+                <!-- <div class="adBtn adKakao">
+                    <a ui-sref="adTabs.video" class="white_font">
+                        <img src="img/adicon.png" class="adIcon" /> 카카오톡 공유하기
+                    </a>
+                </div> -->
+                <!-- <div class="adBar">|</div> -->
+                <!-- <div class="adBtn adReplay" ng-click="playBanner({{ item.no }})">
+                    <a  class="white_font">
+                        <img src="img/adicon2.png" class="adIcon" /> 배너 보기
+                    </a>
+                </div> -->
+            </div>
+            <img src="http://il-bang.com/mobile/ad/img/{{item.ad_link}}" class="adImg border2" style="height:70%"/>
+        </div>
+        	<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "adBannerList()"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

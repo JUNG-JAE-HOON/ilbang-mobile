@@ -1,0 +1,25 @@
+<ion-view view-title="친구보기" ng-controller="reuidCtrl">
+	<ion-content class="content has-header bg-fa padding">
+		<p class="f16">총 <b class="fo">{{totalCount}}</b>분이 나를 추천하셨습니다. <br>
+			<p class="f12">( 카카오톡 알리기로 가입한 목록입니다. )</p>
+		</p>
+		<div class="list">
+			<p class="item csList" ng-repeat = "reuid in reuidList">
+			    <span class="f14">아이디 : {{reuid.uid}}</span>
+				<span class="fr f12">
+			    	<span class="mr10">{{reuid.wdate}}</span>
+					<!-- <span>17:05:10</span> -->
+			    </span>
+			</p>
+
+		</div>
+		<a ng-controller="shareCtrl" ng-click="kakao()">
+			<div class="recommBtnWrap">
+				<div class="recommBtn">
+					<img src="img/kakao.png" class="left" style="width: 25px; margin-right: 10px;" />
+					<div class="left" style="color: #3c1f1e;">친구에게 공유하기</div>
+				</div>
+			</div>
+		</a>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,114 @@
+<ion-view view-title="내 이력서">
+	<ion-content class="content has-header has-footer" ng-controller="gujikViewTab2Ctrl" has-bouncing="false">
+    	<div ng-repeat = "item in items" item = "item" >
+      		<div class="di pr">
+				<!-- <li class="pa viewMap" ui-sref="#">
+		      		<a ui-sref="#" class="f10 fw"><b>열람상품 사용</b></a>
+		    	</li>
+				<li class="pa viewMap" ui-sref="#">
+		      		<a ui-sref="#" class="f10 fw"><b>열람상품 미사용</b></a>
+		    	</li> -->
+        		<img src="img/eeInfo.png" alt="" / width="100%" />
+				<ul class="pa fw ee_detail" style="margin-left:5%">
+					<li class="oh">
+						<h3 class="fw fl bold">{{item.name}}</h3>
+					</li>
+					<li class="padding-bottom margin-vertical" style="width:90%">{{item.title}}</li>
+					<li class="">
+						<ul class="pr fl  iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/gender.png" alt="" width="42%" class="di" style="margin-top:15px" />
+							</li>
+							<li>{{item.sex}}</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/age.png" alt="" width="70%" class="di" style="margin-top:15px;margin-left:2px" />
+							</li>
+							<li>{{item.age}}세</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/career.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:6px" />
+							</li>
+							<li>{{item.career}}</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/handicapped.png" alt="" width="45%" class="di" style="margin-top:13px; margin-left:3px" />
+							</li>
+							<li>{{item.obstacle}}</li>
+						</ul>
+					</li>
+				</ul>
+      		</div>
+	  		<div class="list bg_wh" style="top:-5px">
+	    		<div class="item item-divider" style="background-color: #ddd !important;">내 이력서 정보</div>
+	    		<div class="item noPadding">
+	      			<div class="row">
+	      				<span class="col col-25 f12"><b>제목</b></span>
+	      				<span class="col col f12">{{item.title}}</span>
+	      			</div>
+	    		</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12"><b>연락처</b></span>
+		  				<span class="col f12">{{item.phone}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12"><b>이메일</b></span>
+		  				<span class="col f12">{{item.email}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12"><b>희망 근무 지역</b></span>
+		  				<span class="col f12">{{item.area_1st_nm}} > {{item.area_2nd_nm}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12"><b>희망 직종</b></span>
+		  				<span class="col f12">{{item.work_2nd_nm}}</span>
+		  			</div>
+				</div>
+	    		<div class="bg_white noPadding flow">
+					<div class="tc pd10 f12" style="border-bottom: 1px solid #ddd;"><b>희망 근무 일자</b></div>
+					<div class="dateWrap tc">
+						<div ng-repeat="date in item.date">
+							<label>{{ date }}</label>
+						</div>
+	    			</div>
+				</div>
+				<div class="item noPadding">
+					<div class="row">
+						<span class="col col-25 f12"><b>근무 시간</b></span>
+						<span class="col f12">{{item.time}}</span>
+					</div>
+				</div>
+	    		<div class="list" style="clear: both;">
+	    			<div class="item noPadding">
+	    	  			<div class="row">
+	    	  				<span class="col col-25 f12"><b>경력 사항</b></span>
+	    	  				<span class="col f12">{{item.career}}</span>
+	    	  			</div>
+	    			</div>
+	    			<div class="item noPadding">
+	    	  			<div class="row">
+	    	  				<span class="col col-25 f12"><b>희망 금액(일당)</b></span>
+	    	  				<span class="col f12">&#x20A9; <b class="fo">{{item.pay}}</b></span>
+	    	  			</div>
+	    			</div>
+	    			<div class="padding f12 textArea bg_wh mb5">{{item.content}}</div>
+	    			<div class="padding bg_fa" ng-controller="PopCtrl">
+	    				<!--<a ui-sref="estimationEe" class="button button-block white_btn" ng-click="showEstimate();" style="border-radius: 0;">평가 보기</a>-->
+	    				<!-- <button class="button button-block white_btn" style="border-radius: 0;">열람 상품 사용</button>
+	    				<button class="button button-block red_btn" style="border-radius: 0;" ng-click="doGuin('{{item.no}}','{{item.ruid}}')">구인하기</button>-->
+	    			</div>
+	    		</div>
+	  		</div>
+    	</div>
+	</ion-content>
+</ion-view>

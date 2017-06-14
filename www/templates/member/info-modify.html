@@ -1,0 +1,105 @@
+<ion-view view-title="회원 정보 수정" cache-view="false">
+    <ion-content class="has-footer" ng-controller="updMemberInfoCtrl" has-bouncing="false">
+        <div class="bg mt30">
+            <div class="join_form" >
+                <div class="pic_circle_wrap">
+                    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *"> -->
+                        <img class="white_pic_circle" id="profileImg" ng-src="{{ imageUrl }}" />
+                    <!-- </meta> -->
+                </div>
+                <button ng-click = "dataAlert('사진업로드에는 데이터가 사용됩니다. 가능하면 wifi환경을 이용하여 주세요.')" class="custom-file-input pa custom-file-input2"></button>
+                <div class="modify_ment">개인정보 입력</div>
+                <div class="list flow pdLeft10 mg5">
+                    <label class="item item-input item-select left pdTop40 wid33">
+                        <select class="ionicSel" disabled="disabled" ng-model="year" ng-options="data as data for data in selboxData.year"></select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid33">
+                        <select class="ionicSel" disabled="disabled" ng-model="month" ng-options="data as data for data in selboxData.month"></select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid32">
+                        <select class="ionicSel" ng-model="day" disabled="disabled" ng-options="data as data for data in selboxData.day"></select>
+                    </label>
+                </div>
+                <div class="list wid94 marginAuto">
+                    <ion-radio class="left wid50" disabled ng-model="sex" ng-value="'male'" style="font-size: 12px;">남성</ion-radio>
+                    <ion-radio class="wid50" disabled ng-model="sex" ng-value="'female'" style="font-size: 12px;">여성</ion-radio>
+                </div>
+                <div class="list list-inset bgTrans">
+                    <label class="item item-input"><input type="password" placeholder="패스워드를 입력해주세요." ng-model="pwd1" id="pwd1"/></label>
+                    <label class="item item-input"><input type="password" placeholder="패스워드를 재입력 해주세요." ng-model="pwd2" id="pwd2"/></label>
+                    <div class="no_pass" ng-if="pwd1.length < 6 && pwd1 != ''">* 패스워드가 너무 짧습니다 (6자 이상)</div>
+                    <div class="no_pass" ng-if="pwd1 != '' && pwd2 != '' && pwd1 != pwd2">* 패스워드가 일치하지 않습니다.</div>
+                </div>
+                <div class="list list-inset">
+                    <label class="item item-input readonlybg"><input type="text" ng-model="name" placeholder="이름을 입력해주세요." readonly /></label>
+                </div>
+                <div class="list list-inset marginAuto bgTrans wid95">
+                    <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" ng-model="memberInfo.emailId" placeholder="이메일을 입력 해주세요." />
+                    </label>
+                    <label class="item item-input wid33 left NoborderRight pdRight10" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" id="emailAddr" ng-model="memberInfo.emailAddr" placeholder="직접 입력" />
+                    </label>
+                    <label class="item item-input item-select wid33 pdTop40">
+                        <select class="ionicSel" ng-model="memberInfo.emailAddrSel" ng-change="changeEmail(memberInfo.emailAddrSel)" ng-options="data as data for data in selboxData.email"></select>
+                    </label>
+                </div>
+                <div class="list list-inset flow bgTrans">
+                    <label class="item item-input wid33 left NoborderRight readonlybg" style="border-radius: 0 !important;">
+                        <input type="text" class="pdRight10" ng-model="phone1" readonly />
+                    </label>
+                    <label class="item item-input wid33 left NoborderRight readonlybg">
+                        <input type="text" class="pdRight10" ng-model="phone2" readonly />
+                    </label>
+                    <label class="item item-input wid33 left readonlybg">
+                        <input type="text" class="pdRight10" ng-model="phone3" readonly />
+                    </label>
+                </div>
+                <!--<input type="text" class="inputTxt join_inputTxt mg3" placeholder="추천인 아이디를 입력하세요." ng-model="reuid" />-->
+                <!-- <a ui-sref="#"><div class="radius_btn white_font pa15_btn mg3">본인 인증</div></a>-->
+                <div>
+                <div ng-if="isCompany">
+                        <div class="modify_ment mg5">기업 회원</div>
+                        <div class="com_step_ment mg5">사업자 등록 번호</div>
+                        <div class="list list-inset flow bgTrans" style="margin-top: 10px;">
+                            <label class="item item-input wid33 left NoborderRight readonlybg" style="border-radius: 0 !important;">
+                                <input type="text" class="pdRight10" ng-model="number1" readonly />
+                            </label>
+                            <label class="item item-input wid33 left NoborderRight readonlybg">
+                                <input type="text" class="pdRight10" ng-model="number2" readonly />
+                            </label>
+                            <label class="item item-input wid33 left readonlybg">
+                                <input type="text" class="pdRight10" ng-model="number3" readonly />
+                            </label>
+                        </div>
+                        <div class="list list-inset">
+                            <label class="item item-input readonlybg"><input type="text" disabled="disabled" ng-model="company" placeholder="회사명을 입력해주세요." /></label>
+                            <label class="item item-input readonlybg"><input type="text" disabled="disabled" ng-model="ceo" placeholder="대표자명 입력해주세요." /></label>
+                        </div>
+                        <div class="list list-inset marginAuto wid95">
+                            <label class="item item-input item-select baseSelect">
+                                <div class="input label">&nbsp;</div>
+                                <select class="selectClick" ng-model="types" disabled="disabled" ng-options="data as data for data in selboxData.types"></select>
+                            </label>
+                            <label class="item item-input item-select baseSelect">
+                                <div class="input label">&nbsp;</div>
+                                <select class="selectClick" disabled="disabled" ng-model="status" ng-options="data as data for data in selboxData.status"></select>
+                            </label>
+                        </div>
+                        <div class="list list-inset">
+                            <label class="item item-input"><input type="text" ng-model="memberInfo.content" placeholder="주요 사업 내용을 입력해주세요." /></label>
+                        </div>
+                        <div class="list list-inset marginAuto wid94">
+                            <label class="item item-input item-select baseSelect">
+                                <div class="input label">&nbsp;</div>
+                                <select class="selectClick" disabled="disabled" ng-model="flatation" ng-options="data as data for data in selboxData.flatation"></select>
+                            </label>
+                        </div>
+                    </div>
+                    <a ><div ng-click="updMemberInfo(memberInfo)" type="submit" class="red_btn white_font pa15_btn mg10" >정보수정 완료</div></a>
+                    <a ng-controller="PopCtrl"><div class="white_btn red_font pa15_btn mg3 mt30" ng-click="withdrawal();">회원 탈퇴</div></a>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

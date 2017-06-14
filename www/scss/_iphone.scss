@@ -1,0 +1,199 @@
+
+
+.platform-ios.platform-cordova {
+  .adApplyTabs .tabs {
+    margin: 80px auto 0;
+  }
+  .adLogTabs ion-content {
+    top: 0 !important;
+  }
+  .panelHead {
+    min-height: 170px;
+    padding-top: 40px;
+  }
+  .panelHomeBtn {
+    padding: 0 10px;
+  }
+  .panelName {
+    @include top(50%);
+    left: 25%;
+  }
+  .side-lock {
+    @include margin-top(10%);
+    left: 25%;
+  }
+  .allPage {
+    @include margin-top(0px !important);
+  }
+  .eeListBtn, .erListBtn {
+    @include top(44px !important);
+    margin: 50px 0 !important;
+    height: 100%;
+  }
+  .adSaveLogCont {
+    top: 110px !important;
+  }
+  .adSaveLogCont2 ion-content {
+    @include margin-top(-35px !important);
+  }
+  .adSaveList {
+    @include top(0 !important);
+  }
+  .banner-apply-view {
+    @include margin-top(-20px);
+  }
+  .video-pop {
+    height: 100%;
+    padding-bottom: 100px !important;
+    margin-bottom: 100px;
+  }
+  .header-margin {
+    @include margin-top(64px !important);
+  }
+  .adFBBtn {
+    width: 65px !important;
+    @include top(293px);
+    left: 244.703px;
+    margin-left: 0px;
+    opacity: 1;
+  }
+  .iosNoMt {
+    @include margin-top(0px !important);
+  }
+  .guinTab1Cont, .gujikTab1Cont {
+    @include margin-top(-25px !important);
+  }
+  .guinTab1Head, .gujikTab1Head {
+    height: 64px;
+    padding-top: 24px;
+  }
+  .yoyang-btn-area {
+    bottom: 3%;
+  }
+  .ee-matching-head {
+    height: 64px;
+    background-color: #eb5f43;
+    padding-top: 25px;
+    .adTabCont {
+      @include top(1px !important);
+      bottom: 205px !important;
+    }
+  }
+  .gujik-title-iphone {
+    @include margin-top(25px);
+  }
+  .bg_fa {
+    background: #fafafa !important;
+  }
+  .guin-star-iphone {
+    @include margin-top(-5px);
+  }
+  .message-head{
+    height:44px !important;
+    .buttons{
+      padding:0 0 0 0!important;
+      margin:0 0 0 0!important;
+    }
+  }
+  .message-modal-header{
+    height:44px !important;
+  }
+  .message-header{
+    height: 44px !important;
+  }
+  .message-header img{
+    margin-top: -27px !important
+  }
+
+  .sotong-popup{
+    height: 16em;
+    box-shadow: 0 0 0 0 !important;
+    background: transparent !important;
+    top:4em !important;
+    left:9em !important;
+  }
+  .sotong-artist-popover{
+    border:1px solid $orange;
+    padding:10px 15px 15px;
+    margin-top:27px;
+    background: white;
+    line-height: 17px;
+    border-radius:10px
+  }
+  .popover-tri1{
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid white;
+    position: absolute;
+    z-index: 99;
+    left: 4px;
+    top: 2px;
+  }
+  .popover-tri2{
+    width :0px;
+    height:0px;
+    border-left: 24px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 24px solid $orange;
+    position: absolute;
+  }
+  .tri-wrap{
+    width:48px;
+    height:22px;
+    overflow:hidden;
+    top:-21px;
+    left:55px;
+  }
+  .service-intro-tab{
+      margin-top: 1.5em;
+  }
+}
+
+/*.platform-ios.platform-cordova .title-size{}*/
+
+@media all and (max-width: 320px) {
+  .platform-ios.platform-cordova {
+    .main-slide {
+      height: 183px;
+    }
+    .ee-dtail-iphone {
+      height: 230px;
+    }
+    .hex-apply {
+      margin-bottom: 10px !important;
+      width: 4em;
+      height: 6em;
+      @include margin-top(17px);
+      margin-left: 1.5em;
+    }
+    .artist-apply button {
+      width: 85%;
+    }
+  }
+}
+
+@media only all and (min-width: 321px) and (max-width: 375px) {
+  .platform-ios.platform-cordova {
+    .main-pop-kind .popup-buttons button:last-child:before {
+      @include top(-17em);
+      width: 0;
+    }
+    .main-slide {
+      height: 215px !important;
+    }
+    .slider{
+      height: 162px !important;
+      .mainBanner{
+        height: 162px !important;
+      }
+    }
+  }
+}
+
+@media only all and (min-width: 376px) {
+  .platform-ios.platform-cordova .hex-apply {
+    margin-left: 2.5em;
+  }
+}

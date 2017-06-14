@@ -1,0 +1,146 @@
+<ion-view view-title="{{ title }} 일방" ng-controller="sotongCtrl">
+	<style>
+		.sect1, .sect2 { display: none; }
+		.content { background-color: #f6f5f6; }
+		.bg_wh { margin-bottom: .5em; }
+	</style>
+	<ion-content class="content has-header has-footer sotong-content-box" scroll="true" has-bouncing="false">
+		<div class="di pr sotong-person-info w100">
+        	<ul class="fw pl110">
+            	<li class="sotong-photo pa oh"><img class="profile-img" src="{{ sotongImg }}" width="100%" height="100%"/></li>
+				<li ng-show="sotongKind == 'general'"><h4 class="fw di">{{ sotongName }}</h4> {{ sotongJob }}</li>
+				<li ng-show="sotongKind == 'general'">{{ sotongAge }}</li>
+				<li ng-show="sotongKind == 'general'">{{ sotongBirth }} {{ sotongBirthPlace }}</li>
+				<!-- kind가 company인 경우 -->
+				<li ng-show="sotongKind == 'company'"><h4 class="fw di">{{ sotongName }}</h4> {{ sotongTypes }}</li>
+				<li ng-show="sotongKind == 'company'">{{ sotongFlotation }} 설립</li>
+            </ul>
+		</div>
+		<ul class="row tc noPadding sotong-detail-tabs">
+			<li class="col sotong-detail-tab"><span class="di sotong-tab-active">소식</span></li>
+			<li class="col sotong-detail-tab"><span class="di">프로필</span></li>
+		</ul>
+		<div class="sect sect0">
+			<div class="list" style="margin-top:-.5em; margin-bottom:0">
+				<div class="item">
+				 	<span class="f14 ng-binding bold">{{ sotongName }}님의 사진</span>
+			 	</div>
+			</div>
+			<ion-slide-box on-slide-changed="slideChanged(index)">
+				<div ng-show="imageNot == true" class="no-image-msg">
+					<img src="img/smallThereNo.png" width="20%" />
+					<span class="no-img-txt">등록된 사진이 없습니다.</span>
+				</div>
+				<ion-slide>
+					<ul class="thumb-ul" style="padding: 0 5px;">
+						<li class="thumb-li" ng-repeat="image in imageList" item="imageList" style="height: 80px; padding: 5px; width: 25% !important;" ui-sref="sotong-boardView({ type: type, no: image.no })">
+							<img src="img/renew-video.png" class="playBtn" ng-show="image.videoCheck == true" width="40%" />
+		 					<img ng-src="{{ image.image }}" width="100%" height="100%" />
+		 				</li>
+		 			</ul>
+				 </ion-slide>
+			 </ion-slide-box>
+			 <div class="list">
+			 	<div class="item">
+			 		<span class="f14 ng-binding">
+						<b>최신 글</b>
+						<span class="showMore" ui-sref="sotong-boardList({ no: no })">전체 글 ></span>
+					</span>
+			 	</div>
+				<div ng-show="boardNot == true" class="no-list-msg">
+					<img src="img/smallThereNo.png" width="20%" />
+				 	<span class="no-img-txt">등록된 게시글이 없습니다.</span>
+				</div>
+				<div class="item renew-item" ui-sref="sotong-boardView({ type: type, no: board.no })" ng-repeat="board in boardList" item="boardList">
+			 		<h2>{{ board.title }}</h2>
+					<span class="name">{{ sotongName }}</span>
+					<span class="devide">|</span>
+					<span class="time">{{ board.date }}</span>
+					<span class="balloon">{{ board.reviewCnt }}</span>
+			 	</div>
+			</div>
+		</div>
+		<div class="sect sect1">
+			<div style="top:-5px">
+				<div class="bg_wh padding">
+					<span class="f14">{{ tab1 }}</span>
+					<div class="noPadding row sotong-detail-row" ng-repeat="career in careers" item="careers" ng-show="sotongKind == 'general'">
+						<span class="table-cell sotong-detail-date f12">{{ career.date }}</span>
+						<span class="table-cell f12 sotong-detail-txt">{{ career.content }}</span>
+					</div>
+					<div class="mt15" ng-show="sotongKind == 'company'">
+						<div class="oh">
+							<div class="fl" style="width: 25%;">기업명</div>
+							<div class="fl">{{ sotongName }}</div>
+						</div>
+						<div class="oh mt5">
+							<div class="fl" style="width: 25%;">업종</div>
+							<div class="fl">{{ sotongTypes }}</div>
+						</div>
+						<div class="oh mt5">
+							<div class="fl" style="width: 25%;">기업 형태</div>
+							<div class="fl">{{ sotongStatus }}</div>
+						</div>
+						<div class="oh mt5">
+							<div class="fl" style="width: 25%;">설립일</div>
+							<div class="fl">{{ sotongFlotation }}</div>
+						</div>
+						<div class="oh mt5">
+							<div class="fl" style="width: 25%;">대표 전화</div>
+							<div class="fl">{{ sotongPhone }}</div>
+						</div>
+						<div class="oh mt5">
+							<div class="fl" style="width: 25%;">기업 주소</div>
+							<div class="fl">{{ sotongAddr }}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="top:-5px">
+				<div class="bg_wh padding">
+					<span class="f14">{{ tab2 }}</span>
+					<div class="noPadding row sotong-detail-row" ng-repeat="scholarship in scholars" item="scholars">
+						<span class="table-cell sotong-detail-date f12">{{ scholarship.date }}</span>
+						<span class="table-cell f12 sotong-detail-txt">{{ scholarship.content }}</span>
+					</div>
+				</div>
+			</div>
+			<div style="top:-5px">
+				<div class="bg_wh padding">
+					<span class="f14">수상 내역</span>
+					<div class="noPadding row sotong-detail-row" ng-repeat="prize in prizes" item="prizes">
+						<span class="table-cell sotong-detail-date f12">{{ prize.date }}</span>
+						<span class="table-cell f12 sotong-detail-txt">{{ prize.content }}</span>
+					</div>
+				</div>
+			</div>
+			<div class="bg_wh padding bot-btn-area">
+				<span class="f14">{{ bottomTab }}</span>
+				<div class="noPadding row sotong-detail-row portfolio" ng-repeat="work in works" item="works">
+					<span class="table-cell f12" ng-show="sotongKind == 'general'">{{ work.activityType }}</span>
+					<span class="table-cell f12" ng-show="sotongKind == 'company'">{{ work.date }}</span>
+					<span class="table-cell f12 sotong-detail-txt w100">{{ work.content }}</span>
+				</div>
+				<div class="sotong-sns oh tc">
+					<div class="sns di border2 mr10" ng-click="golink(sotongFacebook)">
+						<img class="vm" src="img/sotong/sotong-facebook.png" alt="" width="15%">
+						<a class="f12">페이스북 방문하기</a>
+					</div>
+					<div class="sns di border2" ng-click="golink(sotongInstagram)" ng-show="sotongKind == 'general'">
+						<img class="vm" src="img/sotong/sotong-insta.png" alt="" width="15%">
+						<a class="f12">인스타그램 방문하기</a>
+					</div>
+					<div class="sns di border2 mr10" ng-click="golink(sotongHomepage)" ng-show="sotongKind == 'company'">
+						<a class="f12">회사 사이트 바로가기</a>
+					</div>
+					<div class="sns di border2 mr10" ui-sref="apply-({ type: type, memKind: kind })" ng-show="modifyBtn == true" style="margin-top:.5em; width:137px;">수정하기</div>
+				</div>
+
+			</div>
+		</div>
+		</div>
+		<div class="oh" ng-controller="randBanCtrl">
+			<a class="bann oh"><img ui-sref="adTabs.banner({ no: {{ bannerNo }} })" class="Rand_Banner bb padding w100" src="{{ bannerPath }}"></a>
+		</div>
+	</ion-content>
+</ion-view>

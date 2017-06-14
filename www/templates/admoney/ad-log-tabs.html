@@ -1,0 +1,23 @@
+<div class="bar-ilbang myAdHead block content has-header has-footer mb2" cache="false">
+	<p class="white_font f20 pa maPanelName wid100">사용 가능 AD머니</p>
+	<div class="pa myAdPoint">
+		<div class="f14 fw bw di pnSmBtn2 mr5 wid100 tc">적립 포인트</div>
+		<h2 class="fw mt5"><span class="ul" ng-controller="admoneyCtrl">{{ adMoney }}</span> P</h2>
+	</div>
+	<p class="pa myAdBtnWrap">
+		<!-- <a ui-sref="emoneyCharge" class="f14 fw bw di myAdBtn mr5">충전하기</a>
+		<a ui-sref="adChange" class="f14 fw bw di myAdBtn">교환하기</a> -->
+	</p>
+</div>
+<ion-nav-view name="adLog1"></ion-nav-view>
+<ion-tabs class="tabs-icon-top tabs-color-active-ilbang adLogTabs has-header tabs-top">
+	<ion-tab title="적립 내역" ui-sref="adLogTabs.adLog1" class="leftRd"></ion-tab>
+	<ion-tab title="사용 내역" ui-sref="adLogTabs.adLog2" class="rightRd">
+		<ion-nav-view name="adLog2"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>
+<!-- <ion-footer-bar class="noPadding" style="height:auto; margin-bottom:-6px">
+	<a class="bann" ng-controller="randBanCtrl">
+			<img ui-sref="admoney" class="Rand_Banner border2" src="{{bannerPath}}" alt="" style="width:100%">
+		</a>
+</ion-footer-bar> -->

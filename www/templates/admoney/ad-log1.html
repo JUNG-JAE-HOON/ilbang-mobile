@@ -1,0 +1,14 @@
+<ion-view view-title="AD머니 적립 내역" style="top:75px;" class="adSaveLogCont">
+	<ion-content ng-controller="adReserveCtrl" has-bouncing="false" class="adSaveList">
+    	<div class="myAdTab list padding">
+        	<p class="item csList padding bg_fa adLog1Item" ng-repeat="item in items" item="item" style="padding:5px 10px">
+              	<span class="f14">
+				  	<span><b>{{ item.title }}</b></span>
+				  	<span class="fr fo f14"><b>{{ item.point }} P</b></span><br>
+                  	<span class="mr20 f12">{{ item.wdate }}</span>
+              	</span>
+          	</p>
+    	</div>
+		<ion-infinite-scroll distance="20%" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

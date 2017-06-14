@@ -1,0 +1,18 @@
+<ion-view view-title="배너 광고 신청 내역">
+	<ion-content style="top: 0; bottom: 130px;" ng-controller="ApplyBannerLogCtrl" has-bouncing="false">
+    	<div class="myAdTab list padding">
+          	<div class="item csList padding bg_fa adLog1Item" ng-repeat="item in items" item="item">
+              	<div class="f16 fo bold">{{ item.title }}</div>
+                <span class="fr f12 w100">
+                	<div class="fl textCut" style="max-width: 80%;">{{ item.content }}</div>
+                    <span class="fr f12">
+						<a ui-sref="applyFormTabs.banner({ no: {{ item.no }}})" class="fo f12 ls bold">수정하기</a>
+					</span><br>
+                    <span class="f12">광고 노출 횟수 : </span>
+                    <span class="f12 fo">{{ item.count }}회</span>
+                </span>
+          	</div>
+    	</div>
+		<ion-infinite-scroll distance="20%" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

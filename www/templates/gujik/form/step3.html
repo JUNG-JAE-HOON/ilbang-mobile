@@ -1,0 +1,29 @@
+<ion-view view-title="구직 신청서 쓰기">
+    <ion-content has-bouncing="false">
+        <div class="bg">
+            <img src="img/stepBar3.png" class="wid100 mg5" />
+            <div class="join_form">
+                <div class="list flow pdLeft10 mb10" style="margin-top: 30px;">
+                    <label class="item item-input item-select left pdTop40 wid98">
+                        <select class="ionicSel" ng-model="gujikForm.career" ng-options="data.no as data.list_name for data in selboxData.career">
+                            <option selected>경력 사항</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="list wid95 marginAuto mb10">
+                    <label class="item item-input" style="max-width: 100%">
+                        <textarea rows="8" placeholder="자기소개서를 입력하세요." id="content" ng-model="gujikForm.content" ng-model="content"></textarea>
+                    </label>
+                </div>
+                <!--<div class="list wid95 marginAuto mb10">
+                    <ion-radio class="left wid50" ng-model="gujikForm.open" ng-value="'yes'" style="font-size: 14px;">공개</ion-radio>
+                    <ion-radio class="wid50" ng-model="gujikForm.open" ng-value="'no'" style="font-size: 14px;">비공개</ion-radio>
+                </div>-->
+            </div>
+            <div class="join_btn_wrap mb20">
+                <a ng-click="formStep2Back()" class="button btn red_btn">이전</a>
+                <a ui-sref="infoEmployee" ng-click="formStep3()" class="button btn white_btn">완료</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,55 @@
+<ion-view view-title="영상 광고 신청" class="bg_fa" style="top:115px">
+	<style media="screen">
+		.card, .list-inset{margin:10px}
+	</style>
+
+	<ion-content class="content" style="top: 0px; margin-bottom: 100px;" ng-controller="ApplyCtrl" has-bouncing="false">
+		<div class="join_form">
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">제목</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="title" placeholder="제목을 입력해주세요." /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">내용</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="content" placeholder="내용을 입력해주세요." /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">링크</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="link" placeholder="링크 주소를 입력해주세요." /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">영상 시간</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="time" placeholder="시간을 입력해주세요. (초)" /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">문제</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="quiz" placeholder="문제를 입력해주세요." /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">보기</div>
+				<label class="item item-input wid40 left NoborderRight"><input class="noPadding" type="text" ng-model="exam1" placeholder="1번" /></label>
+				<label class="item item-input wid40 left"><input type="text" ng-model="exam2" placeholder="2번" class="noPadding"/></label>
+				<label class="item item-input wid40 right"><input type="text" ng-model="exam4" placeholder="4번" class="noPadding"/></label>
+				<label class="item item-input wid40 right NoborderRight"><input class="noPadding" type="text" ng-model="exam3" placeholder="3번" /></label>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">정답</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="correct" placeholder="1번 (숫자만 입력)" /></label>
+			</div>
+			<p class="f10" style="margin:0 0 0 80px">보기 중 정답의 번호를 입력해주세요</p>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">노출수</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="expose" placeholder="1회 (숫자만 입력)" /></label>
+			</div>
+			<p class="f10" style="margin:0 0 0 80px">광고가 노출될 총 횟수를 입력해주세요</p>
+			<div class="list list-inset bgTrans">
+				<div class="left wid20 adPropseTitle f14">적립금</div>
+				<label class="item item-input wid80 right"><input type="text" ng-model="price" placeholder="100원 (숫자만 입력)" /></label>
+			</div>
+			<p class="f10" style="margin:0 0 0 80px">퀴즈를 풀었을 때 사용자에게 적립되는 포인트입니다.</p>
+			<div class="adTotalPrice">총 금액<span style="margin: 0 30px; color: #eb5f43;">{{ expose * price }}</span>원</div>
+			<a ng-click="adProposal(0, 0)" ng-hide="btnView == true" class="white_font"><div class="red_btn pa15_btn mb50" style="text-align: center;">신청하기</div></a>
+			<a ng-click="adProposal(0, 1)" ng-show="btnView == true" class="white_font"><div class="red_btn pa15_btn mb50" style="text-align: center;">수정하기</div></a>
+        </div>
+	</ion-content>
+</ion-view>

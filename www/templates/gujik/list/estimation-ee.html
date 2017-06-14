@@ -1,0 +1,72 @@
+<ion-view view-title="평가 보기">
+	<ion-content class="content has-header has-footer" ng-controller="estiEeCtrl" has-bouncing="false">
+		<div class="tc oh w100" style="padding: 30px 0 20px;">
+			<div class="estimationCircle">사진</div>
+		</div>
+		<div class="tc">
+			<h2 style="margin-bottom:0">
+				<span class="fw100">구직자 </span>
+				<b class="fw200">{{name}}</b>
+			</h2>
+			<p class="dark">구직자 분의 평가 및 평점입니다.</p>
+			<div class="padding-bottom oh starArea mb20">
+				<img src="img/peopleIcon.png" alt="" width="4%" class="fl" style="margin:2px 5px 0 0">
+				<span class="fl">{{allPost}}명</span>
+				<div id="rateYo" class="rateYo fl"></div>
+				<span class="red_font fl" style="font-weight: normal;">4.0점</span>
+				<span class="fl">&nbsp;/&nbsp;</span>
+				<span class="fl">5.0점</span>
+			</div>
+		</div>
+		<div class="list">
+		  	<div class="item item-divider">
+		    	<b class="red_font">{{allPost}}건</b>의 평가가 있습니다.
+		  	</div>
+		  	<div class="item bg_fa f14 pd15" ng-repeat = "item in items" item="item">
+		  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+					<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+				</div>
+
+				<div id="rateYo1" class="rateYo fr"></div>
+		    	<p class="review_ee w100">{{item.content}}</p>
+		    	<p class="mb_7 vm di f14 dark">{{item.wdate}</p>
+		  	</div>
+
+<!--			<div class="item bg_fa f14 pd15">
+		  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+					<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+				</div>
+				<div id="rateYo2" class="rateYo fr"></div>
+		    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+		    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+		  	</div>
+			<div class="item bg_fa f14 pd15">
+		  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+					<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+				</div>
+				<div id="rateYo3" class="rateYo fr"></div>
+		    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+		    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+		  	</div>
+			<div class="item bg_fa f14 pd15">
+		  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+					<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+				</div>
+				<div id="rateYo4" class="rateYo fr"></div>
+		    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+		    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+		  	</div>
+			<div class="item bg_fa f14 pd15">
+		  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+					<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+				</div>
+				<div id="rateYo5" class="rateYo fr"></div>
+		    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+		    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+		  	</div>-->
+		</div>
+		<div class="padding">
+			<a ng-click="confirmStar()" class="button button-block red_btn white_font rd50 estiBtn">평가하기</a>
+		</div>
+	</ion-content>
+</ion-view>

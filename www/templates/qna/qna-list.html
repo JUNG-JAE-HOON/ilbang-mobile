@@ -1,0 +1,37 @@
+<ion-view view-title="Q&amp;A 묻고 답하기" ng-controller="qnaCtrl" cache-view="false">
+	<ion-nav-buttons side="right">
+		<a ng-click="loginCheck()" ng-show="!admin">
+			<img src="img/QNA_03.png" alt="" width="25px" height="25px" style="margin-top: 5px; margin-right: 7px;" />
+		</a>
+	</ion-nav-buttons>
+	<ion-content class="content has-header has-footer" has-bouncing="false">
+		<div class="list noMargin" style="background-color: #f5f5f5;">
+			<div class="item item-divider guideWrap">
+			  	<div class="white_font f14 guideBtn left">안내</div>
+				<div class="left f16" style="max-width: 75%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Q&amp;A 게시판에 대한 안내글입니다.</div>
+				<!-- <div class="fr"><img src="img/QNA_07.png" alt="" width="15px" /></div> -->
+			</div>
+		</div>
+		<div class="list padding-horizontal padding bg_white" style="padding: 0 5%; margin-bottom: 0;">
+		  	<!-- <a class="item csList" ng-click="passwordPop({{ item.no }})" ng-show="!admin" ng-repeat="item in items" item="item"> -->
+			<a class="item csList" ui-sref="QNAView({ no: item.no })" ng-repeat="item in items" item="item">
+				{{ item.title }}
+			    <img class="vm" src="img/nbQA.png" alt="" width="15px" ng-show="item.isNew" />
+		    	<div class="writeInfo">
+		    		<p class="fl"><span>{{ item.name }}</span>님</p>
+		    		<span class="fl dark padding-horizontal f9">|</span>
+		    		<p class="fl">조회수 <span>{{ item.hit }}</span>회</p>
+		    		<span class="fl dark padding-horizontal f9">|</span>
+		    		<p class="fl"><span>{{ item.wdate }}</span></p>
+		    	</div>
+		    	<span class="pa aCount tc f10 dark">{{ item.comment }}</span>
+		  	</a>
+			<div class="tc">
+				<a ng-click="loadMore()" ng-show="listShow" class="button white_btn tc listMore mt20 mb20">더 보기 +</a>
+			</div>
+		</div>
+		<div class="padding">
+			<a href="tel:02-2138-7365"><img src="img/Q&A_19.png" alt="" class="wid100 noPadding" /></a>
+		</div>
+	</ion-content>
+</ion-view>

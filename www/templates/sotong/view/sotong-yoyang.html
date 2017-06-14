@@ -1,0 +1,43 @@
+<ion-view view-title="문화 일방" ng-controller="sotongYoyangCtrl">
+    <style media="screen">
+        .popover { opacity: 1; top: 15%; width: 90%; left: 36%; }
+    </style>
+    <ion-content>
+        <!-- <div class="padding di oh">
+            <span class="f14">문화 일방이란?
+                <img class="vm" src="img/queRed.png" alt="" style="width:20%; margin-top:-4px" ng-click="openPopover()">
+            </span>
+        </div> -->
+        <div class="oh mt20">
+          <!-- <span class="artsit-tooltip">문화일방이란? <img src="img/sotong/sotong-tooltip.png" alt="" width="7%"></span> -->
+            <ul class="col col-33 fl" ui-sref="yoyang">
+                <li class="oh artist">
+                    <!-- <img class="hex" style="background-image: url({{ item.imgUrl }});" width="100%"> -->
+                    <img class="hex profile-img" src="img/sotong-yoyang.png" width="100%">
+                        <!-- <div class="corner-1"></div>
+                        <div class="corner-2"></div> -->
+                </li>
+                <!-- <li class="tc f16 bold artist-name" ng-if="item.name != null">{{ item.name }}</li> -->
+                <li class="tc f16 bold artist-name">기가애드</li>
+                <!-- <li class="tc f16 bold artist-name" ng-if="item.name == null">{{ uid }}</li> -->
+                <!-- <li class="artist-content tc text-cut">{{ item.message }}</li> -->
+
+            </ul>
+            <!-- <ul class="col col-33 fl artist-list tc" ui-sref="sotong-apply">
+                <li class="oh di">
+                    <div class="hex hex-3">
+                        <div class="inner">
+                            <img src="img/sotong-plus.png" width="100%"/>
+                        </div>
+                        <div class="corner-1"></div>
+                        <div class="corner-2"></div>
+                    </div>
+                </li>
+                <li class="artist-apply"><div class="tc di artistBtn">신청하기</div></li>
+            </ul> -->
+        </div>
+    </ion-content>
+    <!-- <ion-footer-bar align-title="left" class="sotong-chating sotong-artist-chating">
+        <button class="noBorder w100">1:1 오픈 채팅하기</button>
+    </ion-footer-bar> -->
+</ion-view>

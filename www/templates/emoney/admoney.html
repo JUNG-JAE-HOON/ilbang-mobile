@@ -1,0 +1,65 @@
+<ion-view view-title="AD머니" cache-view="false">
+	<ion-content class="content has-header has-footer" ng-controller="admoneyCtrl" has-bouncing="false">
+		<style media="screen">
+			.scroll{height: 100%}
+		</style>
+		<ul class="padding adTopShow">
+			<li class="card1 oh">
+				<div class="red_font f22 fw" style="padding: 40px 20px 25px; background-color:#eb5f43;">
+					<span class="bold">현재 나의 AD머니</span>
+					<!-- <img src="img/queRed.png" alt="" width="20px"> -->
+					<span class="fr"><b>{{ adMoney }}</b> P</span>
+				</div>
+
+
+			</li>
+			<li class="tc f14">
+				<!-- <a ui-sref="adChange" class="cardBot f18 white_font">AD머니를 E-머니로 전환하러 가기</a> -->
+			</li>
+		</ul>
+		<div class="list">
+			<div class="row padding bg_wh">
+				<a ui-sref="adTabs.banner" class="item col padding adMenumg5">
+					<img src="img/ADmoney_07.png" alt="" width="100%">
+				</a>
+				<a ui-sref="adLogTabs.adLog1" class="item col padding adMenumg5">
+					<img src="img/ADmoney_09.png" alt="" width="100%">
+				</a>
+			</div>
+			<!-- <div class="row padding">
+				<a ui-sref="#" class="item col padding adMenumg5">
+					<img src="img/ADmoney_13.png" alt="" width="100%">
+				</a>
+				<a ui-sref="#" class="item col padding adMenumg5">
+					<img src="img/ADmoney_14.png" alt="" width="100%">
+				</a>
+			</div> -->
+			<!-- 없어져서 주석처리. 12월 7일 정재훈 -->
+			<!-- <div class="row padding">
+				<a ui-sref="tab.tab1" class="item col padding adMenumg5">
+					<img src="img/ADmoney2_17.png" alt="e머니" width="100%">
+				</a>
+				<a ui-sref="emoneyCharge" class="item col padding adMenumg5">
+					<img src="img/ADmoney2_18.png" alt="" width="100%">
+				</a>
+			</div> -->
+			<div class="row padding">
+				<!-- 없어져서 주석처리. 12월 7일 정재훈 -->
+
+				<a ng-click="loginCheck()" ng-controller="LoginCtrl" class="item col padding adMenumg5">
+					<img src="img/ADmoney2_22.png" alt="" width="100%">
+				</a>
+				<a ui-sref="adApply" ng-controller="LoginCtrl" class="item col padding adMenumg5">
+					<img src="img/ad-apply.png" alt="" width="100%">
+				</a>
+			</div>
+			<!-- <div class="row padding">
+				<a ui-sref="#" class="item col padding adMenumg5">
+					<img src="img/ADmoney2_14.png" alt="" width="100%">
+				</a>
+				<div class="item col padding adMenumg5 adNoMenu"></div>
+			</div> -->
+		</div>
+		<a ui-sref="adApply" class="white_font"><div class="wid100 pa red_btn pd10 tc adApplyBtn">광고 신청하기</div></a>
+	</ion-content>
+</ion-view>

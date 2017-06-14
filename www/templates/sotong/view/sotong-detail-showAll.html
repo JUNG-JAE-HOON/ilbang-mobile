@@ -1,0 +1,33 @@
+<ion-view view-title="전체 글" cache-view="false">
+    <ion-content ng-controller="sotongRenewListCtrl" has-bouncing="false">
+        <div class="di pr sotong-person-info w100">
+            <ul class="fw pl110">
+                <li class="sotong-photo pa oh"><img class="profile-img" ng-src="{{ sotongImg }}" width="100%" height="100%"/></li>
+      			<li ng-show="kind == 'general'"><h4 class="fw di">{{ sotongName }}</h4> {{ sotongJob }}</li>
+      			<li ng-show="kind == 'general'">{{ sotongAge }}</li>
+      			<li ng-show="kind == 'general'">{{ sotongBirth }} {{ sotongBirthPlace }}</li>
+      			<!-- kind가 company인 경우 -->
+      			<li ng-show="kind == 'company'"><h4 class="fw di">{{ sotongName }}</h4> {{ sotongTypes }}</li>
+      			<li ng-show="kind == 'company'">{{ sotongFlotation }} 설립</li>
+            </ul>
+            <!-- <div class="pencil" ng-click="openModalWrite()" ng-show="writeBtn == true"> -->
+            <div class="pencil" ng-click="openModalWrite()">
+                <img src="../img/pencil.png" width="50%" />
+            </div>
+        </div>
+        <div class="sect sect0">
+            <div class="list board">
+                <div class="item renew-item" ng-repeat="board in boardList" item="boardList" ng-click="openModalRead(board.no)">
+                    <h2>{{ board.title }}</h2>
+                    <span class="name">{{ sotongName }}</span>
+                    <span class="devide">|</span>
+                    <span class="time">{{ board.date }}</span>
+                    <span class="reply-icon">
+                        <img src="../img/reply.png" width="4%" />
+                        <span>{{ board.reviewCnt }}</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

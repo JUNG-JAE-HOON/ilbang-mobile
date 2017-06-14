@@ -1,0 +1,115 @@
+<ion-view view-title="구직자 정보" cache-view="false">
+	<ion-content class="content has-header has-footer" ng-controller="guinViewTab1Ctrl" has-bouncing="false">
+    	<div ng-repeat = "item in items" item = "item" >
+      		<div class="di pr">
+
+        		<img src="img/eeInfo.png" alt="" / width="100%" />
+				<ul class="pa fw ee_detail" style="margin-left:30px">
+					<li class="oh">
+						<h3 class="fw fl bold">{{item.name}}</h3>
+						<p class="pr starWrap mt5">
+							<span class="rateYo-guin pa"></span>
+						</p>
+					</li>
+					<li class="padding-bottom">{{item.title}}</li>
+					<li>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/gender.png" alt="" width="42%" class="di" style="margin-top:15px" />
+							</li>
+							<li class="f10">{{item.sex}}</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/age.png" alt="" width="70%" class="di" style="margin-top:15px;margin-left:2px" />
+							</li>
+							<li class="f10">{{item.age}}세</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/career.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:6px" />
+							</li>
+							<li class="f10">{{item.career}}</li>
+						</ul>
+						<ul class="pr fl iconCircle">
+							<li class="pa text-center iconArea">
+								<img src="img/handicapped.png" alt="" width="45%" class="di" style="margin-top:13px; margin-left:3px" />
+							</li>
+							<li class="f10">{{item.obstacle}}</li>
+						</ul>
+					</li>
+				</ul>
+      		</div>
+	  		<div class="list bg_wh" style="top:-5px">
+	    		<div class="item item-divider">구직자 정보</div>
+	    		<div class="item noPadding">
+	      			<div class="row">
+	      				<span class="col col-25 f12">제목</span>
+	      				<span class="col col f12">{{item.title}}</span>
+	      			</div>
+	    		</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12">연락처</span>
+		  				<span class="col f12 ios-black">{{item.phone}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12">이메일</span>
+		  				<span class="col f12">{{item.email}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12">희망 근무 지역</span>
+		  				<span class="col f12">{{item.area_1st_nm}} {{item.area_2nd_nm}}</span>
+		  			</div>
+				</div>
+				<div class="item noPadding">
+		  			<div class="row">
+		  				<span class="col col-25 f12">희망 직종</span>
+		  				<span class="col f12">{{item.work_2nd_nm}}</span>
+		  			</div>
+				</div>
+	    		<div class="bg_white noPadding flow">
+					<div class="tc pd10 f14">희망 근무 일자</div>
+					<div class="dateWrap">
+						<div ng-repeat="date in item.date">
+							<label><input type="checkbox" checklist-model="work_date" checklist-value="date"/>&nbsp;&nbsp;{{ date }}</label>
+						</div>
+	    			</div>
+				</div>
+				<div>
+					<div class="item noPadding">
+							<div class="row">
+								<span class="col col-25 f12"><b>근무 시간</b></span>
+								<span class="col f12">{{item.time}}</span>
+							</div>
+					</div>
+				</div>
+	    		<div class="list" style="clear: both;">
+	    			<div class="item noPadding">
+	    	  			<div class="row">
+	    	  				<span class="col col-25 f12">경력 사항</span>
+	    	  				<span class="col f12">{{item.career}}</span>
+	    	  			</div>
+	    			</div>
+	    			<div class="item noPadding">
+	    	  			<div class="row">
+	    	  				<span class="col col-25 f12">희망 금액(일당)</span>
+	    	  				<span class="col f12">&#x20A9; <b class="fo">{{item.pay}}</b></span>
+	    	  			</div>
+	    			</div>
+	    			<div class="padding f12 textArea bg_wh mb5">{{item.content}}</div>
+
+	    			<div class="padding bg_fa"> <!-- ng-controller="PopCtrl" -->
+	    				<a ui-sref="viewResumeReview({resume_no:{{item.no}}})" class="button button-block white_btn" ng-click="showEstimate();" style="border-radius: 0;">평가보기</a>
+	    				<!--<button class="button button-block white_btn" style="border-radius: 0;">열람 상품 사용</button>-->
+	    				<!--<button class="button button-block red_btn" style="border-radius: 0;" ng-click="doGuin('{{item.no}}','{{item.ruid}}')">구인하기</button>-->
+	    			</div>
+	    		</div>
+	  		</div>
+    	</div>
+	</ion-content>
+</ion-view>

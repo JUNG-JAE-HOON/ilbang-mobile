@@ -1,0 +1,892 @@
+.ellip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logo {
+  width: 30%;
+  padding-top: 30%;
+}
+
+.findBtn_wrap {
+  width: 100%;
+  margin-top: 2%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.baseSelect {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.flow {
+  overflow: auto !important;
+}
+
+.bgTrans {
+  background-color: transparent !important;
+}
+
+.pdLeft10 {
+  padding-left: 10px !important;
+}
+
+.pdRight10 {
+  padding-right: 10px !important;
+}
+
+.pdTop40 {
+  padding-top: 40px !important;
+}
+
+.ionicSel {
+  left: 0 !important;
+  padding: 0 !important;
+  padding-left: 10px !important;
+  direction: inherit !important;
+}
+
+.NoborderRight {
+  border-right: 0 !important;
+}
+
+.NoborderBottom {
+  border-bottom: 0 !important;
+}
+
+.marginAuto {
+  margin: 0 auto;
+}
+
+.readonlybg {
+  background-color: #f8f8f8 !important;
+}
+
+.selectClick {
+  left: 0 !important;
+  max-width: none !important;
+  padding: 0 70% 0 16px !important;
+  direction: inherit !important;
+}
+
+.redCheck {
+  &::before {
+    border-style: none !important;
+    border-radius: 5px !important;
+    background-color: #fff !important;
+  }
+  &::after {
+    background-color: transparent;
+    border-color: #eb5f43;
+    border-width: 2px;
+    left: 22%;
+    top: 30%;
+  }
+}
+
+.panelWrap > .list {
+  padding-top: 0 !important;
+}
+
+/*막바지 피그백에서 상단 하얀바 생겨서 주석처리*/
+/*.platform-ios .menu { top: 20px !important; }*/
+
+.platform-ios .adTabs .tabs {
+  margin: 78px auto 10px !important;
+}
+
+.adLogTabs .tabs {
+  margin: 55px auto 10px !important;
+}
+
+.platform-ios {
+  &.platform-cordova .adLogTabs {
+    .tabs {
+      margin: 80px auto 10px !important;
+    }
+    .myAdTab {
+      margin: 30px 0 !important;
+    }
+  }
+  .siguWrap {
+    margin-bottom: 0 !important;
+    > div {
+      margin: 0 !important;
+    }
+  }
+}
+
+/*.platform-ios .iosmtZero { margin-top: 0 !important; }*/
+
+/* AD머니 */
+
+.adMenumg5 {
+  margin: 2.5px 5px;
+}
+
+.adNoMenu {
+  background-color: #fafafa;
+  border: 0;
+}
+
+.adWrap {
+  width: 100%;
+  height: 150px;
+  margin-bottom: 10px;
+  > .adRgba {
+    position: absolute;
+    width: 97%;
+    height: 138px;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.adPlay {
+  position: absolute;
+  width: 40px;
+  padding-top: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.adTitle {
+  position: absolute;
+  left: 6%;
+  top: 72px;
+}
+
+.adPoint {
+  position: absolute;
+  right: 4%;
+  top: 72px;
+  width: 55px;
+}
+
+.adHr {
+  position: absolute;
+  left: 5%;
+  bottom: 45px;
+  width: 90%;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.adKakao {
+  left: 4%;
+  bottom: 15px;
+}
+
+.adIcon {
+  width: 15px;
+}
+
+.adBar {
+  position: absolute;
+  margin-left: 50%;
+  bottom: 18px;
+  font-size: 28px;
+  color: #fff;
+  opacity: 0.6;
+}
+
+.adBtn {
+  position: absolute;
+  text-align: center;
+  width: 45%;
+  font-size: 13px;
+  height: 40px;
+  line-height: 68px;
+}
+
+.adReplay {
+  right: 4%;
+  bottom: 15px;
+}
+
+.adImg {
+  width: 100%;
+  height: 100%;
+}
+
+.adPropseTitle {
+  font-size: 15px;
+  padding: 12px 0;
+}
+
+.adTotalPrice {
+  font-size: 18px;
+  margin: 50px auto;
+  text-align: center;
+  width: 200px;
+}
+
+.myAdTab > p:nth-child(1), .ELogWrap > p:nth-child(1) {
+  border-top: 0 !important;
+}
+
+.tab-nav > a {
+  max-width: 100% !important;
+}
+
+/* AD머니 - 퀴즈 풀이(영상/배너) */
+
+.QuizTitle {
+  background-color: #eee;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -5px;
+  margin-bottom: 30px;
+  min-height: 20%;
+}
+
+.platform-ios.platform-cordova .QuizTitle {
+  margin-bottom: 30px;
+}
+
+.Quiz {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 110px;
+  font-size: 30px;
+  padding: 10px 0;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.QuizContent {
+  border: 3px solid #ddd;
+  padding: 20px 5% 10px;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+
+.QuizQ {
+  border-radius: 15px;
+  padding: 1px 10px;
+  font-size: 14px;
+  margin-right: 8px;
+  float: left;
+}
+
+.QuizRadioWrap {
+  clear: both;
+  > .item-radio {
+    > .radio-content > .item-content, input:checked + .radio-content .item-content {
+      background-color: #fafafa !important;
+    }
+  }
+}
+
+.QuizRadio {
+  border: 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #ddd !important;
+  line-height: 0;
+}
+
+.QuizBtn {
+  width: 48%;
+  margin: 0 1%;
+  padding: 15px 0;
+  text-align: center;
+  float: left;
+  font-size: 16px;
+}
+
+/* 구인 */
+
+.siguWrap {
+  border-top: 1px solid #ddd;
+}
+
+.siguitem, .ilbangList {
+  margin-bottom: 0;
+  border-right: 1px solid #ddd;
+}
+
+.siguitem:nth-child(3n), .ilbangList:nth-child(3n) {
+  border-right: 0;
+}
+
+.dateWrap {
+  width: 90%;
+  overflow: auto;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  min-height:3em;
+  > div {
+    width: 50%;
+    float: left;
+    padding: 10px;
+    margin-bottom: -1px;
+    border-bottom: 1px solid #ddd;
+    &:nth-child(2n+1) {
+      border-right: 1px solid #ddd;
+    }
+  }
+}
+
+/* 구인/구직 - 평가보기 */
+
+.estimationCircle {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #eb5f43;
+  margin: 0 auto;
+  border-radius: 50%;
+  line-height: 80px;
+  color: #3a3a3a;
+}
+
+/* 구인/구직 - step2 */
+
+.timeRadio {
+  width: 33.3%;
+  margin: 0 !important;
+  float: left;
+  border-right: 0 !important;
+}
+
+.times > .item-radio > .radio-content > .item-content {
+  padding: 15px 0;
+}
+
+/* E-머니 */
+
+.EMoneyCon > .scroll {
+  height: auto !important;
+}
+
+.recommBtnWrap {
+  width: 100%;
+  background-color: #ffd228;
+  padding: 15px 0;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+}
+
+.recommBtn {
+  width: 165px;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+/* 이용 및 요금 안내, 아이템샵 */
+
+.itemBox {
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.itemBtn {
+  padding: 5px 15px !important;
+}
+
+.itemNavy {
+  border: 1px solid #525a71;
+  color: #525a71;
+  background-color: #fff;
+}
+
+.itemBlack {
+  border: 1px solid #565656;
+  color: #565656;
+  background-color: #fff;
+}
+
+/* Q&A */
+
+.guideWrap {
+  margin-left: 4%;
+  margin-right: 2%;
+  border: 0;
+  padding-left: 5px;
+}
+
+.guideBtn {
+  background-color: #eb5f43;
+  padding: 2px 10px;
+  border-radius: 15px;
+  margin-right: 8px;
+}
+
+.red_font {
+  color: #eb5f43;
+  font-weight: bold;
+}
+
+.white_font {
+  color: #fff;
+  font-weight: bold;
+}
+
+.bg {
+  background-color: #fafafa;
+  text-align: center;
+  height: 100%;
+  padding-bottom: 5%;
+}
+
+.bg_red {
+  background-color: #eb5f43;
+}
+
+.bg_white {
+  background-color: #fff;
+}
+
+.join_ment {
+  padding: 35% 0 20% 0;
+  font-size: 16px;
+}
+
+.join_select, .step_select {
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.btn {
+  width: 46%;
+  height: 55px;
+  line-height: 52px;
+  margin: 0 1%;
+  border-radius: 0;
+  font-weight: bold;
+}
+
+.red_btn {
+  border: 1px solid #eb5f43;
+  background-color: #eb5f43;
+  color: #fff;
+}
+
+.white_btn {
+  border: 1px solid #eb5f43;
+  background-color: #fff;
+  color: #eb5f43;
+}
+
+.join_btn_wrap_false {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+}
+
+.join_btn_wrap {
+  width: 100%;
+  margin-top: 15%;
+}
+
+.join_GeCom {
+  margin: 30% auto 0;
+  overflow: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.join_general, .join_company {
+  width: 9em;
+  color: #000;
+  margin: 0 2%;
+  border-radius: 50%;
+}
+
+.join_step {
+  padding-top: 20%;
+  padding-bottom: 15%;
+}
+
+.circle_wrap {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  overflow: auto;
+}
+
+.circle2 {
+  width: 36px;
+}
+
+.circle4 {
+  width: 72px;
+}
+
+.join_step_ment {
+  font-size: 18px;
+}
+
+.red_circle, .white_circle {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #eb5f43;
+  border-radius: 50%;
+  margin: 10px 4px;
+  float: left;
+}
+
+.red_circle {
+  background-color: #eb5f43;
+}
+
+.white_circle {
+  background-color: transparent;
+}
+
+.join_form {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.inputTxt {
+  height: 40px !important;
+  border: 1px solid #e8e8e8 !important;
+  padding-left: 15px !important;
+}
+
+.middle_select {
+  margin: 0 3.5%;
+}
+
+.middle_input {
+  margin: 0 5%;
+}
+
+.join_inputTxt {
+  width: 100%;
+}
+
+.step_select {
+  color: darkgray;
+}
+
+.radio_wrap {
+  width: 100%;
+  color: darkgray;
+  overflow: auto;
+}
+
+.join_radio {
+  width: 50%;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 18%;
+}
+
+.radio3 {
+  width: 33%;
+  font-size: 16px;
+}
+
+.check_btn {
+  width: 27%;
+  height: 45px;
+  font-weight: bold;
+  margin-left: 3%;
+  border-radius: 3px;
+}
+
+.mg1 {
+  margin-top: 1%;
+}
+
+.mg3 {
+  margin-top: 3%;
+}
+
+.mg5 {
+  margin-top: 5%;
+}
+
+.mg10 {
+  margin-top: 10%;
+}
+
+.no_pass {
+  width: 97%;
+  padding-left: 3%;
+  text-align: left;
+  color: #eb5f43;
+  margin-top: 1%;
+}
+
+.bar-btnTxt {
+  padding-left: 15px;
+  font-size: 18px;
+}
+
+.white_pic_circle, .red_pic_circle {
+  position: absolute;
+  width: 120px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.pic_circle_wrap {
+  height: 190px;
+}
+
+.white_pic_circle {
+  top: 30px;
+  height: 120px;
+  color: #3a3a3a;
+  line-height: 80px;
+  background-color: #fff;
+  border: 1px solid #eb5f43;
+  border-radius: 50%;
+}
+
+.red_pic_circle {
+  top: 90px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 0 0 120px 120px;
+  color: #fff;
+  background-color: #eb5f43;
+  opacity: 0.7;
+}
+
+.com_step_ment {
+  padding-left: 15px;
+  font-size: 16px;
+  color: #3a3a3a;
+  text-align: left;
+}
+
+.modify_bar {
+  position: relative;
+  padding-top: 5%;
+  height: 40px;
+  float: left;
+}
+
+.foot_btn {
+  position: absolute;
+  width: 100%;
+  bottom: 11px;
+  margin-top: 10%;
+}
+
+.pa15_btn {
+  padding: 15px  0;
+}
+
+.radius_btn {
+  background-color: #eb5f43;
+  border-radius: 40px;
+}
+
+.rapify_ment, .modify_ment {
+  clear: both;
+  padding-top: 5%;
+}
+
+.find_btn {
+  width: 25%;
+  height: 40px;
+  margin-left: 4%;
+}
+
+.withdrawalPop {
+  width: 95% !important;
+  margin: 0 auto;
+  font-size: 15px;
+  button {
+    padding: 0 !important;
+    margin: 0 !important;
+    border-right: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+  }
+  .popup-buttons {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .popup-head {
+    padding: 10px 0;
+    border-bottom: 2px solid #eb5f43;
+  }
+}
+
+.faqList {
+  border-color: #e3e3e3 !important;
+  background-color: #fff !important;
+}
+
+.faqimg {
+  width: 25px;
+  margin-right: 8px;
+}
+
+.faqArrow_ri {
+  width: 10px;
+  padding-top: 5px;
+}
+
+.faqArrow_bo {
+  width: 15px;
+  padding-top: 5px;
+}
+
+.faqTitleWrap {
+  width: 95%;
+}
+
+.faqTitle {
+  width: 85%;
+  padding-top: 3px !important;
+  text-align: left;
+  color: #eb5f43;
+  font-weight: bold;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.faqContent_wrap {
+  padding: 15px;
+  text-align: left;
+}
+
+.faqContent {
+  color: #3a3a3a;
+  font-size: 13px;
+}
+
+.find_ment {
+  font-size: 16px;
+}
+
+.find_ment2 {
+  padding-top: 5px;
+  font-size: 13px;
+}
+
+.index_img_wrap {
+  width: 190px;
+  margin: 3% auto;
+}
+
+.index_img {
+  width: 40px;
+  margin: 0 10px;
+}
+
+/*.adBtn {
+    width: 80%;
+    height: 50% !important;
+    display: block !important;
+    margin: 0 auto;
+    font-size: 12px;
+    font-weight: bold;
+    color: #686868;
+    background-color: #fafafa;
+    line-height: 50px;
+}*/
+
+.share {
+  border-top: 1px solid #e3e3e3 !important;
+}
+
+.item-options {
+  background-color: #fafafa;
+  width: 150px !important;
+}
+
+.popStyle {
+  padding: 15px 5px;
+}
+
+.pd10 {
+  padding: 10px !important;
+}
+
+.pd15 {
+  padding: 15px !important;
+}
+
+.wid4 {
+  width: 4%;
+}
+
+.wid20 {
+  width: 20%;
+}
+
+.wid30 {
+  width: 30%;
+}
+
+.wid32 {
+  width: 32%;
+}
+
+.wid33 {
+  width: 33%;
+}
+
+.wid40 {
+  width: 40%;
+}
+
+.wid48 {
+  width: 48%;
+}
+
+.wid49 {
+  width: 49%;
+}
+
+.wid50 {
+  width: 50%;
+}
+
+.wid70 {
+  width: 70%;
+}
+
+.wid80 {
+  width: 80%;
+}
+
+.wid90 {
+  width: 90%;
+}
+
+.wid93 {
+  width: 93%;
+}
+
+.wid94 {
+  width: 94%;
+}
+
+.wid95 {
+  width: 95%;
+}
+
+.wid98 {
+  width: 98%;
+}
+
+.wid100 {
+  width: 100%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}

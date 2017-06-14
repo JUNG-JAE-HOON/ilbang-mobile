@@ -1,0 +1,117 @@
+<ion-view view-title="구직자 정보수정" ng-controller="gujikModifyCtrl">
+  <ion-content has-bouncing="false">
+    <div class="bg">
+
+        <div class="join_form">
+            <div class="modify_ment mg5">기본 정보 입력</div>
+            <div class="list flow pdLeft10 mb10 pdRight10" style="margin-top: 15px;">
+                <label class="item item-input mb10"><input type="text" id="title" ng-model="gujikForm.title" placeholder="프로필 제목을 입력하세요." /></label>
+                <!-- <label class="item item-input item-select left pdTop40 wid98">
+                    <select class="ionicSel" ng-model="gujikForm.title" ng-options="data as data for data in selboxData.title">
+                        <option selected>프로필 제목을 선택하세요.</option>
+                    </select>
+                </label>-->
+            </div>
+            <div class="list flow pdLeft10 mb10">
+                <label class="item item-input item-select left pdTop40 wid49">
+                    <select class="ionicSel" ng-model="gujikForm.area_1st" ng-change="changeArea_1st()" ng-options="o.no as o.list_name for o in selboxData.area_1st">
+                        <option selected>희망 근무 지역</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select left pdTop40 wid49">
+                    <select class="ionicSel" ng-model="gujikForm.area_2nd"  ng-options="o.no as o.list_name for o in selboxData.area_2nd">
+                        <option selected>전지역</option>
+                    </select>
+                </label>
+            </div>
+            <div class="list flow pdLeft10 mb10">
+                <label class="item item-input item-select left pdTop40 wid49">
+                    <select class="ionicSel" ng-model="gujikForm.work_1st" ng-change="changeWork_1st()" ng-options="data.no as data.list_name for data in selboxData.work_1st">
+                        <option selected>특성별</option>
+                    </select>
+                </label>
+                <label ng-if="selboxData.work_2nd.length> 1"  class="item item-input item-select left pdTop40 wid49">
+                    <select class="ionicSel" ng-model="gujikForm.work_2nd" ng-options="data.no as data.list_name for data in selboxData.work_2nd">>
+                        <option selected>희망 직종</option>
+                    </select>
+                </label>
+            </div>
+            <!--<div class="list flow pdLeft10" style="margin-top: 15px;">
+                <label class="item item-input item-select left pdTop40 wid98">
+                    <select class="ionicSel" ng-model="gujikForm.work_2nd" ng-options="data.no as data.list_name for data in selboxData.work_2nd">>
+                        <option selected>희망 직종</option>
+                    </select>
+                </label>
+            </div>-->
+            <div class="list flow pdLeft10">
+                <label class="item item-input item-select left pdTop40 wid98">
+                    <select class="ionicSel" ng-model="gujikForm.pay" ng-options="data.no as data.list_name for data in selboxData.pay">>
+                        <option selected>희망 일급</option>
+                    </select>
+                </label>
+            </div>
+
+        <!-- step2 -->
+
+            <div class="modify_ment mg5">희망 근무일</div>
+
+        <button class="button button-ilbang mb20" ng-click="openDatePicker()" >날짜선택</button>
+        <input type="text"  disabled="disabled" ng-model="work_date" style="width=500px"  value=""/>
+            <div class="modify_ment" >근무 시간</div>
+          <div class="list TimeCtrl padding mt20" ng-controller="TimeCtrl">
+            <div class="wid100 flow times">
+                <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'1'" style="font-size: 12px;">오전</ion-radio>
+                <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'2'" style="font-size: 12px;">오후</ion-radio>
+                <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'3'" style="font-size: 12px;">저녁</ion-radio>
+            </div>
+            <div class="wid100 flow times">
+                <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'4'" style="font-size: 12px;">새벽</ion-radio>
+                <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'5'" style="font-size: 12px;">오전~오후</ion-radio>
+                <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="gujikForm.time" ng-value="'6'" style="font-size: 12px;">오후~저녁</ion-radio>
+            </div>
+            <div class="wid100 flow times">
+                <ion-radio class="timeRadio f12" name="time" ng-model="gujikForm.time" ng-value="'7'" style="font-size: 12px;">저녁~새벽</ion-radio>
+                <ion-radio class="timeRadio f12" name="time" ng-model="gujikForm.time" ng-value="'8'" style="font-size: 12px;">새벽~오전</ion-radio>
+                <ion-radio class="wid33 noMargin f12" name="time" ng-model="gujikForm.time" ng-value="'9'" style="font-size: 12px;">풀타임</ion-radio>
+            </div>
+          </div>
+              <!--<div class="list TimeCtrl mt10 oh" ng-controller="TimeCtrl">-->
+                <!-- <ion-checkbox class="timeSel di noBorder f12" ng-repeat="time in timeList" ng-model="time.checked" ng-checked="time.checked"> -->
+                <!--
+                <div class="col">
+                  <ion-checkbox class="f12 col-50 di timeChoice" ng-repeat="time in timeList" ng-model="time.checked" ng-checked="time.checked" style="padding-left: 45px !important;">
+                      {{ time.text }}
+                  </ion-checkbox>
+                </div>
+              </div>-->
+
+
+        <!-- step2 -->
+        <!-- step3 -->
+
+            <div class="list flow pdLeft10 mb10" style="margin-top: 30px;">
+                <label class="item item-input item-select left pdTop40 wid98">
+                    <select class="ionicSel" ng-model="gujikForm.career" ng-options="data.no as data.list_name for data in selboxData.career">
+                        <option selected>경력 사항</option>
+                    </select>
+                </label>
+            </div>
+            <div class="list wid95 marginAuto mb10">
+                <label class="item item-input" style="max-width: 100%">
+                    <textarea rows="8" placeholder="자기소개서를 입력하세요." id="content" ng-model="gujikForm.content" ng-model="content"></textarea>
+                </label>
+            </div>
+            <!--<div class="list wid95 marginAuto mb10">
+                <ion-radio class="left wid50" ng-model="gujikForm.open" ng-value="'yes'" style="font-size: 14px;">공개</ion-radio>
+                <ion-radio class="wid50" ng-model="gujikForm.open" ng-value="'no'" style="font-size: 14px;">비공개</ion-radio>
+            </div>-->
+        </div>
+        <!-- step3 -->
+        <div class="join_btn_wrap mb20">
+            <button ng-click="closeStep(1);" class="button btn red_btn">취소</button>
+            <button ng-click="updateGuinInfo(gujikForm)" class="button btn white_btn">수정하기</button>
+        </div>
+
+    </div>
+  </ion-content>
+</ion-view>

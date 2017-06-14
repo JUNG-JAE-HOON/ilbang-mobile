@@ -1,0 +1,84 @@
+<ion-modal-view>
+	<div class="bar bar-ilbang jcc tc lh36 f16 fw guinTab1Head" ng-click="closeModal(2)">
+		<i class="icon f16 ion-ios-arrow-back button pa" style="color:white; background-color:#eb5f43;left:0"></i>기업 정보
+	</div>
+	<ion-content class="has-header padding modal1-content" scroll="true" has-bouncing="false">
+		<div>
+			<div class="oh">
+				<h5 class="artist-modal-title">기업 설립연도</h5>
+			</div>
+			<div class="list oh margin-vertical">
+				<label class="item item-input item-select left pdTop40 person-profile" style="margin:-1px 0 0 0">
+					<select class="ionicSel" ng-model="company.year" ng-options="year for year in Years">
+						<option value="" selected>년도</option>
+					</select>
+				</label>
+				<label class="item item-input item-select left pdTop40 person-profile">
+					<select class="ionicSel" ng-model="company.month" ng-options="month for month in Months">
+						<option value="" selected>월</option>
+					</select>
+				</label>
+				<label class="item item-input item-select left pdTop40 person-profile">
+					<select class="ionicSel"  ng-model="company.day" ng-options="day for day in Days">
+						<option value="" selected>일</option>
+					</select>
+				</label>
+			</div>
+			<div class="oh">
+				<h5 class="artist-modal-title">기업 업종 / 형태</h5>
+			</div>
+			<div class="list oh margin-vertical">
+				<label class="item item-input item-select left pdTop40 wid50" style="margin:-1px 0 0 0">
+					<select class="ionicSel" ng-model="company.types">
+						<option value="" selected>기업 업종</option>
+						<option value="서비스업">서비스업</option>
+						<option value="제조/화학">제조/화학</option>
+						<option value="의료/제약/복지">의료/제약/복지</option>
+						<option value="판매/유통">판매/유통</option>
+						<option value="교육업">교육업</option>
+						<option value="건설업">건설업</option>
+						<option value="IT/통신">IT/통신</option>
+						<option value="미디어/디자인">미디어/디자인</option>
+						<option value="은행/금융업">은행/금융업</option>
+						<option value="기관/협회">기관/협회</option>
+					</select>
+				</label>
+				<label class="item item-input item-select left pdTop40 wid50">
+					<select class="ionicSel" ng-model="company.status">
+						<option value="" selected>기업 형태</option>
+						<option value="소기업">소기업</option>
+						<option value="중기업">중기업</option>
+						<option value="대기업">대기업</option>
+						<option value="벤쳐기업">벤쳐기업</option>
+						<option value="외국계기업">외국계기업</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="oh">
+			<div class="oh">
+				<h5 class="artist-modal-title">대표 전화</h5>
+			</div>
+			<div class="list oh margin-vertical" style="padding-left: 1px;">
+				<label class="item item-input left person-profile">
+					<input type="text" ng-model="company.phone1" />
+				</label>
+				<label class="item item-input left person-profile">
+					<input type="text" ng-model="company.phone2" />
+				</label>
+				<label class="item item-input left person-profile">
+					<input type="text" ng-model="company.phone3" />
+				</label>
+			</div>
+		</div>
+		<div class="oh">
+			<h5 class="artist-modal-title">기업 주소</h5>
+		</div>
+		<div class="list list-inset margin-vertical">
+			<label class="item item-input"><input type="text" ng-model="company.address" placeholder="주소를 입력해 주세요" /></label>
+		</div>
+		<a ng-click="companyAdd()">
+			<div class="red_btn tc f16 bold mt20" style="padding: 12px 0; border-radius: 5px;">{{ cultureBtn }}</div>
+		</a>
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,8 @@
+.modal-message-css{
+  max-height: 80%; overflow: hidden; min-height: 80% !important;
+  margin-top: 4em;
+  .bar .title + .buttons { right: -.5em; }
+  .estiPop { z-index: 999 !important; }
+  .popup { border: 2px solid #eb5f43; }
+  .popup-container .popup { background: white; }
+}

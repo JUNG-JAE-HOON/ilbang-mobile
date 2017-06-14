@@ -1,0 +1,41 @@
+<ion-view view-title="문화 일방" ng-controller="sotongArtistCtrl">
+    <style media="screen">
+        .popover { opacity: 1; top: 15%; width: 90%; left: 36%; }
+    </style>
+    <ion-content has-bouncing="false">
+        <!-- <div class="padding di oh">
+            <span class="f14">문화 일방이란?
+                <img class="vm" src="img/queRed.png" alt="" style="width:20%; margin-top:-4px" ng-click="openPopover()">
+            </span>
+        </div> -->
+        <div class="oh mt20">
+          <!-- <span class="artsit-tooltip">문화일방이란? <img src="img/sotong/sotong-tooltip.png" alt="" width="7%"></span> -->
+            <ul class="col col-33 fl" ui-sref="sotong-detail({ no: item.no })" ng-repeat="item in items" item="item">
+                <li class="oh artist">
+                    <!-- <img class="hex" style="background-image: url({{ item.imgUrl }});" width="100%"> -->
+                    <img class="hex profile-img" src="{{ item.imgUrl }}" width="100%">
+                        <!-- <div class="corner-1"></div>
+                        <div class="corner-2"></div> -->
+                </li>
+                <li class="tc f16 bold artist-name" ng-if="item.name != null">{{ item.name }}</li>
+                <li class="tc f16 bold artist-name" ng-if="item.name == null">{{ uid }}</li>
+                <li class="artist-content tc text-cut">{{ item.message }}</li>
+            </ul>
+            <ul class="col col-33 fl artist-list tc" ui-sref="artist-apply" ng-show="artistAddBtn == true">
+                <li class="oh di">
+                    <div class="hex hex-3" style="margin-bottom:1em !important; background-color:rgba(249,249,249,1) !important;">
+                        <div class="inner" style="border-radius:3em; height:6em !important;">
+                            <img src="img/sotong-plus.png" width="100%"/>
+                        </div>
+                        <!-- <div class="corner-1"></div>
+                        <div class="corner-2"></div> -->
+                    </div>
+                </li>
+                <li class="artist-apply" ng-show="artistAddBtn == true"><div class="tc di artistBtn">신청하기</div></li>
+            </ul>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="left" class="sotong-chating sotong-artist-chating" ng-show="kakaoView == true">
+        <button class="noBorder w100" ng-click="sotongAlert('서비스 준비중입니다.')">1:1 오픈 채팅하기</button>
+    </ion-footer-bar>
+</ion-view>

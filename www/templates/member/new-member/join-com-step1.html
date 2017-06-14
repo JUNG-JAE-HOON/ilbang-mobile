@@ -1,0 +1,58 @@
+<ion-view>
+    <ion-content class="bg" has-bouncing="false">
+        <div class="join_step">
+            <img src="img/step1.png" class="step_img" />
+            <div class="circle_wrap circle4">
+                <div class="red_circle"></div>
+                <div class="white_circle"></div>
+                <div class="white_circle"></div>
+                <div class="white_circle"></div>
+            </div>
+            <div class="join_step_ment"><span class="red_font">프로필</span>을 작성해 주세요.</div>
+        </div>
+        <div class="join_form">
+            <div class="list list-inset">
+                <label class="item item-input"><input type="text" ng-model="newUser.name" placeholder="이름을 입력해주세요." /></label>
+            </div>
+            <div class="list pdLeft10">
+                <label class="item item-input item-select left pdTop40 wid33">
+                    <select class="ionicSel">
+                        <option selected>년도</option>
+                        <option>2016</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select left pdTop40 wid33">
+                    <select class="ionicSel">
+                        <option selected>월</option>
+                        <option>11</option>
+                    </select>
+                </label>
+                <label class="item item-input item-select left pdTop40 wid32">
+                    <select class="ionicSel">
+                        <option selected>일</option>
+                        <option>18</option>
+                    </select>
+                </label>
+            </div>
+            <div class="list list-inset bgTrans wid95" style="padding-top: 20px !important">
+                <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                    <input type="text" class="pdRight10" ng-model="newUser.phone1" placeholder="010" />
+                </label>
+                <label class="item item-input wid33 left NoborderRight">
+                    <input type="text" class="pdRight10" ng-model="newUser.phone2" placeholder="1234" />
+                </label>
+                <label class="item item-input wid33 left">
+                    <input type="text" class="pdRight10" ng-model="newUser.phone3" placeholder="5678" />
+                </label>
+            </div>
+            <div class="list marginAuto wid94">
+                <ion-radio class="left wid50" name="sex" ng-model="sex" ng-value="'male'" style="font-size: 12px;">남성</ion-radio>
+                <ion-radio class="wid50" name="sex" ng-model="sex" ng-value="'female'" style="font-size: 12px;">여성</ion-radio>
+            </div>
+        </div>
+        <div class="join_btn_wrap">
+            <a class="button btn red_btn" ng-click="back(1)">이전</a>
+            <a class="button btn white_btn" ng-click="next(1)">다음</a>
+        </div>
+    </ion-content>
+</ion-view>

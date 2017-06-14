@@ -1,0 +1,95 @@
+<ion-view view-title="내 구직 신청 & 매칭 목록">
+ <!-- <ion-content class="content has-header matchPage padding bg_fa iosmtZero has-footer" ng-controller="getRuidMathingListCtrl" style="bottom: 80px; height:88%" scroll="true"> -->
+ <ion-content class="content matchPage padding bg_fa has-header has-footer mt50 iosNoMt" ng-controller="getRuidMathingListCtrl" style="bottom: 80px; height:88%" scroll="true" has-bouncing="false">
+  <!-- daskdjasdlj -->
+  <!-- <div class="eeNewTabs mt70 tc oh rd15 bar-ilbang mb30" style="border:1px solid #eb5f43"> -->
+  <div class="eeNewTabs tc oh rd15 bar-ilbang mb30" style="border:1px solid #eb5f43">
+   <div class="fl tc newTab w50 newTab1" ng-click="getMatchingList()">매칭된 목록</div>
+   <div class="fl tc newTab w50 newTab2 newWhiteBtn" ng-click="getMymatchingList()">구직신청 목록</div>
+ </div>
+
+  <!-- daskdjasdlj -->
+  <div class="row margin-vertical noPadding mt30 iosmtZero">
+   <!-- <div class="col item padding dark"> -->
+    <select class="ionicSel wid50" style="border-radius: 0;" ng-model = "selectedItem" ng-change = "alert1()">
+     <option value = "date">날짜순</option>
+     <option value = "range">거리순</option>
+     <option value = "pay">금액순</option>
+    </select>
+    <!-- <span class="padding-left">
+
+    </span> -->
+    <!-- <img class="fr" src="img/mat_arrow.png" alt="" width="8px" style="margin-top:3px" /> -->
+    <!-- </div> -->
+
+   <a ng-click = "mapCheck(apply)" class="col item padding tc mapBtn">
+    <img src="img/localIcon.png" alt="" width="18px" class="di vm mt_4"> 지도로 보기
+   </a>
+  </div>
+  <!-- <div class="matMidBan"> -->
+
+  <div ng-if="matchingListAllPost=='0'||myMatchingListAllPost=='0'" class="tc">
+    <img class="pt50 pb70 tc mt20 mb30" src="img/ee-mat-01.png" ng-if="matchingListAllPost=='0'&& apply=='1'" width="50%">
+    <img class="pt50 pb70 tc mt20 mb30" src="img/ee-mat-02.png" ng-if="myMatchingListAllPost=='0'&& apply=='2'" width="50%">
+  </div>
+  <!-- </div> -->
+  <div class="list mb10" ng-repeat = "item in items" item = "item">
+   <a class="item item-circle pb10" ng-click="goDetail(item.no,item.work_date, item.work_join_list_no,item.apply,item.employ_apply)">
+    <h2 style="border-bottom:1px solid #ccc; padding:.5em 0 .5em">
+     <span class="border pa circle f12">
+      <img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+     </span>
+     <span class="recent_list w85 di f12"><img ng-if="item.apply=='yes' && item.employ_apply=='no'" src="img/guinapply.png" width="40%"><img ng-if="(item.apply=='no'&&item.employ_apply=='no')||(item.apply=='yes'&&item.employ_apply=='yes')" src="img/rere.png" width="40%"> {{item.title}}</span>
+     <!-- <img src="img/newBadge.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px" /> -->
+     <span class="fr f12 dateMobile">
+      <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+      <span class="vm di f10 mt4e"></span>
+      <span class="mb_7 vm di f10">{{item.work_date}}</span>
+     </span>
+    </h2>
+    <div class="padding-top">
+     <span class="badge badge-light ilbangBadge smBadge mr10 f10">{{item.work_2nd_nm}}</span>
+     <span class="f12 ls vm di" style="margin-top:-6px">{{item.area_1st_nm}} - {{item.area_2nd_nm}}</span>
+     <!-- 직장명 -->
+     <p class="padding-top f12">
+       <!-- <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin-top:.4em"/> -->
+       <b>회사명</b>
+       <span> > {{ item.company }}</span>
+     </p>
+     <!-- 직장명 -->
+     <p class="f12">
+      <b>{{item.work_1st_nm}}</b>
+      <span> > {{item.work_2nd_nm}}</span>
+     </p>
+     <p class="f12">
+      <b>{{item.area_1st_nm}}</b>
+      <span> > {{item.area_2nd_nm}}</span>
+     </p>
+    </div>
+    <p ng-if="item.distance=='정보없음'" class="pa mapIcon wdMobile">
+     <img class="di vm" src="img/mapIcon.png" alt="" width="12px"> {{item.distance}}
+    </p>
+    <p ng-if="item.distance!='정보없음'" class="pa mapIcon wdMobile">
+     <img class="di vm" src="img/mapIcon.png" alt="" width="12px"> {{item.distance}}KM
+    </p>
+    <div class="">
+     <p class="ee_pee costPa f12 fr"><b class="fo f14">{{item.pay}} </b>원</p>
+    </div>
+   </a>
+
+  </div>
+  <a class="bann" ng-controller="randBanCtrl">
+    <img ui-sref="adTabs.banner({no:{{bannerNo}}})" class="Rand_Banner border2" src="{{bannerPath}}" alt="" style="width:100%">
+
+    <!-- <img ui-sref="admoney" class="Rand_Banner border2" src="img/twosome-mid.jpg" alt="" style="width:100%">
+    <img ui-sref="admoney" class="Rand_Banner border2" src="img/hosigi-mid.jpg" alt="" style="width:100%">
+    <img ui-sref="admoney" class="Rand_Banner border2" src="img/ghouse-mid.jpg" alt="" style="width:100%"> -->
+  </a>
+
+  <div class="pb60">
+
+  </div>
+  <ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+
+ </ion-content>
+</ion-view>

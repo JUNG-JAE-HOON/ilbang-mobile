@@ -1,0 +1,92 @@
+<ion-modal-view view-title="구인 신청서 쓰기">
+    <ion-content has-bouncing="false">
+        <div class="bg">
+            <img src="img/stepBar1.png" class="wid100 mg5" />
+            <div class="join_form">
+
+                <div class="modify_ment mg5">기본 정보 입력</div>
+                <div class="list list-inset bg_fa mb10">
+                    <label class="item item-input mb10"><input type="text" id="title" ng-model="guinForm.title" placeholder="모집 제목을 입력해주세요." /></label>
+                    <label class="item item-input"><input type="text" id="company" ng-model="guinForm.company" placeholder="상호 또는 성명을 입력해주세요." /></label>
+                </div>
+                <div class="list flow pdLeft10 mb10">
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="guinForm.work_1st" ng-change="changeWork_1st()" ng-options="o.no as o.list_name for o in selboxData.work_1st">
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="guinForm.work_2nd"  ng-options="o.no as o.list_name for o in selboxData.work_2nd">
+                        </select>
+                    </label>
+                </div>
+<!--
+                <div ng-controller="jusoCtrl">
+
+                  <input type="text" ng-model="guinForm.si" name="si" placeholder="시">
+                  <input type="text" ng-model="guinForm.gu" name="gu" placeholder="구">
+                  <input type="text" ng-model="guinForm.lng" name="lng" placeholder="lng">
+                  <input type="text" ng-model="guinForm.lat" name="lat" placeholder="lat" >
+                  <input type="text" ng-model="guinForm.sample3_postcode" placeholder="우편번호">
+
+                  <input type="button" ng-click="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
+                              <div id="wrap" style="display:none;border:1px solid;width:300px;height:300px;margin:5px 0;position:relative">
+
+                              </div>
+                              <input type="text" ng-model="guinForm.sample3_address" class="d_form large" placeholder="주소">
+                </div>
+-->
+
+
+                <div class="list flow pdLeft10 mb10">
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="guinForm.area_1st" ng-change="changeArea_1st()" ng-options="o.no as o.list_name for o in selboxData.area_1st">
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="guinForm.area_2nd"  ng-options="o.no as o.list_name for o in selboxData.area_2nd">
+                        </select>
+                    </label>
+                </div>
+
+                <div class="list list-inset mb10">
+                    <label class="item item-input"><input type="text" id="address" ng-model="guinForm.address" placeholder="상세주소를 입력해주세요." /></label>
+                </div>
+
+                <!--<div class="list list-inset bgTrans margin">
+                    <label class="item item-input wid70 left">
+                        <input type="text" ng-model="guinForm.address" placeholder="근무 지역 주소" />
+                    </label>
+                    <iframe src="http://il-bang.com/ilbang_pc/ionic/juso.php" width="100%" height="350px" id='daumIframe' ng-show="juso_show"></iframe>
+                    <button type="button" ng-click="jusoSearch()" class="button button-ilbang2 border noRadius form1Btn fr">찾기</button>
+
+                </div>-->
+                <div class="modify_ment mg3">담당자 정보</div>
+                <div class="list list-inset mb10">
+                    <label class="item item-input"><input type="text" id="manager" ng-model="guinForm.manager" placeholder="이름을 입력해주세요." /></label>
+                </div>
+                <div class="modify_ment mg3">휴대폰 번호</div>
+                <div class="list list-inset flow bgTrans margin">
+                    <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                        <input type="text"  maxlength="3" class="pdRight10" id="phone1" ng-model="guinForm.phone1" placeholder="" />
+                    </label>
+                    <label class="item item-input wid33 left NoborderRight">
+                        <input type="text"  maxlength="4" class="pdRight10" id="phone2" ng-model="guinForm.phone2" />
+                    </label>
+                    <label class="item item-input wid33 left">
+                        <input type="text"  maxlength="4"class="pdRight10" id="phone3" ng-model="guinForm.phone3" />
+                    </label>
+                </div>
+            </div>
+
+            <div class="join_btn_wrap mb20">
+
+
+                <a ng-click="closeStep(1)" class="button btn red_btn">이전</a>
+                <a ng-click="formStep1(guinForm)" class="button btn white_btn">다음</a>
+            </div>
+        </div>
+
+
+
+    </ion-content>
+</ion-modal-view>

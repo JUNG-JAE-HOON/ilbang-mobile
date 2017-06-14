@@ -1,0 +1,22 @@
+
+<ion-view view-title="악평 지우기 구매" ng-controller="InAppPurchasesCtrl">
+  <ion-content class="has-header" has-bouncing="false">
+    <div class="padding tc pt100">
+      <img src="img/itemshop.png" alt="" width="20%">
+      <h3>악평 지우기</h3>
+      <p class="dark">본인의 리뷰를 1회 지울 수 있는 서비스 입니다.</p>
+    </div>
+    <ul class="list padding">
+      <li class="item item-divider bg_grey fw f16 bold">
+        상품정보
+     </li>
+      <li class="item pt16">
+        <div class="fl f14 bold dark">1회 이용권</div>
+        <div class="di fr assertive">
+          1,000<span class="f12">원</span>
+          <button type="button" class="fr button noRadius button-ilbang buyBtn ml10" ng-click=buy('net.saltfactory.il_bang.review_delete') name="button">구매</button>
+        </div>
+      </li>
+  </ul>
+  </ion-content>
+</ion-view>

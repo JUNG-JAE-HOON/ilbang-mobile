@@ -1,0 +1,196 @@
+<meta name = "format-detection" content = "telephone=no">
+<ion-modal-view view-title="구직자 정보" ng-controller="guinViewTab1Ctrl" has-bouncing="false">
+	<style>
+		.sect2{display: none}
+	</style>
+	<div class="bar bar-ilbang jcc tc lh36 f16 fw guinTab1Head" ng-click="backModal()">
+			<i class="icon f16 ion-ios-arrow-back button pa" style="color:white; background-color:#eb5f43;left:0"></i>
+			구직자 정보
+	</div>
+	<ion-content class="content has-header has-footer guinTab1Cont" delegate-handle="guinModalDetail">
+			<div class="sect1">
+
+						<div class="di pr">
+
+							<img src="img/eeInfo.png" alt="" width="100%" />
+					<ul class="pa fw ee_detail" style="margin-left:5%">
+						<li class="oh pr">
+							<h3 class="w100 fw fl bold title-length gujik-title-iphone" ng-click="test()">{{name}}</h3>
+							<p class="pr starWrap mt5">
+								<span class="rateYo-guin pa"></span>
+							</p>
+						</li>
+						<li class="padding-bottom margin-vertical">{{title}}</li>
+						<li class="oh">
+							<ul class="pr fl iconCircle">
+								<li class="pa text-center iconArea">
+									<img src="img/gender.png" alt="" width="42%" class="di" style="margin-top:15px" />
+								</li>
+								<li class="f10">{{sex}}</li>
+							</ul>
+							<ul class="pr fl iconCircle">
+								<li class="pa text-center iconArea">
+									<img src="img/age.png" alt="" width="70%" class="di" style="margin-top:15px;margin-left:2px" />
+								</li>
+								<li class="f10">{{age}}세</li>
+							</ul>
+							<ul class="pr fl iconCircle">
+								<li class="pa text-center iconArea">
+									<img src="img/career.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:6px" />
+								</li>
+								<li class="f10">{{career}}</li>
+							</ul>
+							<ul class="pr fl iconCircle">
+								<li class="pa text-center iconArea">
+									<img src="img/handicapped.png" alt="" width="45%" class="di" style="margin-top:13px; margin-left:3px" />
+								</li>
+								<li class="f10">{{obstacle}}</li>
+							</ul>
+						</li>
+					</ul>
+						</div>
+					<div class="list bg_wh" style="top:-5px">
+						<div class="item item-divider">구직자 정보</div>
+						<div class="item noPadding">
+								<div class="row">
+									<span class="col col-25 f12">제목</span>
+									<span class="col col f12">{{title}}</span>
+								</div>
+						</div>
+					<div class="item noPadding">
+							<div class="row">
+								<span class="col col-25 f12">연락처</span>
+								<span class="col f12">{{phone}}</span>
+							</div>
+					</div>
+					<div class="item noPadding">
+							<div class="row">
+								<span class="col col-25 f12">이메일</span>
+								<span class="col f12">{{email}}</span>
+							</div>
+					</div>
+					<div class="item noPadding">
+							<div class="row">
+								<span class="col col-25 f12">희망 근무 지역</span>
+								<span class="col f12">{{area_1st_nm}} {{area_2nd_nm}}</span>
+							</div>
+					</div>
+					<div class="item noPadding">
+							<div class="row">
+								<span class="col col-25 f12">희망 직종</span>
+								<span class="col f12">{{work_2nd_nm}}</span>
+							</div>
+					</div>
+						<div class="bg_white noPadding flow">
+						<div class="tc pd10 f14">희망 근무 일자 </div>
+							<div class="dateWrap">
+								<div ng-repeat="date in dates">
+									<label><input type="checkbox" checklist-model="doGuinDate" checklist-value="date"/>&nbsp;&nbsp;{{ date }}</label>
+								</div>
+							</div>
+					</div>
+					<div>
+						<div class="item noPadding">
+								<div class="row">
+									<span class="col col-25 f12"><b>근무 시간</b></span>
+									<span class="col f12">{{time}}</span>
+								</div>
+						</div>
+					</div>
+						<div class="list" style="clear: both;">
+							<div class="item noPadding">
+									<div class="row">
+										<span class="col col-25 f12">경력 사항</span>
+										<span class="col f12">{{career}}</span>
+									</div>
+							</div>
+							<div class="item noPadding">
+									<div class="row">
+										<span class="col col-25 f12">희망 금액(일당)</span>
+										<span class="col f12">&#x20A9; <b class="fo">{{pay}}</b></span>
+									</div>
+							</div>
+							<div class="padding f12 textArea bg_wh mb5">{{content}}</div>
+
+							<div class="padding bg_fa"> <!-- ng-controller="PopCtrl" -->
+								<!-- <a ui-sref="viewResumeReview({resume_no:{{item.no}}})" class="button button-block white_btn" ng-click="showEstimate();" style="border-radius: 0;">평가보기</a> -->
+								<a class="button button-block white_btn" ng-click="showEstimate(); loadMore1(no);" style="border-radius: 0;">평가보기</a>
+								<!-- <button class="button button-block white_btn" style="border-radius: 0;">열람 상품 사용</button> -->
+								<button class="button button-block red_btn" style="border-radius: 0;" ng-click="doGuin(no,ruid)">구인하기</button>
+							</div>
+						</div>
+					</div>
+
+			</div>
+			<div class="sect2 mt30">
+				<div class="tc">
+					<h2 style="margin-bottom:0">
+						<span class="fw100">구직자 </span>
+						<b class="fw200">{{name}}</b>
+					</h2>
+					<p class="dark">구인자 들의 평가 및 평점입니다.</p>
+					<div class="padding-bottom oh starArea mb20">
+						<img src="img/peopleIcon.png" alt="" width="4%" class="fl" style="margin:2px 5px 0 0">
+						<span class="fl">{{allPost}}명</span>
+						<!--<div id="rateYo" class="rateYo fl"></div>
+						<span class="red_font fl" style="font-weight: normal;"></span>
+						<span class="fl"></span>
+						<span class="fl"></span>-->
+					</div>
+				</div>
+				<div class="list">
+				  	<div class="item item-divider">
+				    	<b class="red_font">{{allPost}}건</b>의 평가가 있습니다.
+				  	</div>
+				  	<div class="item bg_fa f14 pd15" ng-repeat = "item in itemss" item="item">
+				  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+							<span><a ui-sref="#" class="red_font" style="font-weight: normal;"><!--&nbsp;삭제--></a></span>
+						</div>
+
+						<div id="rateYo{{$index}}" class="rateYo fr">{{item.score}}점</div>
+				    	<p class="review_ee w100">{{item.content}}</p>
+				    	<p class="mb_7 vm di f14 dark">{{item.wdate}}</p>
+
+				  	</div>
+
+		<!--
+					<div class="item bg_fa f14 pd15">
+				  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+							<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+						</div>
+
+						<div id="rateYo2" class="rateYo fr"></div>
+				    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+				    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+				  	</div>
+					<div class="item bg_fa f14 pd15">
+				  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+							<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+						</div>
+						<div id="rateYo3" class="rateYo fr"></div>
+				    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+				    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+				  	</div>
+					<div class="item bg_fa f14 pd15">
+				  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+							<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+						</div>
+						<div id="rateYo4" class="rateYo fr"></div>
+				    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+				    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+				  	</div>
+					<div class="item bg_fa f14 pd15">
+				  		<div class="fl" style="padding-bottom: 5px;">익명입니다.
+							<span><a ui-sref="#" class="red_font" style="font-weight: normal;">&nbsp;삭제</a></span>
+						</div>
+						<div id="rateYo5" class="rateYo fr"></div>
+				    	<p class="review_ee w100">성실하고 시간 약속 잘지키시네요. 다음에 또 오셨으면 좋겠어요. 별점 4점 드립니다.</p>
+				    	<p class="mb_7 vm di f14 dark">2016.09.27</p>
+				  	</div>-->
+						<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailableReview" on-infinite = "loadMore1({{no}})"></ion-infinite-scroll>
+				</div>
+
+			</div>
+	</ion-content>
+</ion-modal-view>
+</meta>

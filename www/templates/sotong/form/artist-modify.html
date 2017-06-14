@@ -1,0 +1,48 @@
+<ion-view view-title="내 프로필 수정하기" class="bg_wh">
+	<ion-content class="content has-header has-footer sotong-content-box" scroll="true" has-bouncing="false" ng-controller="sotongArtistCtrl">
+		<div class="di pr sotong-person-info w100" style="z-index:0">
+      		<div class="tc" style="margin-top:2.5em">
+        		<ul class="col col-33 di">
+          			<li class="oh artist pr">
+						<form name="test" class="oh pr">
+							<div class="hex hex-apply"  id="artistImg">
+			            		<div class="corner-1"></div>
+			            		<div class="corner-2"></div>
+							</div>
+							<input class="artist-photo pa" type="file" id="FILE_TAG" name="FILE_TAG" ng-model="artistFile" onchange="angular.element(this).scope().uploadArtistImage()" accept="image/*" />
+						</form>
+          			</li>
+          			<li class="tc mt_10 bold f12 artist-name">{{ modify_profileName }}</li>
+          			<li class="artist-content tc text-cut f8">{{ modify_profileMessage }}</li>
+        		</ul>
+      		</div>
+		</div>
+    	<div class="apply-menu mt30">
+      		<ul class="list">
+          		<li class="item">
+            		<b class="f12">개인 프로필</b>
+            		<span class="fr f12" ng-click="openModal(1)">수정하기</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">경력 사항</b>
+            		<span class="fr f12" ng-click="openModal(2)">수정하기</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">학력 사항</b>
+            		<span class="fr f12" ng-click="openModal(3)">수정하기</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">수상 내역</b>
+            		<span class="fr f12" ng-click="openModal(4)">수정하기</span>
+            	</li>
+          		<li class="item">
+            		<b class="f12">전체 작품 활동 내역</b>
+            		<span class="fr f12" ng-click="openModal(5)">수정하기</span>
+          		</li>
+      		</ul>
+    	</div>
+		<!-- <div class="sotong-detail-apply h70px artis-apply-button">
+	    	<button class="button w100 f14">프로필 수정하기</button>
+	  	</div> -->
+	</ion-content>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-modal-view>
+<ion-content>
+  <div ng-controller="jusoCtrl">
+
+    <input type="text" ng-model="si"  >
+    <input type="text" ng-model="do" name="lnt" >
+    <input type="text" ng-model="lng" name="lng" placeholder="lng">
+    <input type="text" ng-model="lat" name="lat" placeholder="lat" >
+    <input type="text" ng-model="sample3_postcode" placeholder="우편번호">
+
+    <input type="button" ng-click="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
+
+    <div id="wrap" style="display:none;border:1px solid;width:500px;height:300px;margin:5px 0;position:relative">
+    <img src="//i1.daumcdn.net/localimg/localimages/07/postcode/320/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+    </div>
+    <input type="text" ng-model="sample3_address" class="d_form large" placeholder="주소">
+  <input type="button" ng-click="closeModal()" value="모달닫기" />
+
+    <input type="button" ng-click="next2()" value="다음">
+  </div>
+
+
+</ion-content>
+</ion-modal-view>

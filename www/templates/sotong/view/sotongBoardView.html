@@ -1,0 +1,51 @@
+<ion-view view-title="{{ title }} 일방" ng-controller="sotongBoardViewCtrl">
+    <ion-content scroll="true" has-bouncing="false">
+        <div class="sect0">
+            <div class="list">
+                <div class="item renew-item">
+                    <h2>{{ boardTitle }}</h2>
+  					<span class="name">{{ name }}</span>
+  					<span class="devide">|</span>
+  					<span class="time">{{ wdate }}</span>
+                    <span class="reply-icon">
+                        <img src="img/reply.png" width="4%" />
+                        <span>{{ reviewCnt }}</span>
+                    </span>
+                    <span style="position: absolute; right: 10px; font-size: 14px;" ng-show="manageCheck == true">
+                        <span style="margin-right: 5px;" ng-click="openModalWrite()">수정</span>
+                        <span ng-click="boardDelete()">삭제</span>
+                    </span>
+  			 	</div>
+            </div>
+            <div style="padding: 0 10px;">
+                <div ng-show="videoView == true">
+                    <iframe ng-src="{{ videoUrl }}" frameborder="0" width="100%" height="200" allowfullscreen></iframe>
+                </div>
+                <div class="img-area" ng-repeat="image in imageList" item="imageList" ng-show="imageCnt != 0">
+                    <img ng-src="http://il-bang.com/pc_renewal/sotongBoardFile/{{ image }}" width="100%" />
+                </div>
+                <div class="cont-area" ng-bind-html="content"></div>
+                <div style="margin: 10px 0; overflow: hidden;">
+                    <img src="img/reply.png" width="6%" style="float: left; margin: 3px 5px 0 0;" />
+                    <div style="float: left; font-size: 14px; color: #aaa;" ng-click="commentView()">댓글 {{ reviewCnt }}개</div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%; background-color: #eee;" ng-show="commentShow == true">
+            <div style="border: 1px solid #ddd; border-right: 0; border-left: 0; background-color: #fff; overflow: hidden; padding-right: 10px;">
+                <input type="text" ng-model="sotong.comment" placeholder="댓글을 남겨보세요." style="width: 85%; padding-left: 15px; float: left; height: 40px;" />
+                <div class="tc" style="font-size: 13px; float: right; background-color: #ccc; color: #fff; padding: 6px 10px; margin-top: 8px; line-height: 1;" ng-click="commentApply()">등록</div>
+            </div>
+            <ion-scroll zooming="false" direction="y" style="max-height: 220px;">
+                <div style="padding: 10px 0; overflow: hidden; border-bottom: 1px solid #ddd; margin: 0 15px;" ng-repeat="comment in commentList" item="commentList">
+                    <div style="margin-right: 10px; float: left;">{{ comment.name }}</div>
+                    <div style="float: left; max-width: 83%;">
+                        <span class="mr10">{{ comment.content }}</span>
+                        <span class="mr10" style="color: #aaa;">{{ comment.date }}</span>
+                        <span style="color: orange;" ng-show="comment.deleteView == true" ng-click="commentDelete(comment.no)">X</span>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view view-title="나의 평가보기" ng-controller="MyReviewCtrl">
+  <ion-content has-bouncing="false">
+     <div class="list">
+       <div class="item item-divider">
+        <b class="red_font"><img src="img/peopleIcon.png" alt="" width="4%" class="fl" style="margin:2px 5px 0 0">{{allPost}}건</b>의 평가가 있습니다.
+       </div>
+       <div class="item bg_fa f14 pd15" ng-repeat = "item in items" item="item">
+        <div class="fl" style="padding-bottom: 5px;">채용 공고 : {{item.review_title}}
+        <span><a ui-sref="#" class="red_font" style="font-weight: normal;"><!--&nbsp;삭제--></a></span>
+       </div>
+       <div id="rateYo1{{$index}}" class="rateYo fr">{{item.review_score}}점</div>
+        <p class="review_ee w100"> {{item.review_content}} </p>
+        <p class="mb_7 vm di f14 dark w100">
+          {{item.review_wdate}}
+
+            <img class="fr pa" src="img/esti_delete.png" alt="" width="15%" style="margin-top:-10px; right:1.5em" ng-click="checkItem(item.review_no, item.review_title, item.review_content, item.review_score)">
+
+        </p>
+       </div>
+       <!-- <ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailableReview" on-infinite = "loadMore()"></ion-infinite-scroll> -->
+    </div>
+  </ion-content>
+</ion-view>

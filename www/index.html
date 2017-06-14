@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <title>ilbang</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/default.css" rel="stylesheet">
+  <!-- <link href="css/iphone.css" rel="stylesheet"> -->
+  <link href="css/jquery.rateyo.min.css" rel="stylesheet">
+  <!-- <link href="css/sotong.css" rel="stylesheet"> -->
+
+  <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css" rel="stylesheet">
+  <script src="lib/ionic/js/jquery.min.js"></script>
+
+
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="cordova.js"></script>
+  <!-- your app's js -->
+  <script src="js/app.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers/list-controller.js"></script>
+  <script src="js/controllers/main-controller.js"></script>
+  <script src="js/controllers/side-controller.js"></script>
+  <script src="js/controllers/pop-controller.js"></script>
+  <script src="js/controllers/gujikList-controller.js"></script>
+  <script src="js/controllers/join-controller.js"></script>
+  <script src="js/controllers/memberInfo-controller.js"></script>
+  <script src="js/controllers/viewGujikInfo-controller.js"></script>
+  <script src="js/controllers/gujikWrite-controller.js"></script>
+  <script src="js/controllers/guinWrite-controller.js"></script>
+  <script src="js/controllers/updMemberInfo-controller.js"></script>
+  <script src="js/controllers/adSaveLog-controller.js"></script>
+  <script src="js/controllers/myGujikList-controller.js"></script>
+  <script src="js/controllers/home-controller.js"></script>
+  <script src="js/controllers/payOption-controller.js"></script>
+  <script src="js/controllers/guinList-controller.js"></script>
+  <script src="js/controllers/viewGuinInfo-controller.js"></script>
+  <script src="js/controllers/getEuidMatchingList-controller.js"></script>
+  <script src="js/controllers/guinViewTab1-controller.js"></script>
+  <script src="js/controllers/guinViewTab2-controller.js"></script>
+  <script src="js/controllers/guinViewTab3-controller.js"></script>
+  <script src="js/controllers/guinViewTab4-controller.js"></script>
+  <script src="js/controllers/gujikViewTab1-controller.js"></script>
+  <script src="js/controllers/gujikViewTab2-controller.js"></script>
+  <script src="js/controllers/gujikViewTab3-controller.js"></script>
+  <script src="js/controllers/gujikViewTab4-controller.js"></script>
+  <script src="js/controllers/estimation-ee-controller.js"></script>
+  <script src="js/controllers/estimation-er-controller.js"></script>
+  <script src="js/controllers/ruidMatchingComplete-controller.js"></script>
+  <script src="js/controllers/getRuidMathingList-controller.js"></script>
+  <script src="js/controllers/euidMatchingComplete-controller.js"></script>
+  <script src="js/controllers/guinModify-controller.js"></script>
+  <script src="js/controllers/gujikModify-controller.js"></script>
+  <script src="js/controllers/item-controller.js"></script>
+  <script src="js/controllers/noticeList-controller.js"></script>
+  <script src="js/controllers/adLog-controller.js"></script>
+  <script src="js/controllers/noticeView-controller.js"></script>
+  <script src="js/controllers/resumeReview-controller.js"></script>
+  <script src="js/controllers/employReview-controller.js"></script>
+  <script src="lib/checklist-model.js"></script>
+  <script src="js/controllers/kakao-controller.js"></script>
+  <script src="js/controllers/myItem-controller.js"></script>
+  <script src="js/controllers/adApply-controller.js"></script>
+  <script src="js/controllers/viewResumeReview-controller.js"></script>
+  <script src="js/controllers/viewEmployReview-controller.js"></script>
+  <script src="js/controllers/qna-controller.js"></script>
+  <script src="js/controllers/memberFind-controller.js"></script>
+  <script src="js/controllers/adCooperate-controller.js"></script>
+  <script src="js/controllers/myReview-controller.js"></script>
+  <script src="js/controllers/insrtCmpInfo-controller.js"></script>
+  <script src="js/controllers/gameng-controller.js"></script>
+  <script src="js/controllers/gaMengUser-controller.js"></script>
+  <script src="js/controllers/randBanner-controller.js"></script>
+  <script src="js/controllers/gmDetailMap-controller.js"></script>
+  <script src="js/controllers/gmMap-controller.js"></script>
+  <script src="js/controllers/gaMengPayComplet-controller.js"></script>
+  <script src="js/controllers/gaMengAdminLog-controller.js"></script>
+  <script src="js/controllers/gaMengUserLog-controller.js"></script>
+  <script src="js/controllers/sotong-controller.js"></script>
+  <script src="js/controllers/inAppBrowser-controller.js"></script>
+  <script src="js/controllers/snsLogin-controller.js"></script>
+  <script src="js/controllers/locate-controller.js"></script>
+  <script src="js/controllers/androidInapp-controller.js"></script>
+  <script src="js/controllers/online-controller.js"></script>
+  <script src="js/controllers/insrtEMCmpInfo-controller.js"></script>
+  <script src="js/controllers/snsSharing-controller.js"></script>
+  <script src="js/controllers/sotongArtist-controller.js"></script>
+  <script src="js/controllers/artistModify-controller.js"></script>
+  <script src="js/controllers/resumeList-controller.js"></script>
+  <script src="js/controllers/message-controller.js"></script>
+  <script src="js/controllers/startup-controller.js"></script>
+  <script src="js/controllers/sotong-yoyang.js"></script>
+  <script src="js/controllers/sotong-ad.js"></script>
+  <script src="js/controllers/sotongCultureList-controller.js"></script>
+  <script src="js/directive.js"></script>
+  <script src="js/controllers/eventLaunchApp-controller.js"></script>
+  <script src="js/controllers/sotongRenewList.js"></script>
+  <script src="js/controllers/sotongRenewRead.js"></script>
+  <script src="js/controllers/sotongBoardView-controller.js"></script>
+  <script src="js/controllers/video-controller.js"></script>
+
+
+  <!-- <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=8c206b01fbd252061a4c716709134232"></script> -->
+  <!-- <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=8c206b01fbd252061a4c716709134232"></script> -->
+  <script src="http://apis.daum.net/maps/maps3.js?apikey=721aff1257b519a5cffe6cc6cbed8aa6"></script>
+  <!-- 달력-->
+  <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+  <script src="js/controllers/time-controller.js"></script>
+  <!-- 숫자 카운트 용 -->
+  <script src="lib/counter/jquery.animateNumber.js"></script>
+  <!-- 안드로이드 4.x.x대 결제때문에 추가-->
+  <script src="lib/promise-polyfill/promise.js"></script>
+  <!-- 별점 스크립트 -->
+  <script src="js/jquery.rateyo.js"></script>
+  <body ng-app="ilbang">
+        <ion-nav-bar class="bar-ilbang white_font" align-title="center">
+
+          <ion-nav-back-button ng-controller="LoginCtrl" style="display: block !important;" class="button-clear" ng-click="myGoBack()">
+
+          </ion-nav-back-button>
+
+            <ion-nav-buttons side="right">
+                <a ui-sref="main.home"><img src="img/home-icon.png" width="60%" style="padding: 5px 0;"></a>
+                <!-- <a ui-sref="main.home" class="button button-icon icon ion-home" style="color: white;"></a> -->
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view>
+
+        </ion-nav-view>
+        <!-- <div class="bar-footer hide-on-keyboard-open">
+          <div class="bar bar-footer noPadding">
+                <img src="img/footBan.png" alt="" width="100%" height="100%">
+          </div>
+        </div> -->
+  </body>
+</html>

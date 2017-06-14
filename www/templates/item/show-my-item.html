@@ -1,0 +1,42 @@
+<ion-view view-title="아이템 내역 확인" style="padding-top:62px" ng-controller = "itemListCtrl">
+	<ion-content class="padding bg_fa" style="top:0; bottom: 0;" has-bouncing="false">
+        <div class="list ELogWrap" ng-repeat = "item in items" item = "item">
+
+		      	<p class="item csList bgTrans mt50">
+                <span class="f14">긴급구인</span>
+                <span class="fr fo f14"><b>{{item.emergency}} 회</b></span>
+            </p>
+            <p class="item csList bgTrans">
+                <span class="f14">이력서열람 1회</span>
+                <span class="fr fo f14"><b>{{item.reading1}} 회</b></span>
+            </p>
+            <p class="item csList bgTrans">
+                <span class="f14">악평 지우기 1회</span>
+                <span class="fr fo f14"><b>{{item.review_delete}} 회</b></span>
+            </p>
+            <p class="item csList bgTrans">
+                <span class="f14">이력서열람 1주일</span>
+                <span class="fr fo f14 fg">{{item.reading1week}}</span>
+            </p>
+            <p class="item csList bgTrans">
+                <span class="f14">이력서열람 한 달</span>
+                <span class="fr fo f14 fg">{{item.reading1month}}</span>
+        	</p>
+
+        </div>
+
+
+    </ion-content>
+		<div class="row noPadding mb2 showMyItemBtn" style="background:#fafafa; height:auto">
+			<div class="col padding" ng-controller="PopCtrl">
+				<a ui-sref="itemshop" class="button button-ilbang di w100 noRadius">
+					아이템구매하기
+				</a>
+			</div>
+			<div class="col padding">
+				<a ui-sref="main.home" class="button button-light border fo di w100 noRadius">
+					메인으로
+				</a>
+			</div>
+		</div>
+</ion-view>

@@ -1,0 +1,29 @@
+$orange:#eb5f43;
+@mixin top($var){
+  top:$var;
+}
+@mixin margin-top($var){
+  margin-top:$var;
+}
+@mixin margin-bottom($var){
+  margin-bottom:$var;
+}
+@mixin background-color($var){
+  background-color:$var;
+}
+@mixin margin($var){
+  margin:$var;
+}
+@mixin padding($var1,$var2,$var3,$var4){
+  padding:$var1 $var2 $var3 $var4;
+}
+
+@mixin width($var){
+  width:$var;
+}
+@mixin margin-horizontal($var1,$var2){
+  margin:0 $var2 0 $var1;
+}
+@mixin margin-vertical($var1,$var2){
+  margin:$var1 0 $var2 0;
+}

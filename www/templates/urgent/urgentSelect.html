@@ -1,0 +1,25 @@
+<ion-view view-title="긴급 구인">
+	<ion-content class="content has-header padding bg_fa" scroll="true" ng-controller="GuinFormCtrl" has-bouncing="false">
+		<div class="tc">
+			<span><img class="mb20 pt50" src="img/urgentLoad.png" alt="" width="15%"><br></span>
+			<span class="f14 ls">긴급구인 기능을 사용하시려면<br> 기존에 작성한 "채용 공고"를 불러오거나 새로 작성해주세요.</span>
+		</div>
+		<div class="padding">
+			<a ui-sref="urgentLoad" class="button button-block white_btn rd50">
+
+			  	<img class="vm di mr10" width="18px" src="img/loadForm.png" alt="">기존 채용 공고 불러오기
+				</a>
+			<a ng-if="cmpInfoInsrtYn" ui-sref="emergency" class="button button-block red_btn rd50">
+			  	<img class="vm di mr10" width="18px" src="img/newForm.png" alt="">채용 공고 새로 작성
+			</a>
+			<a ng-if="!cmpInfoInsrtYn" ui-sref="em-add-info" class="button button-block red_btn rd50">
+			  	<img class="vm di mr10" width="18px" src="img/newForm.png" alt="">채용 공고 새로 작성
+			</a>
+		</div>
+		<p>
+<div>
+	 <img src="img/urgent-guide.png" alt="" width="100%">
+ </div>
+  </p>
+	</ion-content>
+</ion-view>

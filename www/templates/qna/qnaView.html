@@ -1,0 +1,38 @@
+<ion-view view-title="Q&amp;A 묻고 답하기">
+	<ion-content class="content has-header padding bg_fa" scroll="true" ng-controller="qnaViewCtrl" has-bouncing="false">
+		<div class="pd15 flow">
+            <div class="wid100 f16 mb5">
+				<span class="fl">{{ title }} [{{ comment }}]</span>
+				<span class="fr f14" style="color: #aaa;">작성자 : {{ name }}</span>
+			</div>
+            <div class="f14" style="color: #aaa; clear: both;">
+				<span>조회수 : {{ hit }}회</span>
+				<span class="fr">{{ date }}</span>
+			</div>
+			<div class="mt30">
+				{{ content }}
+			</div>
+			<p class="border mt20"></p>
+			<div ng-show="!adminConShow" class="w100 oh mt20">
+				<div class="fl bold f16" style="padding-left: 5px;">관리자 답변</div>
+				<div class="fr" style="color: #999;">{{ adminWdate }}</div><br />
+				<div class="bg_white mt5" style="border: 1px solid #ddd; padding: 5px 10px;">{{ adminContent }}</div>
+				<p class="border mt20"></p>
+			</div>
+			<div ng-show="admin" class="mt40">
+				<textarea class="w100" rows="8" style="border: 1px solid #ddd; padding: 5px;" ng-model="adminContent2" placeholder="관리자 댓글 입력">{{ adminContent2 }}</textarea>
+				<a ng-click="adminInput(0)" ng-show="adminConShow"><div class="red_btn pd10 tc f16 mt15">댓글 입력</div></a>
+				<a ng-click="adminInput(1)" ng-show="!adminConShow"><div class="red_btn pd10 tc f16 mt15">댓글 수정</div></a>
+			</div>
+        </div>
+      	<div class="oh mb30" ng-show="!admin">
+			<div ng-show="valid">
+				<a ng-click="adjustment()" class="fl di mr10 wid40" style="margin-left:10%"><div class="red_btn pd10 tc f16">수정하기</div></a>
+		      	<a ng-click="qnaDelete()" class="fl di mr10 wid40"><div class="red_btn pd10 tc f16">삭제하기</div></a>
+			</div>
+			<div ng-show="!valid" class="tc">
+				<a ui-sref="csCenter" class="di wid40"><div class="red_btn pd10 tc f16">이전</div></a>
+			</div>
+      	</div>
+	</ion-content>
+</ion-view>

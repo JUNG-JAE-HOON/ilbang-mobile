@@ -1,0 +1,31 @@
+<ion-view view-title="구인 신청서 쓰기">
+    <ion-content scroll="false" has-bouncing="false">
+        <div class="bg">
+            <img src="img/stepBar1.png" class="wid100 mg5" />
+         <form role="form" method="get" ng-submit="#/guinStep2">
+            <div class="join_form">
+                <div class="modify_ment mg5">기본 정보 입력</div>
+                <input type="text" class="inputTxt wid100 mg5" placeholder="모집 제목을 입력해주세요." />
+                <input type="text" class="inputTxt wid100 mg3" placeholder="상호 또는 성명을 입력해주세요." />
+                <select class="step_select wid48 mg3" style="margin-right: 2%">
+                    <option selected>특성별</option>
+                </select>
+                <select class="step_select wid48 mg3">
+                    <option selected>희망 직종(2차)</option>
+                </select>
+                <input type="text" class="inputTxt wid70 mg3 left" placeholder="근무 지역 주소" />
+                <input type="button" class="find_btn white_btn wid25 mg3" value="찾기" />
+                <div class="modify_ment mg3">담당자 정보</div>
+                <input type="text" class="inputTxt wid100 mg5" placeholder="이름을 입력 해주세요." />
+                <input type="text" class="inputTxt wid30 mg3 left" ng-model="phone1" placeholder="010" />
+                <input type="text" class="inputTxt wid30 mg3 left middle_input" ng-mdel="phone2" />
+                <input type="text" class="inputTxt wid30 mg3" ng-mdel="phone3" />
+            </div>
+            <div class="join_btn_wrap">
+                <a ui-sref="#" class="button btn red_btn">이전</a>
+                <a ui-sref="#" class="button btn white_btn">다음</a>
+            </div>
+         </form>
+        </div>
+    </ion-content>
+</ion-view>

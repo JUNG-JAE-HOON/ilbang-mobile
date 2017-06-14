@@ -1,0 +1,60 @@
+<ion-view>
+  <div class="bar bar-header bar-ilbang">
+  	  <div class="title fw">E-머니 결제</div>
+  </div>
+	<ion-content class="content has-header has-footer">
+    <div class="padding">
+      <div class="tc">
+        <div class="paymentArea">
+          <img src="img/payment.png" alt="" / width="50px">
+          <h4 class="dark fg">
+            충전하실 E머니 금액을 확인해 주세요.
+          </h4>
+          <div class=""><span class="mr10">주문금액</span><b class="f22 assertive">100,000원</b></div>
+
+
+        </div>
+        <p class="tl assertive">결제하시는 분</p>
+        <hr class="assertive" style="border:1px solid">
+        <div class="row">
+          <div class="col fg" align="left">아이디</div><div class="col fg" align="right">ilbang9192</div>
+        </div>
+          <div class="row">
+            <div class="col fg" align="left">이름</div><div class="col fg" align="right">마지현</div>
+        </div>
+        <div class="row">
+          <div class="col fg" align="left">연락처</div><div class="col fg" align="right">010-1234-1234</div>
+        </div>
+        <hr class="dark" style="border:1px solid">
+      </div>
+
+      <div class="list mt30" ng-controller="PaymentOption">
+
+        <div class="item item-divider" ng-click="paymentOption()" style="border:3px solid #f5f5f5">
+          <div class=""> <b class="assertive">결제방법</b> 선택 (액션시트)</div>
+        </div>
+
+        <a class="item credit f14 fg pt16" ng-click="toggleMenu();" style="border:3px solid #f5f5f5"> 신용카드 (슬라이드 다운)<img class="vm di mt3 fr" src="img/arrow_right.png" alt="" / width="8px"></a>
+        <div class="selectList" style="display: none">
+          <a class="item pt16 options" ui-sref="#" class="f16"> 신용카드 <img class="vm di mt3 fr" src="img/arrow_right.png" alt="" / width="8px"></a>
+          <a class="item pt16 options" ui-sref="#" class="f16"> 신용카드 <img class="vm di mt3 fr" src="img/arrow_right.png" alt="" / width="8px"></a>
+          <a class="item pt16 options" ui-sref="#" class="f16"> 신용카드 <img class="vm di mt3 fr" src="img/arrow_right.png" alt="" / width="8px"></a>
+          <a class="item pt16 options" ui-sref="#" class="f16"> 신용카드 <img class="vm di mt3 fr" src="img/arrow_right.png" alt="" / width="8px"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row noPadding mb2 mt20" style="background:#fafafa; height:auto">
+      <div class="col padding" ng-controller="PopCtrl">
+        <a class="button button-ilbang di w100 noRadius" ng-click="chargeAlert()">
+          결제하기
+        </a>
+      </div>
+      <div class="col padding">
+        <a ui-sref="emoneyCharge" class="button button-light border fo di w100 noRadius">
+          취소
+        </a>
+      </div>
+    </div>
+	</ion-content>
+</ion-view>

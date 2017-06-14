@@ -1,0 +1,32 @@
+<ion-view view-title="E-머니">
+	<ion-content class="content has-header has-footer EMoneyCon">
+		<ul class="padding adTopShow">
+			<li class="card1" style="padding:0 20px;">
+				<div class="red_font f22" style="padding: 35px 0 25px">
+					<span class="bold">현재 나의 E-머니</span>
+					<img src="img/queRed.png" alt="" width="20px">
+					<span class="fr"><b>5,700</b> P</span>
+				</div>
+				<hr style="opacity: 0.3;">
+				<div class="red_font f20" style="padding-top: 16px">
+					<span class="bold">현재 나의 AD머니</span>
+					<span class="fr"><b>7,000</b> P</span>
+				</div>
+			</li>
+			<li class="tc f16 white_font" style="line-height: 50px;">
+				<a ui-sref="emoneyCharge" class="wid48 left white_font">E-머니 충전하기</a>
+				<div class="wid4 f20 left" style="line-height: 47px; font-weight: normal; opacity: 0.7;">|</div>
+				<a ui-sref="itemshop" class="wid48 left white_font">구직 상품 구매</a>
+			</li>
+		</ul>
+		<ion-nav-view name="tab1"></ion-nav-view>
+		<ion-tabs class="tabs-icon-top tabs-color-active-ilbang myeTabs has-header tabs-top">
+		  	<ion-tab title="충전 내역" ui-sref="tab.tab1" class="leftRd">
+
+		  	</ion-tab>
+		  	<ion-tab title="사용 내역" ui-sref="tab.tab2" class="rightRd">
+		    	<ion-nav-view name="tab2"></ion-nav-view>
+		  	</ion-tab>
+		</ion-tabs>
+	</ion-content>
+</ion-view>

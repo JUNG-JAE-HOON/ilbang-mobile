@@ -1,0 +1,23 @@
+<ion-view view-title="소통방">
+    <ion-content ng-controller="randBanCtrl" has-bouncing="false">
+        <div class="oh">
+          <a ui-sref="sotong-({ type: 'culture' })" class="sotong-menu di">
+              <img src="img/sotong/sotong-list3.png" width="100%">
+          </a>
+          <a ui-sref="sotong-({ type: 'advert' })" class="sotong-menu di">
+              <img src="img/sotong/sotong-list4.png" width="100%">
+          </a>
+          <a ui-sref="sotong-({ type: 'care' })" class="sotong-menu di">
+              <img src="img/sotong/sotong-list5.png" width="100%">
+          </a>
+          <a ui-sref="sotong-({ type: 'fitness' })" class="sotong-menu di">
+              <img src="img/sotong/sotong-fitness.png" width="100%">
+          </a>
+        </div>
+        <div class="oh">
+            <a class="bann oh">
+                <img ui-sref="adTabs.banner({no:{{bannerNo}}})" class="Rand_Banner bb padding w100" src="{{ bannerPath }}" />
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

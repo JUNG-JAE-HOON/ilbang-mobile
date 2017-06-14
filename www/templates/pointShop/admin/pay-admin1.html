@@ -1,0 +1,100 @@
+<ion-view view-title="가맹몰 결제관리자">
+  <ion-content  class="has-footer has-header" ng-controller="gaMengUserCtrl" has-bouncing="false"><!-- ng-controller="gamengCtrl" -->
+    <div class="padding bb admin1-top">
+      <div class="di item-circle pbn h100px admin-info bb">
+        <h2 class="noMargin">
+          <span class="pa gameng-circle f12">
+            <img src="{{logo}}" alt="" width="100%">
+          </span>
+          <!--
+          <div class="red_circle1 pa">
+                  <span>매칭<br>진행</span>
+          </div>
+          <div class="green_circle pa">
+            <span>매칭<br>완료</span>
+          </div>
+        -->
+          <!-- <div class="green_circle pa">
+            <span>매칭<br>완료</span>
+          </div> -->
+          <span class="erTlt1 textCut f12 w85 di"><b>{{ title }} ({{Tdiscount_rate}}%할인) </b></span>
+          <img ng-if ="item.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+          <span class="fr">
+            <!-- <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/> -->
+          </span>
+        </h2>
+        <div class="oh">
+          <span class="mb_7 vm di f12 font-grey">{{ address }}</span>
+          <!-- <span class="badge badge-light ilbangBadge smBadge mr10 f10">{{ item.test3 }}</span> -->
+          <div class="mt5 oh mt10">
+            <p class="f12 fl mr10 font-grey">
+              <span>{{ dist }}</span>
+              <span></span>
+            </p>
+            <span class="fl f12 font-grey">|</span>
+            <span class="ml10 f12 fl font-grey">
+              {{tel}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="cost-list oh padding">
+        <ul class="oh padding" >
+          <li>
+            <p class="fl admin-item">판매금액</p>
+            <p class="fr admin-cost">{{saleAmt | number}}원</p>
+          </li>
+          <li>
+            <p class="fl admin-item">누적포인트</p>
+            <p class="fr admin-cost">{{totalPoint | number }}P</p>
+          </li>
+          <li>
+            <p class="fl admin-item">최대 사용가능 포인트(P)</p>
+            <p class="fr admin-cost">{{usablePoint | number }}P</p>
+          </li>
+          <li>
+            <p class="fl admin-item red">차감포인트</p>
+            <p class="fr admin-cost">{{minusPoint | number }}P</p>
+          </li>
+          <li>
+            <p class="fl admin-item">차감 후 포인트</p>
+            <p class="fr admin-cost">{{balancePoint | number }}P</p>
+          </li>
+          <li>
+            <p class="fl admin-item">최종결제 금액</p>
+            <p class="fr admin-cost">{{payAmt | number  }}원</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="admin1-bottom oh">
+      <div class="admin-inputform">
+        <div class="mt50 pr">
+          <label for="" class="ls">판매금액
+              <input ng-change="calcPoint()" class="w100 mt10 tc input-admin" type="number" name="" value="" ng-model="saleAmt" style="border:1px solid #ddd">
+              <span class="pa" style="top:38px;right:10px; z-index:9999999">원</span>
+          </label>
+        </div>
+        <div class="mt30 pr">
+          <label for="" class="ls">차감포인트
+              <input ng-change="calcPoint2()" ng-model="minusPoint" class="w100 mt10 tc" type="number" name="" value="" style="border:1px solid #ddd">
+              <span class="pa" style="top:38px;right:10px; z-index:9999999">P</span>
+          </label>
+        </div>
+      </div>
+      <div class="admin-inputform">
+          <div class="mt30 pr mb50">
+            <label for="" class="ls">관리자 코드
+                <input ng-model="adminCd" class="w100 mt10 tc" type="text" name="" value="" style="border:1px solid #ddd"  placeholder="{{code}}">
+            </label>
+          </div>
+      </div>
+
+    </div>
+    <div class="bar bar-ilbang noPadding tc" style="line-height:44px">
+      <div  class="fw gameng-detail-btn2 noMargin w50" ng-click="goPay()" />확인</div><!-- class="fw gameng-detail-btn2 noMargin w50"-->
+      <div class="fw gameng-detail-btn2 noMargin w50" ui-sref="gameng">취소</div>
+    </div>
+  </ion-content>
+
+</ion-view>

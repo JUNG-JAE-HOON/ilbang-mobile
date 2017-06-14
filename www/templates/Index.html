@@ -1,0 +1,36 @@
+<ion-view hide-nav-bar="true" class="indexView">
+	<ion-content class="indexMain" ng-controller="LoginCtrl" has-bouncing="false">
+		<div align="center"><img src="img/index_logo.png" class="logo"></div>
+		<div class="list list-inset bgTrans mg10 wid90 marginAuto">
+			<label class="item item-input loginInput" style="height:58px"><input type="text" class="f26" placeholder="아이디" ng-model="id" style="height:45px"/></label>
+			<label class="item item-input loginInput" style="height:58px" style="margin: 0 !important;"><input type="password" class="f26" placeholder="패스워드" ng-model="pw" style="height:45px"/></label>
+		</div>
+		<div style="width: 140px; margin-left: 5%;">
+			<label class="autoLogin item item-checkbox mt5" style="width: 140px; padding-left: 40px; padding-top: 13px;">
+				<div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-cricle" style="left: 6%; padding-left: 0;">
+					<input type="checkbox" checklist-model="auto" checklist-value="true"/>
+					<i class="checkbox-icon redCheck"></i>
+				</div>
+				<div class="item-content disable-pointer-events">
+					<span>자동 로그인</span>
+				</div>
+			</label>
+		</div>
+		<div class="index_img_wrap" ng-controller="snsLoginCtrl">
+			<!-- <span><a ui-sref="index"><img src="img/fbIcon.png" alt="" class="index_img"></a></span> -->
+			<!-- <span class="white_font">|</span> -->
+			<!-- <span><a ng-click="kakaoLogin()"><img src="img/ktIcon.png" alt="" class="index_img"></a></span> -->
+			<!-- <span class="white_font">|</span> -->
+			<!-- <span><a ui-sref="index"><img src="img/nvIcon.png" alt="" class="index_img"></a></span> -->
+		</div>
+		<div class="mg3" style="margin-left: 3%;">
+			<a ng-click="login()" class="button btn white_btn">로그인</a>
+			<a ui-sref="signUpChoice2" class="button btn white_btn">회원가입</a>
+		</div>
+		<div class="findBtn_wrap" ng-controller="JoinCtrl">
+			<a ui-sref="findId" class="fw findBtn">아이디 찾기</a>
+			<span class="fw padding-horizontal"> | </span>
+			<a ui-sref="findPwd" class="fw findBtn">비밀번호 찾기</a>
+		</div>
+	</ion-content>
+</ion-view>

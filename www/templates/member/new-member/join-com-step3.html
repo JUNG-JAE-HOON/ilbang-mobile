@@ -1,0 +1,38 @@
+<ion-view>
+  <ion-content class="bg" has-bouncing="false">
+      <div class="join_step">
+          <img src="img/step3.png" class="step_img" />
+          <div class="circle_wrap circle4">
+              <div class="white_circle"></div>
+              <div class="white_circle"></div>
+              <div class="red_circle"></div>
+              <div class="white_circle"></div>
+          </div>
+          <div class="join_step_ment"><span class="red_font">프로필</span>을 작성해 주세요.</div>
+      </div>
+      <div class="join_form">
+          <div class="list list-inset">
+              <label class="item item-input"><input type="text" ng-model="newUser.company" placeholder="회사명을 입력해주세요." /></label>
+              <label class="item item-input"><input type="text" ng-model="newUser.ceo" placeholder="대표자명 입력해주세요." /></label>
+          </div>
+          <div class="list list-inset marginAuto wid95">
+              <label class="item item-input item-select baseSelect">
+                  <div class="input label">&nbsp;</div>
+                  <select class="selectClick">
+                      <option>기업 형태를 선택해주세요.</option>
+                  </select>
+              </label>
+              <label class="item item-input item-select baseSelect">
+                  <div class="input label">&nbsp;</div>
+                  <select class="selectClick">
+                      <option>업종을 선택해주세요.</option>
+                  </select>
+              </label>
+          </div>
+      </div>
+      <div class="join_btn_wrap">
+          <a class="button btn red_btn" ng-click="back(3)">이전</a>
+          <a class="button btn white_btn" ng-click="next(3)">다음</a>
+      </div>
+  </ion-content>
+</ion-view>

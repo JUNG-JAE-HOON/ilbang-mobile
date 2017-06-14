@@ -1,0 +1,59 @@
+<ion-view view-title="가맹몰 결제 이용내역" class="fw">
+  <ion-nav-bar class="bar-ilbang">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <!-- <ion-nav-buttons side="right">
+          <a ui-sref="main.home"><img src="img/home-icon.png" width="60%" style="padding: 5px 0;"></a>
+      </ion-nav-buttons> -->
+  </ion-nav-bar>
+
+  <ion-content ng-controller="gaMengAdminLogCtrl" class="has-footer has-header bg_fa padding" style="color:black" has-bouncing="false">
+    <div class="padding bg_fa bb">
+      <!-- <div class="list mb10" ng-repeat = "item in items" item = "item" ng-click="viewResume({{item.no}})"> -->
+      <div class="list mb10"><!-- ng-click="viewResume1({{item.no}})"-->
+        <div class="item-circle pbn h100px">
+          <div style="border-bottom:1px solid #ccc; padding:.5em 0 .5em">
+            <span class="pa gameng-circle f12">
+              <img src="{{img_url}}" alt="" width="100%">
+            </span>
+            <span class="erTlt1 gameng-title textCut f13 w85 di w100">
+                <b class="ls">{{ name }} ({{discount_rate}}할인)</b>
+                <!-- <b class="ls">{{ item.name }}</b> -->
+            </span>
+          </div>
+          <div class="oh">
+            <span class="mb_7 vm di f12 font-grey">{{ Taddress }}</span>
+            <!-- <span class="mb_7 vm di f12 font-grey">{{ item.area_1st_nm }} {{ item.area_2nd_nm }} {{ item.address }}</span> -->
+            <!-- <span class="badge badge-light ilbangBadge smBadge mr10 f10">{{ item.test3 }}</span> -->
+            <div class="mt5">
+              <p class="f12 fl mr10 font-grey dc-rate">
+              <span>{{ distance }}</span>
+
+              </p>
+              <span class="fl f12 font-grey">|</span>
+              <span class="ml10 f12 fl font-grey">
+                TEL : {{ phone }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="padding usage-list" ng-repeat = "item in AdminLogitems" item = "item" >
+      <ul class="oh padding-horizontal">
+          <li class="table-cell fl">
+            <span class="mr5">{{item.uid}}</span>
+            <span class="f10">{{item.wdate}}</span>
+          </li>
+          <li class="table-cell fr bold">
+            <!--<span> ({{item.minusPoint}}</span>P 사용)-->
+            <span>{{item.minusPoint}}</span>P 사용
+          </li>
+      </ul>
+    </div>
+    <ion-infinite-scroll distance="20%" ng-if = "!AdminLognoMoreItemsAvailable" on-infinite = "AdminLogloadMore()" ></ion-infinite-scroll>
+  </ion-content>
+  <div class="bar bar-footer bar-ilbang noPadding tc" ui-sref="gameng">
+    <div class="title fw">메인으로</div>
+  </div>
+</ion-view>

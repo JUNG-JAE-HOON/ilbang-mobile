@@ -1,0 +1,15 @@
+<ion-popover-view class="gameng-pop" style="background-color:black">
+    <ion-content has-bouncing="false">
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+            <div class="list gameng-list">
+                <div class="item item-divider tc">
+                    <h2><span class="fo">카테고리</span> 선택</h2>
+                </div>
+                <div ng-repeat="item in categoryList">
+                    <ion-radio class="bb2" ng-click="categorySelect('{{ item.value }}')">{{ item.name }}</ion-radio>
+                </div>
+            </div>
+        </ion-list>
+    </ion-content>
+    <div class="bar-ilbang fw gameng-cancel tc f18 pa w100" ng-click="closePopover('category');">취소하기</div>
+</ion-popover-view>

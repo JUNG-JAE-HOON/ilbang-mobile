@@ -1,0 +1,61 @@
+<ion-view view-title="구직 신청서 쓰기">
+    <ion-content has-bouncing="false">
+        <div class="bg">
+            <img src="img/stepBar1.png" class="wid100 mg5" />
+            <div class="join_form">
+                <div class="modify_ment mg5">기본 정보 입력</div>
+                <div class="list flow pdLeft10 mb10" style="margin-top: 15px;">
+                    <!--<label class="item item-input item-select left pdTop40 wid98">
+                        <select class="ionicSel" ng-model="gujikForm.title" ng-options="data as data for data in selboxData.title">
+                            <option selected>프로필 제목을 선택하세요.</option>
+                        </select>
+                      </label>-->
+                    <label class="item item-input mb10"><input type="text" id="title" ng-model="gujikForm.title" placeholder="프로필 제목을 입력하세요." /></label>
+
+                </div>
+                <div class="list flow pdLeft10 mb10">
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="gujikForm.area_1st" ng-change="siSelect()" ng-options="data.number as data.value for data in selboxData.area_1st">
+                            <option selected>희망 근무 지역</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="gujikForm.area_2nd" ng-options="data.guNo as data.guName for data in guList">>
+                            <option selected>전지역</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="list flow pdLeft10 mb10">
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="gujikForm.work_1st" ng-change="changeWork_1st()" ng-options="data.no as data.list_name for data in selboxData.work_1st">
+                            <option selected>특성별</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select left pdTop40 wid49">
+                        <select class="ionicSel" ng-model="gujikForm.work_2nd" ng-options="data.no as data.list_name for data in selboxData.work_2nd">>
+                            <option selected>희망 직종</option>
+                        </select>
+                    </label>
+                </div>
+                <!--<div class="list flow pdLeft10" style="margin-top: 15px;">
+                    <label class="item item-input item-select left pdTop40 wid98">
+                        <select class="ionicSel" ng-model="gujikForm.work_2nd" ng-options="data.no as data.list_name for data in selboxData.work_2nd">>
+                            <option selected>희망 직종</option>
+                        </select>
+                    </label>
+                </div>-->
+                <div class="list flow pdLeft10">
+                    <label class="item item-input item-select left pdTop40 wid98">
+                        <select class="ionicSel" ng-model="gujikForm.pay" ng-options="data.no as data.list_name for data in selboxData.pay">>
+                            <option selected>희망 일급</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="join_btn_wrap mb20">
+                <button ng-click="closeStep(1);" class="button btn red_btn">이전</button>
+                <button ng-click="formStep1(gujikForm)" class="button btn white_btn">다음</button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

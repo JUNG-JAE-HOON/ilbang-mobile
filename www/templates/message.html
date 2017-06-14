@@ -1,0 +1,28 @@
+<ion-view view-title="알림">
+    <ion-content ng-controller="messageCtrl" class="message-content message-modal-view">
+        <style media="screen">
+            /*.test:after { background-image: url("img/checkCirle.png"); }*/
+        </style>
+        <div class="bar bar-header bg_eb message-header">
+            <span class="f12 ml10" style="width:3.5em">
+                <img class="vm di mt7" src="img/message/msg-intro.png" width="100%" />
+            </span>
+            <span class="di mt7 ml10 w100">알림 메세지 입니다.</span>
+        </div>
+        <ul class="list has-header padding oh">
+            <li class="item msg-item" ng-repeat="message in messageList" item="messageList" ng-click="openModal(message.no)" ng-class="{ 'yes': 'readMsg', 'no': 'noReadMsg' }[message.check]">
+                <div class="fl">
+                    <img src="img/message/msg-check1.png" width="50%" ng-show="message.check == 'no'">
+                    <img src="img/message/msg-check2.png" width="50%" ng-show="message.check == 'yes'">
+                </div>
+                <div class="fl show-msg textCut" style="max-width: 70%;">
+                    <p class="f12 noMargin">{{ message.date }}</p>
+                    <p class="f14">{{ message.message }}</p>
+                </div>
+            </li>
+        </ul>
+        <div class="msg-more fo" ng-show="moreView == true" ng-click="moreMessage()">더 보기
+            <img class="ml5" src="img/message/msg-more.png" width="10%">
+        </div>
+    </ion-content>
+</ion-view>

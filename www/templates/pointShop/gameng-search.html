@@ -1,0 +1,49 @@
+<ion-modal-view ng-controller="gamengCtrl">
+  <ion-header-bar class="bar bar-header bar-ilbang" style="height:60px; line-height:49px; ">
+      <span ng-click="hideSrch()" class="fw pa">
+        닫기
+      </span>
+      <form name="gamengSrch" class="fr oh di gamengSrch" action="index.html" method="post">
+         <input class="di" type="text" name="" style="width:100%" ng-model="currentLoc" value="{{currentLoc}}">
+      </form>
+  </ion-header-bar>
+  <ion-content class="mt15" has-bouncing="false">
+
+    <div class="list">
+      <div class="item current-loc bg_fa" ng-click="test()">
+        <img src="img/gameng/gps.png" alt="" width="5%" style="margin-bottom:-2px">
+        현재위치로 검색하기
+      </div>
+      <div class="item-divider bg_wh pl20" style="color:red">
+        추천가맹점 (현재위치에서 5km 이내 가맹점 입니다.)
+      </div>
+      <div class="" ng-repeat="item in recommndAffList">
+            <!-- <ion-radio> {{ item.text }} </ion-radio> -->
+
+            <!-- <div class="item item-divider">
+              asldjasdjk
+            </div> -->
+
+            <ion-radio class="bb2" ng-click="">
+              {{item.name}} (할인율:{{item.discount_rate}})
+            </ion-radio>
+      </div>
+    </div>
+    <ion-infinite-scroll distance="20%" ng-if = "!loadRecmmndAffListAv" on-infinite = "loadRecmmndAffList()"></ion-infinite-scroll>
+  </ion-content>
+</ion-modal-view>
+
+<!-- <ion-view ng-controller="MapCtrl" title="지도로 보기">
+
+<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <a ui-sref="main.home"><img src="img/home-icon.png" width="60%" style="padding: 5px 0;"></a>
+    </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content class="pr">
+
+    </ion-content>
+
+</ion-view> -->

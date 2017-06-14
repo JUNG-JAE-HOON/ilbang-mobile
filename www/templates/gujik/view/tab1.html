@@ -1,0 +1,116 @@
+<ion-view view-title="담당자 정보" cache-view="false">
+	<ion-content class="content has-header has-footer bg_white" ng-controller="gujikViewTab1Ctrl" has-bouncing="false">
+    <div ng-repeat = "item in items" item = "item">
+      	<div class="di pr">
+
+	        <img src="img/eeInfo.png" alt="" / width="100%">
+			<ul class="pa fw ee_detail" style="margin-left:30px">
+				<li class="oh">
+					<h3 class="fw fl bold">{{item.company}}</h3>
+					<p class="fl padding-left" style="padding-top: 9px">담당자 {{item.manager}}</p>
+					<p class="pr starWrap mt10">
+						<span class="rateYo-gujik pa"></span>
+					</p>
+
+				</li>
+				<li class="padding-bottom">{{item.business}}</li>
+				<li>
+					<ul class="pr fl iconCircle">
+						<li class="pa text-center iconArea">
+							<img src="img/gender.png" alt="" width="42%" class="di" style="margin-top:15px">
+						</li>
+						<li class="f10">{{item.sex}}</li>
+					</ul>
+					<ul class="pr fl iconCircle">
+						<li class="pa text-center iconArea">
+							<img src="img/age.png" alt="" width="70%" class="di" style="margin-top:15px;margin-left:2px">
+						</li>
+						<li class="f10">{{item.age_1st}}세 ~ {{item.age_2nd}}세</li>
+					</ul>
+					<ul class="pr fl iconCircle">
+						<li class="pa text-center iconArea">
+							<img src="img/howmany.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:5px">
+						</li>
+						<li class="f10">{{item.people_num}}명</li>
+					</ul>
+					<ul class="pr fl iconCircle">
+						<li class="pa text-center iconArea">
+							<img src="img/career.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:3px">
+						</li>
+						<li class="f10">{{item.career}}</li>
+					</ul>
+				</li>
+			</ul>
+	      </div>
+		  <div class="list" style="top:-5px">
+		    	<div class="item item-divider">담당자 정보</div>
+		    	<div class="item noPadding">
+		      		<div class="row">
+		      			<span class="col col-25 f12"><b>회사</b></span>
+		      			<span class="col col f12">{{item.company}}</span>
+		      		</div>
+		    	</div>
+				<div class="item noPadding">
+			  		<div class="row">
+			  			<span class="col col-25 f12"><b>회사 위치</b></span>
+			  			<span class="col f12">{{item.address}}</span>
+			  		</div>
+				</div>
+				<div class="item noPadding">
+			  		<div class="row">
+			  			<span class="col col-25 f12"><b>담당 업무</b></span>
+			  			<span class="col f12">{{item.business}}</span>
+			  		</div>
+				</div>
+				<div class="item noPadding">
+			  		<div class="row">
+			  			<span class="col col-25 f12"><b>담당자 연락처</b></span>
+			  			<span class="col f12 ios-black">{{item.phone}}</span>
+			  		</div>
+				</div>
+		    	<div class="tc padding-top">
+					<div class="tc pd10 f14">희망 근무 일자</div>
+					<div class="dateWrap">
+						<div ng-repeat="date in item.date">
+							<label><input type="checkbox" checklist-model="work_date" checklist-value="date"/>&nbsp;&nbsp;{{ date }}</label>
+						</div>
+					</div>
+		    	</div>
+		    	<div class="list">
+		    		<div class="item noPadding">
+		    	  		<div class="row">
+		    	  			<span class="col col-25 f12"><b>근무 시간</b></span>
+		    	  			<span class="col f12">{{item.time}}</span>
+		    	  		</div>
+		    		</div>
+		    		<div class="item noPadding">
+		    	  		<div class="row">
+		    	  			<span class="col col-25 f12"><b>금액(일당)</b></span>
+		    	  			<span class="col f12">&#x20A9; <b class="fo">{{item.pay}}</b></span>
+		    	  		</div>
+		    		</div>
+		    		<div class="padding f12 textArea">{{item.content}}</div>
+		    		<div class="padding bg_fa" ng-controller="PopCtrl">
+		    		<button class="button button-block button-ilbang2 border" ui-sref="viewEmployReview({employ_no:{{item.no}}})" >
+		    		  평가보기
+		    		</button>
+						<!--<button class="button button-block button-ilbang2 border" ng-click="showEstimate();">
+		    		  내 평가보기
+		    		</button>-->
+						<!--<button class="button button-block button-ilbang2 border" ng-click="showEstimate();">
+		    		  신청서 삭제
+		    		</button>-->
+
+		    		<!--<button class="button button-block button-ilbang">
+		    		  지원하기
+		    		</button>-->
+						<!--<button class="button button-block button-ilbang">
+		    		  수정하기
+		    		</button>-->
+						<!--<a class="button button-block red_btn" style="border-radius: 0;" ng-click="doGujik('{{item.no}}','{{item.euid}}')">구직하기</a>-->
+		    		</div>
+		    	</div>
+		  	</div>
+    	</div>
+	</ion-content>
+</ion-view>

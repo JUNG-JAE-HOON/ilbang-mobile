@@ -1,0 +1,19 @@
+<ion-view>
+    <ion-content scroll="false" class="bg" has-bouncing="false">
+        <div class="join_ment"><span class="red_font">연령대</span>를 선택해 주세요.</div>
+        <div class="list wid90" style="margin: 0 auto;">
+            <label class="item item-input item-select baseSelect">
+                <div class="input label">&nbsp;</div>
+                <select class="selectClick" ng-model="ageList" ng-options="age.title for age in ages track by age.id" style="padding: 0 77% 0 16px !important;">
+                    <option ng-value="age.value" ng-repeat="age in ages">{{ age.title }}</option>
+                </select>
+            </label>
+        </div>
+        <div ng-if="ageList.id == 0">20!!</div>
+        <div ng-if="ageList.id == 1">50!!</div>
+        <div class="join_btn_wrap_false">
+            <a ng-click="goBack();" class="button btn red_btn">이전</a>
+            <a ng-click="setChoice2()" class="button btn white_btn">다음</a>
+        </div>
+    </ion-content>
+</ion-view>

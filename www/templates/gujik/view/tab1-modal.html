@@ -1,0 +1,162 @@
+<meta name = "format-detection" content = "telephone=no">
+<ion-modal-view view-title="담당자 정보" cache-view="false" ng-controller="gujikViewTab1Ctrl">
+ <style>
+  .sect2{display: none}
+ </style>
+ <div class="bar bar-ilbang jcc tc lh36 f16 fw gujikTab1Head">
+   <i class="icon f16 ion-ios-arrow-back button pa" style="color:white; background-color:#eb5f43;left:0" ng-click ="backModal()"></i>
+   담당자 정보
+ </div>
+ <ion-content class="content has-header has-footer bg_white gujikTab1Cont" delegate-handle="gujikModalDetail" has-bouncing="false">
+
+  <div class="sect1">
+
+        <div class="di pr">
+
+          <img src="img/eeInfo.png" alt="" width="100%" class="ee-dtail-iphone">
+    <ul class="pa fw ee_detail" style="margin-left:5%">
+     <li class="oh">
+      <h3 class="w100 fw fl bold title-length gujik-title-iphone">{{company}}</h3>
+      <p class="fl manage-length" style="padding-top: 2px">담당자 {{manager}}</p>
+      <p class="pr starWrap mt5">
+        <span class="rateYo-gujik pa"></span>
+      </p>
+     </li>
+     <li class="padding-bottom" style="width:90%">{{business}}</li>
+     <li class="oh">
+      <ul class="pr fl iconCircle">
+       <li class="pa text-center iconArea">
+        <img src="img/gender.png" alt="" width="42%" class="di" style="margin-top:15px">
+       </li>
+       <li class="f10">{{sex}}</li>
+      </ul>
+      <ul class="pr fl iconCircle">
+       <li class="pa text-center iconArea">
+        <img src="img/age.png" alt="" width="70%" class="di" style="margin-top:15px;margin-left:2px">
+       </li>
+       <li class="f10">{{age_1st}}세 ~ {{age_2nd}}세</li>
+      </ul>
+      <ul class="pr fl iconCircle">
+       <li class="pa text-center iconArea">
+        <img src="img/howmany.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:5px">
+       </li>
+       <li class="f10">{{people_num}}명</li>
+      </ul>
+      <ul class="pr fl iconCircle">
+       <li class="pa text-center iconArea">
+        <img src="img/career.png" alt="" width="45%" class="di" style="margin-top:15px; margin-left:3px">
+       </li>
+       <li class="f10">{{career}}</li>
+      </ul>
+     </li>
+    </ul>
+        </div>
+     <div class="list" style="top:-5px">
+        <div class="item item-divider">담당자 정보</div>
+        <div class="item noPadding">
+           <div class="row">
+            <span class="col col-25 f12"><b>회사</b></span>
+            <span class="col col f12">{{company}}</span>
+           </div>
+        </div>
+     <div class="item noPadding">
+        <div class="row">
+         <span class="col col-25 f12"><b>회사 위치</b></span>
+         <span class="col f12 line-change">{{address}}</span>
+        </div>
+     </div>
+     <div class="item noPadding">
+        <div class="row">
+         <span class="col col-25 f12"><b>담당 업무</b></span>
+         <span class="col f12">{{business}}</span>
+        </div>
+     </div>
+     <div class="item noPadding">
+        <div class="row">
+         <span class="col col-25 f12"><b>담당자 연락처</b></span>
+         <span class="col f12">{{phone}}</span>
+        </div>
+     </div>
+        <div class="tc padding-top">
+      <div class="tc pd10 f14">희망 근무 일자</div>
+      <div class="dateWrap">
+       <div ng-repeat="date in dates">
+        <label><input type="checkbox" checklist-model="work_dates" checklist-value="date"/>&nbsp;&nbsp;{{ date }}</label>
+       </div>
+      </div>
+        </div>
+        <div class="list">
+         <div class="item noPadding">
+            <div class="row">
+             <span class="col col-25 f12"><b>근무 시간</b></span>
+             <span class="col f12">{{time}}</span>
+            </div>
+         </div>
+         <div class="item noPadding">
+            <div class="row">
+             <span class="col col-25 f12"><b>금액(일당)</b></span>
+             <span class="col f12">&#x20A9; <b class="fo">{{pay}}</b></span>
+            </div>
+         </div>
+         <div class="padding f12 textArea">{{content}}</div>
+         <div class="detail-sns-btn bg_fa" ng-controller="snsSharingCtrl">
+           <a class="fr mt20 bg_wh tr mr10 mb5" ng-click="twitter(number)">
+               <img src="img/twitter.png" alt="" width="100%">
+          </a>
+           <a class="fr mt20 bg_wh tr mb5" ng-click="facebook(number)">
+               <img src="img/facebook.png" alt="" width="100%">
+          </a>
+          <a class="fr mt20 bg_wh tr mb5" ng-click="kakaoShareInfo(title,company,address,number)">
+               <img src="img/detail-kakao.png" alt="" width="100%">
+          </a>
+         </div>
+         <div class="padding bg_wh">
+         <!-- <button class="button button-block button-ilbang2 border" ui-sref="viewEmployReview(employ_no:{{item.no}})" > -->
+         <button class="button button-block button-ilbang2 border" ng-click="showEstimate()">
+           평가보기
+         </button>
+
+       <a class="button button-block red_btn" style="border-radius: 0;" ng-click="doGujik(number,euid,alertMsg)">구직하기</a>
+         </div>
+        </div>
+      </div>
+
+
+  </div>
+  <div class="sect2 mt30">
+   <div class="tc">
+    <h2 style="margin-bottom:0">
+     <span class="fw100">구인자 </span>
+     <b class="fw200">{{reName}}</b>
+    </h2>
+    <p class="dark">구직자 들의 평가 및 평점입니다.</p>
+    <div class="padding-bottom oh starArea mb20">
+     <img src="img/peopleIcon.png" alt="" width="4%" class="fl" style="margin:2px 5px 0 0">
+     <span class="fl">{{allPost}}명</span>
+     <!--<div id="rateYo" class="rateYo fl"></div>
+     <span class="red_font fl" style="font-weight: normal;"></span>
+     <span class="fl"></span>
+     <span class="fl"></span>-->
+    </div>
+   </div>
+   <div class="list">
+     <div class="item item-divider">
+      <b class="red_font">{{allPost}}건</b>의 평가가 있습니다.
+     </div>
+     <div class="item bg_fa f14 pd15" ng-repeat = "item in itemss" item="item">
+      <div class="fl" style="padding-bottom: 5px;">익명입니다.
+      <span><a ui-sref="#" class="red_font" style="font-weight: normal;"><!--&nbsp;삭제--></a></span>
+     </div>
+
+     <div id="rateYo{{$index}}" class="rateYo fr">{{item.score}}점</div>
+      <p class="review_ee w100">{{item.content}}</p>
+      <p class="mb_7 vm di f14 dark">{{item.wdate}}</p>
+
+     </div>
+
+     <ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailableReview" on-infinite = "loadMore1()"></ion-infinite-scroll>
+   </div>
+  </div>
+  </ion-content>
+</ion-modal-view>
+</meta>

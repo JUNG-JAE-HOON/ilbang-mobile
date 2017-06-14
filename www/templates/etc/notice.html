@@ -1,0 +1,21 @@
+<ion-view view-title="공지 사항" ng-controller="noticeCtrl">
+	<ion-content class="content has-header" has-bouncing="false">
+		<div class="list padding-horizontal padding bg_white" style="padding: 0 3%; margin-bottom: 0;">
+			<a class="item csList" ui-sref="notiveView({no:{{ item.no }}})" ng-repeat="item in items" item="item">
+				<span class="csTitle di">{{ item.title }}</span>
+				<img src="img/nbQA.png" ng-if ="item.isNew" width="15px" style="position: absolute; top: 12px;" />
+		    	<div class="writeInfo" style="clear: both;">
+		    		<p class="fl">{{ item.name }}</p>
+		    		<span class="fl dark padding-horizontal f9">|</span>
+		    		<p class="fl">조회수 <span>{{ item.hit }}</span>회</p>
+		    		<span class="fl dark padding-horizontal f9">|</span>
+		    		<p class="fl"><span>{{ item.datetime }}</span></p>
+		    	</div>
+		  	</a>
+		</div>
+		<ion-infinite-scroll distance="20%" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>
+		<div class="padding">
+			<img src="img/Q&A_19.png" class="wid100 noPadding" />
+		</div>
+	</ion-content>
+</ion-view>

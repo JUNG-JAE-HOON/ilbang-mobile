@@ -1,0 +1,213 @@
+<ion-view ng-controller="jhTest" view-title="아코디언 테스트">
+    <ion-content has-bouncing="false">
+        <div class="cont1 db">
+          <div class="bg">
+              <img src="img/stepBar1.png" class="wid100 mg5" />
+              <div class="join_form">
+
+                  <div class="modify_ment mg5">기본 정보 입력</div>
+                  <div class="list list-inset bg_fa mb10">
+                      <label class="item item-input mb10"><input type="text" id="title" ng-model="guinForm.title" placeholder="모집 제목을 입력해주세요." /></label>
+                      <label class="item item-input"><input type="text" id="company" ng-model="guinForm.company" placeholder="상호 또는 성명을 입력해주세요." /></label>
+                  </div>
+                  <div class="list flow pdLeft10 mb10">
+                      <label class="item item-input item-select left pdTop40 wid49">
+                          <select class="ionicSel" ng-model="guinForm.work_1st" ng-change="changeWork_1st()" ng-options="o.no as o.list_name for o in selboxData.work_1st">
+                          </select>
+                      </label>
+                      <label class="item item-input item-select left pdTop40 wid49">
+                          <select class="ionicSel" ng-model="guinForm.work_2nd"  ng-options="o.no as o.list_name for o in selboxData.work_2nd">
+                          </select>
+                      </label>
+                  </div>
+  <!--
+                  <div ng-controller="jusoCtrl">
+
+                    <input type="text" ng-model="guinForm.si" name="si" placeholder="시">
+                    <input type="text" ng-model="guinForm.gu" name="gu" placeholder="구">
+                    <input type="text" ng-model="guinForm.lng" name="lng" placeholder="lng">
+                    <input type="text" ng-model="guinForm.lat" name="lat" placeholder="lat" >
+                    <input type="text" ng-model="guinForm.sample3_postcode" placeholder="우편번호">
+
+                    <input type="button" ng-click="sample3_execDaumPostcode()" value="우편번호 찾기"><br>
+                                <div id="wrap" style="display:none;border:1px solid;width:300px;height:300px;margin:5px 0;position:relative">
+
+                                </div>
+                                <input type="text" ng-model="guinForm.sample3_address" class="d_form large" placeholder="주소">
+                  </div>
+  -->
+
+
+                  <div class="list flow pdLeft10 mb10">
+                      <label class="item item-input item-select left pdTop40 wid49">
+                          <select class="ionicSel" ng-model="guinForm.area_1st" ng-change="changeArea_1st()" ng-options="o.no as o.list_name for o in selboxData.area_1st">
+                          </select>
+                      </label>
+                      <label class="item item-input item-select left pdTop40 wid49">
+                          <select class="ionicSel" ng-model="guinForm.area_2nd"  ng-options="o.no as o.list_name for o in selboxData.area_2nd">
+                          </select>
+                      </label>
+                  </div>
+
+                  <div class="list list-inset mb10">
+                      <label class="item item-input"><input type="text" id="address" ng-model="guinForm.address" placeholder="상세주소를 입력해주세요." /></label>
+                  </div>
+
+                  <!--<div class="list list-inset bgTrans margin">
+                      <label class="item item-input wid70 left">
+                          <input type="text" ng-model="guinForm.address" placeholder="근무 지역 주소" />
+                      </label>
+                      <iframe src="http://il-bang.com/ilbang_pc/ionic/juso.php" width="100%" height="350px" id='daumIframe' ng-show="juso_show"></iframe>
+                      <button type="button" ng-click="jusoSearch()" class="button button-ilbang2 border noRadius form1Btn fr">찾기</button>
+
+                  </div>-->
+                  <div class="modify_ment mg3">담당자 정보</div>
+                  <div class="list list-inset mb10">
+                      <label class="item item-input"><input type="text" id="manager" ng-model="guinForm.manager" placeholder="이름을 입력해주세요." /></label>
+                  </div>
+                  <div class="modify_ment mg3">휴대폰 번호</div>
+                  <div class="list list-inset flow bgTrans margin">
+                      <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                          <input type="text"  maxlength="3" class="pdRight10" id="phone1" ng-model="guinForm.phone1" placeholder="" />
+                      </label>
+                      <label class="item item-input wid33 left NoborderRight">
+                          <input type="text"  maxlength="4" class="pdRight10" id="phone2" ng-model="guinForm.phone2" />
+                      </label>
+                      <label class="item item-input wid33 left">
+                          <input type="text"  maxlength="4"class="pdRight10" id="phone3" ng-model="guinForm.phone3" />
+                      </label>
+                  </div>
+              </div>
+
+              <div class="join_btn_wrap mb20">
+
+
+                  <a ng-click="closeStep(1)" class="button btn red_btn">이전</a>
+                  <a class="button btn white_btn nxtBtn1">다음</a>
+              </div>
+          </div>
+        </div>
+        <div class="cont2 dn">
+          <div class="bg">
+              <img src="img/stepBar2.png" class="wid100 mg5" />
+              <div class="join_form">
+                  <div class="modify_ment mt20 mb20">희망 작업일</div>
+                  <button class="button button-ilbang mb20" ng-click="openDatePicker()">날짜선택</button>
+                  <!-- <input type="text" class="w100 border2 tc" ng-model="work_date" value=""/> -->
+                  <input type="text" class="w100 border2 tc" ng-model="work_date" value="" wrap="soft" readonly/>
+                  <div="rapify_ment">근무 시간</div>
+                  <div class="list TimeCtrl padding mt20" ng-controller="TimeCtrl">
+                        <!--<ion-checkbox class="timeSel di noBorder f12" ng-repeat="time in timeList" ng-model="time.checked" ng-click="updateSelection($index, timeList, item.title)">
+                            {{ time.text }}
+                        </ion-checkbox>-->
+                      <div class="wid100 flow times">
+                          <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'1'">오전</ion-radio>
+                          <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'2'">오후</ion-radio>
+                          <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'3'">저녁</ion-radio>
+                      </div>
+                      <div class="wid100 flow times">
+                          <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'4'">새벽</ion-radio>
+                          <ion-radio class="timeRadio NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'5'">오전 ~ 오후</ion-radio>
+                          <ion-radio class="wid33 noMargin NoborderBottom f12" name="time" ng-model="guinForm.time" ng-value="'6'">오후 ~ 저녁</ion-radio>
+                      </div>
+                      <div class="wid100 flow times">
+                          <ion-radio class="timeRadio f12" name="time" ng-model="guinForm.time" ng-value="'7'">저녁 ~ 새벽</ion-radio>
+                          <ion-radio class="timeRadio f12" name="time" ng-model="guinForm.time" ng-value="'8'">새벽 ~ 오전</ion-radio>
+                          <ion-radio class="wid33 noMargin f12" name="time" ng-model="guinForm.time" ng-value="'9'">풀타임</ion-radio>
+                      </div>
+                  </div>
+                  <div class="join_btn_wrap mb20">
+                      <a ng-click="formStep1Back()" class="button btn red_btn">이전</a>
+                      <a ng-click="formStep2()" class="button btn white_btn nxtBtn2">다음</a>
+                  </div>
+              </div>
+
+          </div>
+
+        </div>
+        <div class="cont3 dn">
+          <div class="bg">
+              <img src="img/stepBar3.png" class="wid100 mg5" />
+              <div class="join_form">
+                  <div class="list list-inset wid93 mb10" style="margin-top: 30px;">
+                      <label class="item item-input">
+                          <input type="text" id="business" ng-model="guinForm.business" placeholder="담당 업무 내용을 입력해주세요." />
+                      </label>
+                  </div>
+                  <div class="list flow pdLeft10 mb10">
+                      <label class="item item-input item-select left pdTop40 wid48">
+                          <select class="ionicSel" ng-model="guinForm.people_num" ng-options="o.no as o.list_name for o in selboxData.people_num">
+                              <option selected>모집 인원</option>
+                          </select>
+                      </label>
+                      <!--<label class="item item-input item-select left pdTop40 wid48">
+                          <select class="ionicSel" ng-model="guinForm.pay" ng-options="o.no as o.list_name for o in selboxData.pay">
+                              <option selected>일급</option>
+                          </select>
+                      </label>-->
+                  </div>
+                  <div class="list list-inset wid93 mb10" style="margin-top: 10px; margin-left:9px">
+                      <label class="item item-input">
+                          <input type="number" id="pay" ng-model="guinForm.pay" placeholder="일급" />
+                      </label>
+                  </div>
+                  <style media="screen">
+                      .item-content{text-overflow: inherit !important;}
+                  </style>
+                  <div class="list marginAuto wid95 mb10" >
+                      <ion-radio class="left wid33 f12" ng-model="guinForm.sex" ng-value="'nothing'">무관</ion-radio>
+                      <ion-radio class="left wid33 f12" ng-model="guinForm.sex" ng-value="'male'">남성</ion-radio>
+                      <ion-radio class="wid33 f12" ng-model="guinForm.sex" ng-value="'female'">여성</ion-radio>
+                  </div>
+
+                  <div class="list mb10 flow pdLeft10">
+                      <label class="item item-input item-select left pdTop40 wid48">
+                          <select class="ionicSel" ng-model="guinForm.age_1st" ng-options="o.no as o.list_name for o in selboxData.age_1st">
+                              <option selected>최소 연령 선택</option>
+                          </select>
+                      </label>
+                      <label class="item item-input item-select left pdTop40 wid48">
+                          <select class="ionicSel" ng-model="guinForm.age_2nd" ng-change="checkAge()" ng-options="o.no as o.list_name for o in selboxData.age_2nd">
+                              <option selected>최대 연령 선택</option>
+                          </select>
+                      </label>
+                  </div>
+                  <div class="list mb10 flow pdLeft10">
+                      <label class="item item-input item-select left pdTop40 wid95">
+                          <select class="ionicSel" ng-model="guinForm.career" ng-options="o.no as o.list_name for o in selboxData.career">
+                              <option selected>필요 경력</option>
+                          </select>
+                      </label>
+                  </div>
+                  <div class="list wid95 marginAuto">
+                      <label class="item item-input wid98" style="max-width: 100%">
+                          <textarea rows="8" id="content" ng-model="guinForm.content" placeholder="상세 모집 내용을 입력해주세요."></textarea>
+                      </label>
+                  </div>
+              </div>
+                <!-- <div ng-if='guinForm.work_2nd == 8021'class="di padding mt20 bar-ilbang fw" style="border-radius:5px; width:70%;width:60%">
+                  <input class="mr10" type="checkbox" ng-click="fIlbangYn()" ng-model="guinForm.foreign" checklist-value="'1'"/>외국인 고용 특례
+                </div> -->
+              <div class="join_btn_wrap mb20">
+                  <a ng-click="formStep2Back()" class="button btn red_btn">이전</a>
+                  <a ng-click="formStep3(guinForm)" class="button btn white_btn">완료</a>
+              </div>
+          </div>
+          <div class="mb60">
+
+          </div>
+        </div>
+
+        <script type="text/javascript">
+
+          $(".nxtBtn1").click(function(){
+            $(".cont1").hide();
+            $(".cont2").show();
+          });
+          $(".nxtBtn2").click(function(){
+            $(".cont2").hide();
+            $(".cont3").show();
+          });
+        </script>
+    </ion-content>
+</ion-view>

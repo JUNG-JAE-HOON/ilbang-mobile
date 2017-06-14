@@ -1,0 +1,44 @@
+<ion-view view-title="{{ title }} 일방 프로필 {{ cultureBtn }}" class="bg_wh" ng-controller="sotongApplyCtrl" cache-view="false">
+	<ion-content class="content has-header has-footer sotong-content-box" scroll="true" has-bouncing="false">
+		<div class="di pr sotong-person-info w100" style="z-index:0">
+			<div class="tc" style="margin-top:2.5em">
+				<ul class="col col-33 di">
+					<li class="oh artist pr">
+						<div class="hex hex-apply" style="height:6em">
+							<img src="{{ imgUrl1 }}" id="artistImg" width="100%" />
+						</div>
+					</li>
+					<span class="custom-file-input pa" ng-click="dataAlert('사진업로드에는 데이터가 사용됩니다. 가능하면 wifi환경을 이용하여 주세요.')">
+						<img src="img/sotong-photo-up.png" alt="" width="100%">
+					</span>
+					<li class="tc bold f12 artist-name">{{ profileName }}</li>
+					<li class="artist-content tc text-cut f8">{{ profileMessage }}</li>
+				</ul>
+			</div>
+		</div>
+		<div class="apply-menu mt30">
+			<ul class="list">
+				<li class="item" ng-click="openModal(1)">
+					<b class="f12">{{ kindProfile }} 프로필</b>
+					<span class="fr f12">{{ addBtn1 }}</span>
+				</li>
+				<li class="item" ng-click="openModal(2)">
+					<b class="f12">{{ kindCareer }}</b>
+					<span class="fr f12">{{ addBtn2 }}</span>
+				</li>
+				<li class="item" ng-click="openModal(3)">
+					<b class="f12">{{ kindScholarship }}</b>
+					<span class="fr f12">{{ addBtn3 }}</span>
+				</li>
+				<li class="item" ng-click="openModal(4)">
+					<b class="f12">수상 내역</b>
+					<span class="fr f12">{{ addBtn4 }}</span>
+				</li>
+				<li class="item" ng-click="openModal(5)">
+					<b class="f12">전체 {{ kindWorks }}</b>
+					<span class="fr f12">{{ addBtn5 }}</span>
+				</li>
+			</ul>
+		</div>
+	</ion-content>
+</ion-view>

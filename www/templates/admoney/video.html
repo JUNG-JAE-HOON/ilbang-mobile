@@ -1,0 +1,32 @@
+<ion-view view-title="AD 적립" cache-view="false" ng-controller="VideoCtrl">
+    <ion-content class="padding" style="top:20px !important; bottom: 125px !important;" has-bouncing="false">
+        <p class="f12 fg">친구에게 공유해보세요!</p>
+        <div ng-repeat="item in items" class="adWrap pr border2" style="box-sizing:content-box; padding:5px 5px 50px 5px; width:95%" ng-click="playVideo({{ item.no }})">
+            <div class="{{item.views}}">
+                <img src="img/play.png" class="adPlay" style="margin-top:30px"/>
+                <div class="adTitle wid70" style="top:83%; text-align:left">{{ item.title }}</div>
+                <div class="adPoint" style="top:83%">
+                    <img src="img/point.png" class="left" style="width: 20px; margin-right: 5px;" />
+                    <div class="red_font">{{ item.add_point }}</div>
+                </div>
+                <!-- <hr class="adHr" /> -->
+                <!-- <div class="adBtn adKakao">
+                    <a ui-sref="adTabs.video" class="white_font">
+                        <img src="img/adicon.png" class="adIcon" /> 카카오톡 공유하기
+                    </a>
+                </div> -->
+                <!-- <div class="adBar">|</div> -->
+                <!-- <div class="adBtn adReplay">
+                    <a  class="white_font" ng-click="playVideo({{ item.no }})" >
+                        <img src="img/adicon2.png" class="adIcon" /> 동영상 다시보기
+                    </a>
+                </div> -->
+            </div>
+            <img src="http://img.youtube.com/vi/{{item.ad_link}}/mqdefault.jpg" class="adImg"/>
+        </div>
+  	<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "adVideoList()"></ion-infinite-scroll>
+    <div class="height:30px">
+
+    </div>
+    </ion-content>
+</ion-view>

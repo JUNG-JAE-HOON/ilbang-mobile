@@ -1,0 +1,47 @@
+<ion-view view-title="채용 공고">
+	<ion-content class="content has-header has-footer" ng-controller="GuinFormCtrl" has-bouncing="false">
+		<div class="padding margin-vertical mt10 iosmtZero">
+
+
+			<div class="list mb10" ng-repeat = "guin in myGuinList" item="guin">
+				<label>
+
+
+				<a class="item item-circle">
+					<h2 class="eeList f12">
+						<input type="hidden" class = "name" ng-click="al(guin.no,guin.title,guin.wdate,guin.pay,guin.area_1st_nm,guin.area_2nd_nm)"></input>
+
+						<span class="border pa circle f12">
+							<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+						</span>
+						<span class="recent_list w85 di">{{guin.title}}</span>
+						<img ng-if ="guin.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -4px 5px" />
+					    <span class="fr dateMobile">
+								<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px" />
+							<span class="mb_7 vm di f10">{{guin.wdate}}</span>
+						</span>
+					</h2>
+					<div class="padding-top">
+						<span class="badge badge-light ilbangBadge smBadge mr10 f10">{{guin.work_2nd_nm}}</span>
+						<span class="f14 ls vm di" style="margin-top:-6px">{{guin.career}} {{guin.delegate}}</span>
+						<p class="padding-top">
+							<b>특성별</b>
+							<span> > {{guin.work_2nd_nm}}</span>
+						</p>
+						<p>
+							<b>지역</b>
+							<span> > {{guin.area_1st_nm}} > {{guin.area_2nd_nm}}</span>
+						</p>
+					</div>
+					<p class="pa ee_pee f12"><b class="fo f14" style="margin-right:3px">{{guin.pay}}</b>원</p>
+				</a>
+
+			</label>
+
+
+			</div>
+			<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadEmergencyMore()"></ion-infinite-scroll>
+		</div>
+
+	</ion-content>
+</ion-view>

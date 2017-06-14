@@ -1,0 +1,26 @@
+<ion-view ng-controller="MapCtrl" title="지도로 보기">
+    <ion-content class="pr" scroll='false' has-bouncing="false">
+        <!--<style media="screen">-->
+        <style>
+        .customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left; overflow: hidden; height: 50px}
+        .customoverlay:nth-of-type(n) {border:0;}
+        .customoverlay .test2 {display:block;text-decoration:none;text-align:center;font-size:14px;font-weight:bold;overflow:hidden; border-radius:0 0 5px 0; }
+        .customoverlay .test1 {display:block;text-decoration:none;text-align:center;font-size:14px;font-weight:bold;overflow:hidden; border-radius:0 0 0 5px; }
+        .customoverlay .title{margin-right:0 !important}
+        .customoverlay .cont{background-color: black; color:white !important; opacity:0.8; margin-left: -2px}
+        .customoverlay .title{background-color:#eb5f43; color:white !important; opacity:0.8}
+        .customoverlay .cont,.customoverlay .title {display:block;text-align:center;padding:10px 15px;font-size:14px;font-weight:bold;}
+        .customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:22px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+
+        </style>
+
+      <div id="map_update" class="mapWrap" style="width:100%;height:100%;">
+        <!-- 업체 상세정보 시작-->
+
+        <!-- 업체 상세정보 끝-->
+      </div>
+
+
+    </ion-content>
+
+</ion-view>

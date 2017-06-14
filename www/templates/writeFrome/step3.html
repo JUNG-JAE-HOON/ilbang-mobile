@@ -1,0 +1,27 @@
+<ion-view view-title="구직 신청서 쓰기">
+    <ion-content scroll="false" has-bouncing="false">
+        <div class="bg">
+            <img src="img/stepBar3.png" class="wid100 mg5" />
+            <div class="join_form">
+                <select class="step_select wid100 mg10">
+                    <option selected>경력 사항</option>
+                </select>
+                <textarea class="step_select wid100 mg3" rows="8" placeholder="상세 모집 내용을 입력 해주세요."></textarea>
+                <div class="radio_wrap mg3">
+                    <div class="join_radio left">
+                        <input type="radio" id="open" name="application" ng-model="gusicOpen" />
+                        <label for="open">공개</label>
+                    </div>
+                    <div class="join_radio left">
+                        <input type="radio" id="notOpen" name="application" ng-model="gusicNotOpen" />
+                        <label for="notOpen">비공개</label>
+                    </div>
+                </div>
+            </div>
+            <div class="join_btn_wrap">
+                <a ui-sref="#" class="button btn red_btn">이전</a>
+                <a ui-sref="myInfo" ng-click="formStep3()" class="button btn white_btn">완료</a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view view-title="{{ title }} 일방" cache-view="false" ng-controller="onlineCtrl">
+    <ion-content class="content has-header" has-bouncing="false">
+        <div class="button-bar bb">
+            <div class="button noRadius bg_wh" ng-click="area1Button()" style="border-right: 1px solid #ddd;">{{ area1Name }}
+                <img class="fr mt15" src="img/mat_arrow.png" alt="" width="10px">
+            </div>
+            <div class="button noRadius bg_wh" ng-click="area2Button()">{{ area2Name }}
+                <img class="fr mt15" src="img/mat_arrow.png" alt="" width="10px">
+            </div>
+        </div>
+        <div ng-show="showArea1">
+            <div class="row list noPadding di col-33 siguitem" ng-repeat="area1 in area1List">
+                <div class="item tc local padding-vertical" ng-click="area1Select({{ area1.no }}, '{{ area1.name }}')">{{ area1.name }}</div>
+            </div>
+        </div>
+        <div ng-show="showArea2">
+            <div class="row list noPadding di col-33 siguitem" ng-repeat="area2 in area2List">
+                <div class="item tc local padding-vertical" ng-click="area2Select({{ area2.no }}, '{{ area2.name }}')">{{ area2.name }}</div>
+            </div>
+        </div>
+        <div class="dn gear-ban oh" ui-sref="gear-detail">
+          <img src="img/gearman-ban.png" alt="" width="100%">
+        </div>
+        <div class="padding bg_fa">
+            <div class="item item-circle pbn mb10" ng-repeat="item in items" item="item">
+                <h2 style="border-bottom:1px solid #ccc; padding:.5em 0 .5em">
+                    <span class="border pa circle f12">
+                        <img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+                    </span>
+                    <span class="erTlt1 textCut f12 w85 di"><b class="ng-binding">{{ item.company }}</b></span>
+                </h2>
+                <div class="padding-top">
+                    <span class="badge badge-light ilbangBadge smBadge mr10 f10 ng-binding">{{ title }} 일방</span>
+                    <span class="f12 ls vm di ng-binding" style="margin-top:-6px">{{ item.content }}</span>
+                    <p class="f12 mt5" style="margin-bottom: 0;">
+                        <b class="ng-binding">특성별</b>
+                        <span class="ng-binding"> &gt; {{ title }} 일방</span>
+                    </p>
+                    <p class="f12" style="margin-bottom: 0;">
+                        <b>지역</b>
+                        <span class="ng-binding"> &gt; {{ item.area1 }}시 &gt; {{ item.area2 }}</span>
+                    </p>
+                    <div class="f12 line-change online-address" style="color: #666;"><span class="bold pa online-address-span">주소</span> > {{ item.addr }}</div>
+                    <div class="f12 mb10" style="color: #666;"><span class="bold">연락처</span> > {{ item.phone }}</div>
+                </div>
+            </div>
+        </div>
+        <ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

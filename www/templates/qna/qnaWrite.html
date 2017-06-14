@@ -1,0 +1,24 @@
+<ion-view view-title="질문하기">
+	<ion-content class="content has-header padding bg_fa" scroll="false" ng-controller="qnaWriteCtrl" has-bouncing="false">
+		<div class="list list-inset">
+  			<label class="item item-input">
+    			<input type="text" ng-model="title" placeholder="제목을 입력해주세요." />
+  			</label>
+		</div>
+		<!-- <div class="list list-inset">
+  			<label class="item item-input">
+    			<input type="password" ng-model="pwd" placeholder="비밀번호를 입력해주세요." />
+  			</label>
+			<label class="item item-input">
+    			<input type="password" ng-model="pwd2" placeholder="비밀번호를 재입력해주세요." />
+  			</label>
+		</div> -->
+		<div class="list list-inset">
+  			<label class="item item-input">
+    			<textarea rows="10" ng-model="content" placeholder="내용을 입력해주세요."></textarea>
+  			</label>
+		</div>
+      	<a ng-click="qnaWrite(0)" ng-show="!adjustmentView"><div class="wid100 red_btn pd10 tc f16">등록하기</div></a>
+		<a ng-click="qnaWrite(1)" ng-show="adjustmentView"><div class="wid100 red_btn pd10 tc f16">수정하기</div></a>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,83 @@
+<ion-view view-title="지역 가맹점 검색" ng-controller="gamengSrchCtrl" style="color: #fff;">
+	<ion-nav-bar class="bar-ilbang" align-title="center">
+		<ion-nav-buttons side="left">
+			<span ng-click="goMain()"><i class="icon ion-android-arrow-back gameng-back"></i></span>
+	    </ion-nav-buttons>
+	    <ion-nav-buttons side="right">
+	        <span ng-click="goMain()"><img src="img/home-icon.png" width="60%" style="padding: 5px 0;"></span>
+	    </ion-nav-buttons>
+	</ion-nav-bar>
+	<ion-content class="content has-header" ng-controller="gamengCtrl" has-bouncing="false">
+		<div class="button-bar bb">
+			<div class="button noRadius noMargin bg_wh" ng-click="popoverSi.show($event)" style="border-right: 1px solid #ddd;">{{ siName }}
+				<img class="fr mt15" src="img/mat_arrow.png" width="10px" />
+			</div>
+			<div class="button noRadius noMargin bg_wh" ng-click="showGu($event)" style="border-right: 1px solid #ddd;">{{ guName }}
+				<img class="fr mt15" src="img/mat_arrow.png" width="10px" />
+			</div>
+			<div class="button noRadius noMargin bg_wh" ng-click="popoverCategory.show($event)">{{ categoryName }}
+				<img class="fr mt15" src="img/mat_arrow.png" width="10px" />
+			</div>
+		</div>
+		<div class="button-bar" style="border-bottom: 1px solid #ddd; margin-top: 2px;">
+			<div class="button noRadius bg_wh mt_2" ui-sref="gamengMap">내 주변 가맹점
+				<img class="fr mt15" src="img/mat_arrow.png" width="10px" >
+			</div>
+		</div>
+		<div class="padding bg_fa">
+			<div class="list mb10" ng-repeat="item in items" item="item">
+				<div class="item item-circle pbn h100px item-mine" ng-if="item.mine == 1">
+					<div style="border-bottom: 1px solid #ccc; padding: .5em 0 .5em;">
+						<span class="pa gameng-circle f12" ng-click="viewGameng({{ item.no }})">
+							<img src="{{ item.img_url }}" style="width: 100%" />
+						</span>
+						<span class="erTlt1 gameng-title textCut f13 di" ng-click="viewGameng({{ item.no }})">
+							<b class="ls">{{ item.name }}</b>
+							<span class="border fo br mr5" style="border-radius: 3px; font-size: 6px; padding: 0 2px">{{ item.discount_rate }}</span>
+						</span>
+						<img ng-if ="item.isNew" src="img/newBadge.png" width="6%" class="vm newBadge" style="margin: 0 0 -6px 5px;" />
+						<a ng-href="tel:{{ item.phone }}" class="gameng-phone pa f12 tr">
+							<img src="img/gameng/list-phone.png" width="100%" />
+						</a>
+					</div>
+					<div class="oh" ng-click="viewGameng({{ item.no }})">
+						<span class="mb_7 vm di f12 font-grey gameng-name w100 textCut">{{ item.address }}</span>
+						<div class="mt5">
+							<p class="f12 fl mr10 font-grey dc-rate">{{ item.type }}</p>
+							<span class="fl f12 font-grey">|</span>
+							<p class="f12 fl mr10 font-grey dc-rate ml10">{{ item.distance }}</p>
+							<span class="fl f12 font-grey">|</span>
+							<span class="ml10 f12 fl font-grey">{{ item.phone }}</span>
+						</div>
+					</div>
+				</div>
+				<div class="item item-circle pbn h100px" ng-if="item.mine == 0">
+					<div style="border-bottom: 1px solid #ccc; padding: .5em 0 .5em">
+						<span class="pa gameng-circle f12" ng-click="viewGameng({{ item.no }})">
+							<img src="{{ item.img_url }}" width="100%">
+						</span>
+						<span class="erTlt1 gameng-title textCut f13 w85 di w100" ng-click="viewGameng({{ item.no }})">
+							<b class="ls">{{ item.name }}</b>
+							<span class="border fo br mr5" style="border-radius:3px; font-size:6px; padding:0 2px">{{ item.discount_rate }}</span>
+						</span>
+						<img ng-if ="item.isNew" src="img/newBadge.png" width="6%" class="vm newBadge" style="margin: 0 0 -6px 5px" />
+						<a href="tel:{{ item.phone }}" class="gameng-phone pa f12 tr">
+							<img src="img/gameng/list-phone.png" width="100%" />
+						</a>
+					</div>
+					<div class="oh" ng-click="viewGameng({{ item.no }})">
+						<span class="mb_7 vm di f12 font-grey gameng-name w100 textCut">{{ item.address }}</span>
+						<div class="mt5">
+							<p class="f12 fl mr10 font-grey dc-rate">{{ item.type }}</p>
+							<span class="fl f12 font-grey">|</span>
+							<p class="f12 fl mr10 font-grey dc-rate ml10">{{ item.distance }}</p>
+							<span class="fl f12 font-grey">|</span>
+							<span class="ml10 f12 fl font-grey">{{ item.phone }}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<ion-infinite-scroll distance="20%" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

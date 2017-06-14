@@ -1,0 +1,198 @@
+.hex {
+  width: 6em;
+  // height: 6em;
+  // background-color: #ccc;
+  background-color: white;
+  background-repeat: no-repeat;
+  // background-position: 50% 50%;
+  background-size: auto 7em;
+  position: relative;
+  float: left;
+  // margin: 25px 5px;
+  text-align: center;
+  zoom: 1;
+  // margin-left: 24%;
+  // margin-top: 20px;
+  // border-radius: 3em;
+  // transform:translate(5px, 5px);
+  &.hex-gap {
+    margin-left: 86px;
+  }
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999em;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  // .corner-1, .corner-2 {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: inherit;
+  //   z-index: -2;
+  //   overflow: hidden;
+  //   backface-visibility: hidden;
+  // }
+  // .corner-1 {
+  //   z-index: -1;
+  //   transform: rotate(60deg);
+  //   border-radius: 10px;
+  // }
+  // .corner-2 {
+  //   transform: rotate(-60deg);
+  //   border-radius: 10px;
+  // }
+  // .corner-1:before, .corner-2:before {
+  //   width: 173px;
+  //   height: 173px;
+  //   content: '';
+  //   position: absolute;
+  //   background: inherit;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 1;
+  //   background: inherit;
+  //   background-repeat: no-repeat;
+  //   backface-visibility: hidden;
+  // }
+  // .corner-1:before {
+  //   transform: rotate(-60deg) translate(-108px, -46px);
+  //   transform-origin: 0 0;
+  // }
+  // .corner-2:before {
+  //   transform: rotate(60deg) translate(-73px, 27px);
+  //   bottom: 0;
+  // }
+  .hex3{
+    margin-bottom:1em !important; background-color:rgba(249,249,249,1) !important;
+    .inner{
+      color: #eee;
+      border-radius:3em; height:6em !important;
+    }
+  }
+
+  h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+  }
+  hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    width: 60%;
+    margin: 15px auto;
+  }
+  p {
+    font-size: 16px;
+    font-family: 'Kotta One', serif;
+    width: 80%;
+    margin: 0 auto;
+  }
+  &.hex-1 {
+    background: #74cddb;
+  }
+  &.hex-2 {
+    background: #f5c53c;
+  }
+}
+
+/* Custom styles*/
+
+.artist {
+  // height: 7em;
+  width: 6em;
+  height: 6em;
+  margin:0 auto;
+  overflow: hidden;
+  border-radius:3em;
+  background: white;
+  border:1px solid #ddd;
+}
+.profile-img{
+  display: inline-block;
+  vertical-align: middle;
+}
+.sotong-photo{
+  background: white;
+}
+.artist-name {
+  color: #7e261f;
+  margin-top:1em;
+}
+
+.artist-content {
+  color: #292e2f;
+}
+
+.apply-menu .item {
+  padding: 10px 12px;
+}
+
+.hex-apply {
+  margin-bottom: 10px !important;
+  // width: 4em;
+  // height: 6em;
+  width:100%;
+  // margin-top: 17px;
+  .corner-1:before {
+    transform: rotate(-60deg) translate(-109px, -42px) !important;
+  }
+  .corner-2:before {
+    transform: rotate(60deg) translate(-68px, 28px) !important;
+  }
+}
+
+.artist-photo {
+  width: 37px;
+  height: 30px;
+  right: 1.2em;
+  top: 3em;
+}
+
+.artis-apply-button {
+  margin-top: 30px;
+}
+
+.artist-apply button {
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0 auto !important;
+}
+
+.sotong-tab-active {
+  height: 35px;
+  display: inline-block;
+  width: 75%;
+  border-bottom: 3px solid #eb5f43;
+}
+@media all and (max-width: 320px) {
+  .artist-photo {
+    width: 37px;
+    height: 30px;
+    right: 1.2em;
+    bottom: 6.6em;
+  }
+  .artis-apply-button {
+    margin-top: 10px;
+  }
+  .artist-apply button {
+    width: 85%;
+  }
+}
+
+@media only all and (min-width: 321px) and (max-width: 375px) {}
+
+@media only all and (min-width: 376px) {
+  .hex-apply {
+    margin-left: 2.5em;
+  }
+}
+.sotong-artist-chating{
+  @include background-color(#fafafa);
+}

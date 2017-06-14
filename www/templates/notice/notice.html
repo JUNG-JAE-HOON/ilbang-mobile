@@ -1,0 +1,24 @@
+<ion-view view-title="공지 사항" ng-controller="noticeCtrl">
+	<ion-content class="content has-header has-footer" has-bouncing="false">
+		<div class="list padding-horizontal padding bg_white" style="padding: 0 3%; margin-bottom: 0;">
+			<a class="item csList" ui-sref="noticeView({no:{{ item.no }}})" ng-repeat="item in items" item="item">
+				<div class="csTitle di f14 ellip" style="max-width: 95%;">{{ item.title }}</div>
+				<img src="img/nbQA.png" ng-if ="item.isNew" width="15px" style="position: absolute; top: 12px;" />
+		    	<div class="" style="clear: both;">
+		    		<div class="fl f12" style="color: #666;">{{ item.name }}</div>
+		    		<div class="fl f12 dark padding-horizontal f12" style="color: #666;">|</div>
+		    		<div class="fl f12" style="color: #666;">조회수 {{ item.hit }}회</div>
+		    		<div class="fl dark padding-horizontal f12" style="color: #666;">|</div>
+		    		<div class="f12 ellip" style="color: #666; max-width: 45%;">{{ item.datetime }}</div>
+		    	</div>
+		  	</a>
+		</div>
+		<a ng-click="loadMore()" ng-show="listShow" class="f18 tc">
+			<div class="white_font red_btn rd50 wid70" style="padding: 15px 0; margin: 20px auto 10px;">더보기 +</div>
+		</a>
+		<!-- <ion-infinite-scroll distance="20%" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()"></ion-infinite-scroll>		 -->
+		<div class="padding">
+			<a ng-href="tel:02-2138-7365"><img src="img/Q&A_19.png" alt="" class="wid100 noPadding" /></a>
+		</div>
+	</ion-content>
+</ion-view>

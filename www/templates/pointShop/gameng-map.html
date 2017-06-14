@@ -1,0 +1,92 @@
+<ion-view  title="지도로 보기" style="color:white" ng-controller="gmMapCtrl">
+
+<ion-nav-bar class="bar-ilbang" >
+    <!-- <ion-nav-back-button>
+    </ion-nav-back-button> -->
+    <ion-nav-buttons side="left">
+        <!-- <span ng-click="gamengSrch.show()"><img src="img/gameng/gameng-srch.png" width="60%" style="padding: 5px 0;"></span> -->
+        	        <span ng-click="goBack()"><i class="icon ion-android-arrow-back gameng-back"></i></span>
+    </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content  class="pr has-header" scroll='false' has-bouncing="false">
+
+        <!--<style media="screen">-->
+        <style>
+        .customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left; overflow: hidden; height: 50px;}
+        .customoverlay:nth-of-type(n) {border:0;;}
+        .customoverlay .test2 {display:block;text-decoration:none;text-align:center;font-size:14px;font-weight:bold;overflow:hidden; border-radius:0 0 5px 0; ;}
+        .customoverlay .test1 {display:block;text-decoration:none;text-align:center;font-size:14px;font-weight:bold;overflow:hidden; border-radius:0 0 0 5px; ;}
+        .customoverlay .title{margin-right:0 !important;}
+        .customoverlay .cont{background-color: black; color:white !important; opacity:0.8; margin-left: -2px;}
+        .customoverlay .title{background-color:#eb5f43; color:white !important; opacity:0.8;}
+        .customoverlay .cont,.customoverlay .title {display:block;text-align:center;padding:10px 15px;font-size:14px;font-weight:bold;;}
+        .customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:22px;background:url('http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png');}
+        </style>
+
+      <div id="map_update" class="mapWrap" style="width:100%;height:100%;" >
+        <!-- 업체 상세정보 시작-->
+
+
+        <script>
+
+        function gamengInfo(name,phone,address,sale,image_url){
+
+          document.getElementById("shopName").innerHTML=name;
+          document.getElementById("phone").innerHTML=phone;
+          document.getElementById("address").innerHTML=address;
+          document.getElementById("sale").innerHTML=sale;
+          $("#linkShop").attr("href", "tel:"+phone);
+          $("#shop_img").attr("src", image_url);
+
+          $('.mapWrap').height(80+"%");
+        // $('.gameng-map-info').removeClass('gameng-hidden');
+        }
+
+
+        </script>
+
+      </div>
+
+              <!-- <div class="pa gameng-info-area gameng-hidden " ng-controller="gamengCtrl"> -->
+                <div class="gameng-map-info oh">
+                        <div class="item item-circle pbn">
+                     <h2 style="border-bottom:1px solid #ccc; padding:.5em 0 0em">
+                      <span class="pa gameng-circle f12">
+                       <img id="shop_img" alt="" width="100%">
+                      </span>
+
+
+                      <span class="erTlt1 textCut f14 w85 di" ><div id="shopName"></div></span>
+                      <img ng-if ="item.isNew" src="img/newBadge.png"  alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+                      <span class="fr">
+                       <!-- <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/> -->
+
+                                <a id='linkShop' class="phone f12 ls tr fr mt5">
+                                    <img src="img/gameng/list-phone.png" alt="" width="60%">
+                                </a>
+                      </span>
+                     </h2>
+                     <div class="oh" ui-sref="gameng-detail">
+                      <span class="mb_7 vm di f10 font-grey" id="address"> </span>
+                      <!-- <span class="badge badge-light ilbangBadge smBadge mr10 f10">{{ test3 }}</span> -->
+                      <div class="mt5">
+                       <p class="f10 fl mr10 font-grey">
+                                <span>할인:</span>
+                        <span id="sale"></span>
+
+                       </p>
+                       <span class="fl f10 font-grey">|</span>
+                       <span class="ml10 f10 fl font-grey" id="phone">
+
+                       </span>
+                      </div>
+                     </div>
+                    </div>
+                </div>
+              <!-- </div> -->
+              <!-- 업체 상세정보 끝-->
+
+
+    </ion-content>
+
+</ion-view>

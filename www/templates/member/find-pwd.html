@@ -1,0 +1,33 @@
+<ion-view view-title="비밀번호 찾기">
+	<ion-content class="bg tl" ng-controller="FindCtrl" has-bouncing="false">
+		<div class="join_form">
+			<div style="color: #797979; padding-top: 10px;">* 회원가입 당시에 입력한 정보를 입력해주세요.</div>
+			<div class="list list-inset bgTrans">
+				<div class="mb10 f16 bold" style="color: #797979; padding-left: 5px;">아이디 *</div>
+				<label class="item item-input"><input type="text" ng-model="id" /></label>
+				<div class="no_pass" ng-if="id == ''">* 아이디를 입력해주세요.</div>
+			</div>
+			<div class="list list-inset bgTrans">
+				<div class="mb10 f16 bold" style="color: #797979; padding-left: 5px;">이름 *</div>
+				<label class="item item-input"><input type="text" ng-model="name" /></label>
+				<div class="no_pass" ng-if="name == ''">* 이름을 입력해주세요.</div>
+			</div>
+			<div class="list list-inset flow bgTrans">
+				<div class="mb10 f16 bold" style="color: #797979; padding-left: 5px;">전화번호 *</div>
+				<label class="item item-input wid33 left" style="border-right: 0 !important; border-radius: 0 !important;">
+					<input type="text" ng-model="phone1" style="padding-right: 10px;" />
+				</label>
+				<label class="item item-input wid33 left" style="border-right: 0 !important; border-radius: 0 !important;">
+					<input type="text" ng-model="phone2" style="padding-right: 10px;" />
+				</label>
+				<label class="item item-input wid33 left" style="border-radius: 0 !important;">
+					<input type="text" ng-model="phone3" style="padding-right: 10px;" />
+				</label>
+				<div class="no_pass" ng-if="phone1 == '' || phone2 == '' || phone3 == ''">* 전화번호를 입력해주세요.</div>
+			</div>
+			<a ng-click="memberFind(1)">
+				<div class="red_btn white_font pa15_btn f16 tc wid95 marginAuto" style="margin-top: 60px;">확인</div>
+			</a>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,90 @@
+<ion-modal-view view-title="스타벅스 가산 1호점" ng-repeat="x in viewGameng1">
+  <div class="bar bar-header bar-ilbang oh tc" >
+    <span class="fw pa gamengDetail-close" ng-click="hideDetail()">
+      닫기
+    </span>
+    <h4 class="di fw m0a lh36" align="center">{{x.name}}</h4>
+  </div>
+  <!-- <ion-nav-bar class="bar-ilbang" >
+
+    <ion-nav-buttons side="left" >
+      <span ng-click="hideDetail()">
+        닫기
+      </span>
+    </ion-nav-buttons>
+    <ion-nav-title class="fw">
+        스타벅스 가산 1호점
+      </ion-nav-title>
+	    <ion-nav-buttons side="right">
+
+	    </ion-nav-buttons>
+	</ion-nav-bar> -->
+  <ion-content class="has-header has-footer" ng-controller="gamengCtrl" has-bouncing="false">
+      <div class="padding">
+        <div class="item item-circle noBorder pane bb oh gameng-detail-head bg_wh">
+					<h2 style="padding:1.5em 0 0">
+						<span class="pa gameng-circle f12">
+							<img src="{{x.img_url}}" alt="" width="100%" style="margin-top:-.1em">
+						</span>
+						<!--
+						<div class="red_circle1 pa">
+										<span>매칭<br>진행</span>
+						</div>
+						<div class="green_circle pa">
+    					<span>매칭<br>완료</span>
+    				</div>
+					-->
+						<!-- <div class="green_circle pa">
+    					<span>매칭<br>완료</span>
+    				</div> -->
+						<span class="erTlt1 textCut f12 di w100"><b>{{x.name}}</b></span>
+						<img ng-if ="item.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+
+					</h2>
+
+          <p class="fl di mt3 w100">
+            <!-- <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/> -->
+
+              <span>{{x.distance}}</span>
+              <span></span>
+          </p>
+          <div class="oh di tl fl">
+            <div class="oh">
+              <p class="f12 fl font-grey mt10" style="margin-top:3px">
+                <a href="tel:{{x.phone}}" class="phone f12 oh" style="color:red">
+                  <img src="img/gameng/detail-phone.png" alt="" width="50%">
+                </a>
+              </p>
+            </div>
+          </div>
+				</div>
+
+        <!-- askdaslkd -->
+        <div class="oh mt10 padding">
+          <h6 class="font-grey">관련정보 상세정보</h6>
+          <h6 ng-if="uid==x.admin_id" class="mb5">관리자 코드</h6>
+          <span ng-if="uid==x.admin_id"  class="f12 font-grey">{{x.admin_cd}}</span>
+          <h6 class="mb5">주소</h6>
+          <span class="f12 font-grey">{{x.address}}</span>
+          <h6 class="mt20">문의 및 안내</h6>
+          <span class="f12 font-grey">
+            {{x.phone}}
+          </span>
+          <h6 class="mt20">지도보기</h6>
+          <div class="gameng-map height-fix" ng-controller="gmDetailMapCtrl">
+            <div id="map_detail" class="mapWrap border2 height-fix">
+              <!-- 업체 상세정보 시작-->
+
+              <!-- 업체 상세정보 끝-->
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="bar bar-ilbang" style="height:88px">
+      <div class="title fw gameng-detail-btn1 noMargin" ng-click="goAdminPay()">가맹점 이용내역</div><!-- ui-sref="gameng-pay({affiliate_no:x.no})" -->
+      <div class="title fw gameng-detail-btn2 noMargin" ng-click="goUserPay()">포인트 사용하기</div><!-- ui-sref="gameng-admin({affiliate_no:x.no})" -->
+    </div>
+  </ion-content>
+
+</ion-modal-view>

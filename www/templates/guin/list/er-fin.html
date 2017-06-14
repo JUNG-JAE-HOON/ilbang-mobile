@@ -1,0 +1,86 @@
+<ion-view view-title="직원 목록">
+	<ion-content class="content has-header finPage bg_fa iosmtZero has-footer bt70" ng-controller="euidMatchingCompleteCtrl" has-bouncing="false">
+		<div class="padding pt30 iosmtZero">
+			<div class="list mb10" ng-repeat = "item in items" item="item">
+				<!--  긴급구인 (반투명 붉은배경)은 urgent2클래스로 컨트롤합니다  -->
+				<div class="border2 oh">
+					<a class="noBorder item item-circle urgent2" ui-sref="guinViewTab4({no:{{item.no}},work_date:'{{item.work_date}}',work_join_list_no:{{item.work_join_list_no}}})">
+						<h2 style="border-bottom: 1px solid #ccc; padding:.5em 0 .5em">
+							<span class="border pa circle f12">
+								<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+							</span>
+							<span class="w85 di f12">{{item.title}}</span><!-- class ="긴급구인:recent_list "-->
+							<span class="fr dateMobile2">
+								<img src="img/listTime.png" alt="" width="14px" class="vm newBadge" style="margin:0 0 -6px 5px" />
+								<span class="mb_7 vm di f10">{{item.work_date}}</span>
+							</span>
+						</h2>
+						<div class="padding-top">
+							<span class="badge badge-light ilbangBadge smBadge mr10 f10">{{item.work_2nd_nm}}</span>
+							<span class="f12 ls vm di" style="margin-top:-6px">{{item.area_1st_nm}} - {{item.area_2nd_nm}}</span>
+							<p class="padding-top f12">
+								<b>{{item.work_1st_nm}}</b> > <span>{{item.work_2nd_nm}}</span>
+							</p>
+							<p class="f12">
+								<b>{{item.area_1st_nm}}</b> > <span>{{item.area_2nd_nm}}</span>
+							</p>
+						</div>
+						<p class="di ee_pee fr"><b class="fo di vm" style="margin:-2px 3px 0 0">{{item.pay}} </b>원 </p>
+					</a>
+					<div class="tc padding-vertical" ng-controller="PopCtrl">
+						<a ui-sref="resumeReview({work_join_list_no:{{item.work_join_list_no}}})" ng-click="confirmStar()" class="di button-ilbang tc f16 wid90 marginAuto" style="line-height: 40px; border-radius:5px">평가 남기기</a>
+					</div>
+				</div>
+			</div>
+			<div class="pt50 tc">
+				<img class="pt100" src="img/er-fin-01.png" ng-if="allPost=='0'||euid==undefined" width="60%" >
+			</div>
+
+			<!-- 나중에 지워야 할 데이터 -->
+<!--			<div class="list mb10">-->
+				<!-- 긴급구인 (반투명 붉은배경)은 urgent2클래스로 컨트롤합니다 -->
+<!--				<div class="border2 oh">
+					<a class="noBorder item item-circle urgent2" ui-sref="infoEmployer{{item.no}}">
+						<h2 style="border-bottom:.3px solid #ccc; padding:.5em 0 .5em">
+							<span class="border pa circle f12">
+							<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+						</span>
+							<span class="recent_list w85 di f12">엠엠씨피플
+
+									      </span>
+-->
+									      <!-- <img src="img/newBadge.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/> -->
+<!--
+									      <span class="fr dateMobile finDate">
+									      	<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px"/>
+									      		<span class="mb_7 vm di f12">1시간 전</span>
+									      </span>
+								      </h2>
+
+								      <div class="padding-top finCont">
+												<span class="badge badge-light ilbangBadge smBadge mr10 f10">건설일방</span>
+												<span class="f12 ls vm di" style="margin-top:-6px">서울특별시 - 금천구</span>
+												<p class="padding-top f12">
+													<b>특성별</b> > <span>건설일방</span>
+												</p>
+												<p class="f12">
+													<b>지역별</b> > <span>서울특별시</span>
+												</p>
+										</div>
+										<p class="pa ee_pee costPa"><b class="fo f14">30,000 </b>원 </p>
+								    </a>
+								    <div class="tc padding-vertical bg_wh" ng-controller="PopCtrl">
+								    	<a ui-sref="estimationEe" ng-click="confirmStar()" class="di button-ilbang tc f16 wid90 marginAuto" style="line-height: 40px; border-radius:5px">평가 남기기</a>
+								    </div>
+
+								</div>
+							</div>
+							<a ui-sref="admoney">
+								<img src="img/empBan1.png" alt="" width="100%" />
+							</a>
+						</div>
+			</div>
+-->
+	<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+		</ion-content>
+</ion-view>

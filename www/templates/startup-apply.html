@@ -1,0 +1,53 @@
+<ion-view view-title="창업 신청하기" cache-view="false" ng-controller="startupCtrl">
+    <ion-content class="bg_white" has-bouncing="false">
+        <style>
+            .item-checkbox .checkbox { right: 0; left: 1%; top: 48%; }
+            .checkbox-icon { width: 27px; height: 27px; }
+            .validCheck .checkbox-icon:before { border: 1px solid #ddd !important; background-color: #f5f5f5 !important; }
+            .validCheck .checkbox-icon:after { top: 9px; left: 25%; }
+            .checkbox input:after, .checkbox-icon:after { border-width: 2px; border-color: #eb5f43; }
+        </style>
+        <div class="oh padding-horizontal">
+            <h5 class="artist-modal-title">이름</h5>
+		</div>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" ng-model="startup.name" placeholder="이름을 입력해주세요." />
+            </label>
+        </div>
+        <div class="oh padding-horizontal">
+            <h5 class="artist-modal-title">연락처</h5>
+		</div>
+		<div class="list oh margin-vertical padding">
+            <label class="item item-input left person-profile">
+				<input type="text" ng-model="startup.phone1" />
+			</label>
+			<label class="item item-input left person-profile">
+				<input type="text" ng-model="startup.phone2" />
+			</label>
+			<label class="item item-input left person-profile">
+				<input type="text" ng-model="startup.phone3" />
+			</label>
+		</div>
+        <div class="oh padding-horizontal">
+			<h5 class="artist-modal-title">이메일</h5>
+		</div>
+		<div class="list oh margin-vertical padding">
+			<label class="item item-input left person-profile">
+				<input type="text" ng-model="startup.email1" placeholder="이메일 주소" />
+			</label>
+            <label class="item item-input left person-profile">
+				<input type="text" ng-model="startup.email2" placeholder="이메일 주소" />
+			</label>
+            <label class="item item-input item-select pdTop40 person-profile">
+                <select class="ionicSel" ng-model="startup.email3" ng-options="email.name for email in emails" ng-change="emailChange()"></select>
+			</label>
+		</div>
+        <div class="item noPadding noBorder">
+            <ion-checkbox class="validCheck w100 pt16 f14 noBorder di" ng-model="startup.agree">
+                <div class="item-content disable-pointer-events">개인 정보 수집에 동의합니다.</div>
+            </ion-checkbox>
+        </div>
+        <div class="red_btn marginAuto wid95 f16 tc mt50" style="border-radius: 15px; padding: 15px 0;" ng-click="startupApply()">창업 신청하기</div>
+    </ion-content>
+</ion-view>

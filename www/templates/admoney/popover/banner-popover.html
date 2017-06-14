@@ -1,0 +1,43 @@
+<ion-view view-title="AD머니 배너" hide-nav-bar="false">
+    <div class="bar bar-header bar-ilbang">
+    <h1 class="title fw">AD배너</h1>
+    </div>
+    <ion-content class="bg_fa" style="height:100%" has-bouncing="false">
+        <style media="screen">
+          .scroll{height:100%}
+        </style>
+
+        <img ng-src="{{url}}" class="wid100 header-margin" style="height: 100px;" />
+        <div class="wid100 QuizTitle pt20">
+          {{title}}
+          <p class="pd5 address f11 noMargin" ng-bind-html="content" style="font-weight:300">
+
+
+          </p>
+        </div>
+
+        <div class="wid90 QuizContent pr">
+          <div class="Quiz red_font">QUIZ</div>
+            <div class="wid100">
+            <style>
+            .item-radio .radio-icon {
+                top: -10px;
+                color: #eb5f43;
+              }
+            </style>
+                <div class="red_btn QuizQ">Q.</div>
+                <div class="red_font left wid80 f16">{{quiz}}</div>
+                <div class="QuizRadioWrap">
+                    <ion-radio class="QuizRadio mt15 f14" ng-model="example" ng-click="choisBanner(1)" ng-value="1">{{example1}}</ion-radio>
+                    <ion-radio class="QuizRadio f14" ng-model="example"  ng-click="choisBanner(2)"ng-value="2">{{example2}}</ion-radio>
+                    <ion-radio class="QuizRadio f14" ng-model="example" ng-click="choisBanner(3)" ng-value="3">{{example3}}</ion-radio>
+                    <ion-radio class="noMargin noBorder f14" ng-model="example" ng-click="choisBanner(4)" ng-value="example4" style="line-height: 0">{{example4}}</ion-radio>
+                </div>
+            </div>
+        </div>
+        <div class="wid90 marginAuto mt10 flow">
+            <a><div class="QuizBtn white_btn" ng-click="closeModal2()">이전</div></a>
+            <a><div class="QuizBtn red_btn" ng-click="addPointBanner()">적립하기</div></a>
+        </div>
+    </ion-content>
+</ion-view>

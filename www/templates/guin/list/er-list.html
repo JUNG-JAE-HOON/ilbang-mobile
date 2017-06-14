@@ -1,0 +1,50 @@
+<ion-view view-title="채용 공고">
+	<ion-content class="content has-header has-footer erListBtn pb60" ng-controller="GuinFormCtrl"  has-bouncing="false">
+
+		<div class="padding margin-vertical iosNoMt">
+			<a ng-if="cmpInfoInsrtYn" class="button button-block white_btn rd50 mt40" ng-click="checkLogin('guin')" style="line-height: 47px !important;">채용 공고 새로 작성</a><!-- 기업정보 등록햇을 때 혹은 기업이 사용 -->
+			<a ng-if="!cmpInfoInsrtYn" class="button button-block white_btn rd50 mt20" ng-click="checkLogin('add-info')" style="line-height: 47px !important;">채용 공고 새로 작성</a><!-- 기업정보 등록 하기 -->
+			<a class="button button-block white_btn rd50 mt10" ng-click="checkLogin('urgentSlct')" style="line-height: 47px !important;">긴급 구인</a>
+			<div align="right" class="mb5">
+				채용공고 개수 : {{allPost}} 개
+			</div>
+			<div class="list pt10" ng-repeat = "guin in myGuinList" item="guin">
+				<a class="item item-circle" ui-sref="guinViewTab2({no:{{guin.no}}})">
+					<h2 class="eeList f12">
+						<span class="border pa circle">
+							<img src="img/character.png" alt="" width="100%" style="margin-top:-.1em">
+						</span>
+						<span class="recent_list w85 di">{{guin.title}} 	</span>
+						<img ng-if ="guin.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -4px 5px" />
+					    <span class="fr dateMobile">
+							<img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px" />
+							<span class="mb_7 vm di f10">{{guin.wdate}}</span>
+						</span>
+					</h2>
+					<div class="padding-top">
+						<span class="badge badge-light ilbangBadge smBadge mr10 f10">{{guin.work_2nd_nm}}</span>
+						<span class="f14 ls vm di" style="margin-top:-6px">{{guin.career}} {{guin.delegate}}</span>
+						<p class="padding-top">
+							<b>{{guin.work_1st_nm}}</b>
+							<span> > {{guin.work_2nd_nm}}</span>
+						</p>
+						<p>
+							<b>지역</b>
+							<span> > {{guin.area_1st_nm}} > {{guin.area_2nd_nm}}</span>
+						</p>
+					</div>
+					<p class="pa ee_pee f12"><b class="fo f14" style="margin-right:3px">{{guin.pay}}</b>원</p>
+				</a>
+				<div class="row noPadding mb5">
+					<a class="col item tc padding f12 NoborderRight" ng-click="delGuinForm({{guin.no}})" >삭제 하기</a>
+					<a class="col item tc padding f12 NoborderRight" ui-sref="guinModify({no:{{guin.no}}})">수정 하기</a>
+					<a class="col item tc padding f12" ng-click="selectDelegate({{guin.no}})">대표 공고로 선택</a>
+				</div>
+			</div>
+			<p class="tc pt40">
+				<img class="pt40" src="img/er-list-01.png" ng-if="allPost=='0'||uid==undefined" width="40%">
+			</p>
+			<ion-infinite-scroll distance="20%" ng-if = "!noMoreItemsAvailable" on-infinite = "loadMore()"></ion-infinite-scroll>
+		</div>
+	</ion-content>
+</ion-view>

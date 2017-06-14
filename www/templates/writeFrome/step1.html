@@ -1,0 +1,39 @@
+<ion-modal-view view-title="구직 신청서 쓰기">
+
+            <ion-content scroll="false" has-bouncing="false">
+                <div class="bg">
+                    <img src="img/stepBar1.png" class="wid100 mg5" />
+                    <form method="get" role="form" ng-submit="#/gusicStep2">
+                    <div class="join_form">
+                        <div class="modify_ment mg5">기본 정보 입력</div>
+                        <select name="title" class="step_select wid100 mg5">
+                            <option selected>프로필 제목을 선택하세요.</option>
+                            <option>제목1</option>
+                            <option>제목2</option>
+                            <option>제목3</option>
+                            <option>제목4</option>
+
+                        </select>
+                        <select class="step_select wid48 mg3" style="margin-right: 1%">
+                            <option selected>희망 근무 지역</option>
+                        </select>
+                        <select class="step_select wid48 mg3" style="margin-left: 1%">
+                            <option selected>전지역</option>
+                        </select><select class="step_select wid100 mg3">
+                            <option selected>희망 직종</option>
+                        </select>
+                        <select class="step_select wid100 mg3">
+                            <option selected>희망 일급</option>
+                        </select>
+                    </div>
+                    <div class="join_btn_wrap">
+                        <a ui-sref="#" class="button btn red_btn">이전</a>
+                        <a ng-click="modalStep2.show()" class="button btn white_btn">다음</a>
+                        <button ></button>
+                    </div>
+                    </form>
+                </div>
+            </ion-content>
+
+
+      </ion-modal-view>

@@ -1,0 +1,43 @@
+<ion-view>
+  <ion-content class="bg" has-bouncing="false">
+      <div class="join_step">
+          <img src="img/step4.png" class="step_img" />
+          <div class="circle_wrap circle4">
+              <div class="white_circle"></div>
+              <div class="white_circle"></div>
+              <div class="white_circle"></div>
+              <div class="red_circle"></div>
+          </div>
+          <div class="join_step_ment"><span class="red_font">프로필</span>을 작성해 주세요.</div>
+      </div>
+      <div class="join_form">
+          <div class="com_step_ment">사업자 등록 번호</div>
+          <div class="list list-inset flow bgTrans" style="margin-top: 10px;">
+              <label class="item item-input wid33 left NoborderRight" style="border-radius: 0 !important;">
+                  <input type="text" class="pdRight10" ng-model="newUser.number1" placeholder="123" />
+              </label>
+              <label class="item item-input wid33 left NoborderRight">
+                  <input type="text" class="pdRight10" ng-model="newUser.number2" placeholder="45" />
+              </label>
+              <label class="item item-input wid33 left">
+                  <input type="text" class="pdRight10" ng-model="newUser.number3" placeholder="67890" />
+              </label>
+          </div>
+          <div class="list list-inset marginAuto wid94">
+              <label class="item item-input item-select baseSelect">
+                  <div class="input label">&nbsp;</div>
+                  <select class="selectClick">
+                      <option>설립년도를 선택해주세요.</option>
+                  </select>
+              </label>
+          </div>
+          <div class="list list-inset">
+              <label class="item item-input"><input type="text" ng-model="newUser.task" placeholder="주요 사업 내용을 입력해주세요." /></label>
+          </div>
+      </div>
+      <div class="join_btn_wrap">
+          <a class="button btn red_btn" ng-click="back(4)">이전</a>
+          <a class="button btn white_btn" ng-click="next(4)">회원가입 완료</a>
+      </div>
+  </ion-content>
+</ion-view>

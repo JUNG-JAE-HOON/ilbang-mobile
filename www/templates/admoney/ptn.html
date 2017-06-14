@@ -1,0 +1,52 @@
+<ion-view view-title="업무 제휴 신청하기">
+    <ion-content class="content has-header padding bg_fa" ng-controller="cooperateCtrl" has-bouncing="false">
+        <div class="join_form">
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">회사명</div>
+                <label class="item item-input w100 left" style="border-radius: 0 !important;">
+                    <input type="text" ng-model="company" style="padding-right: 10px;" placeholder="회사명을 입력해주세요."/>
+                </label>
+            </div>
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">이름</div>
+                <label class="item item-input w100 left" style="border-radius: 0 !important;">
+                    <input type="text" ng-model="name" style="padding-right: 10px;" placeholder="이름을 입력해주세요." />
+                </label>
+            </div>
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">이메일</div>
+                <label class="item item-input w100 left" style="border-radius: 0 !important;">
+                    <input type="text" ng-model="email" style="padding-right: 10px;" placeholder="이메일을 입력해주세요." />
+                </label>
+            </div>
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">전화번호 (숫자만 입력)</div>
+                <label class="item item-input wid33 left" style="border-right: 0 !important; border-radius: 0 !important;">
+                    <input type="text" ng-model="phone1" style="padding-right: 10px;" placeholder="010"/>
+                </label>
+                <label class="item item-input wid33 left" style="border-right: 0 !important; border-radius: 0 !important;">
+                    <input type="text" ng-model="phone2" style="padding-right: 10px;"/>
+                </label>
+                <label class="item item-input wid33 left" style="border-radius: 0 !important;">
+                    <input type="text" ng-model="phone3" style="padding-right: 10px;" />
+                </label>
+                <div class="no_pass" ng-if="phone1 == '' || phone2 == '' || phone3 == ''">* 전화번호를 입력해주세요.</div>
+            </div>
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">제목</div>
+                <label class="item item-input w100 left" style="border-radius: 0 !important;">
+                    <input type="text" ng-model="title" style="padding-right: 10px;" placeholder="제목을 입력해주세요."/>
+                </label>
+            </div>
+            <div class="list list-inset bgTrans flow">
+                <div class="mb5" style="padding-left: 5px;">내용</div>
+                <textarea rows="10" class="wid100" ng-model="content" style="border: 1px solid #ddd; padding: 5px 10px;" placeholder="내용을 입력해주세요."></textarea>
+            </div>
+            <div class="adReqBtn">
+                <a class="wid100 tc" ng-click="cooperate()">
+                    <div class="button button-block red_btn white_font">신청하기</div>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

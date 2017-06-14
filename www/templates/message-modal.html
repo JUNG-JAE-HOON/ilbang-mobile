@@ -1,0 +1,23 @@
+<ion-modal-view class="modal-message-css" view-title="알림" has-bouncing="false" style="width:80%; margin-left:10%;">
+    <style>
+        .modal-backdrop { z-index: 99; }
+
+
+        /*.guinTab1Head { display: none; }*/
+
+    </style>
+    <ion-nav-bar class="bar-ilbang message-head" >
+        <ion-nav-buttons side="left">
+            <span ng-click="closeModal()"><i class="icon ion-android-arrow-back gameng-back"></i></span>
+        </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <img class="msg-trash" src="img/message/msg-trash.png" ng-click="deleteMessage(no)">
+        </ion-nav-buttons>
+    </ion-nav-bar>
+	<ion-content class="content has-header has-footer guinTab1Cont">
+          <div class="bar bar-header bg_eb message-modal-header">
+            <span class="di mt7 ml10 f12 textCut message-txt" style="padding-right: 10px;">{{ message }}</span>
+        </div>
+        <div class="msgDetailTxt padding oh has-header" ng-bind-html="message"></div>
+	</ion-content>
+</ion-modal-view>

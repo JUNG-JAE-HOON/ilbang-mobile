@@ -1,0 +1,15 @@
+<div class="has-header" style="" ng-controller="AdLogCtrl">
+    <div class="adCircle">
+        <a ng-click="openPopover($event)">
+        <!-- <a ng-click="$scope.popover.show($event)"> -->
+        	<img src="img/ad-pop-icon1.png" alt="" width="60px;">
+        </a>
+    </div>
+</div>
+<ion-nav-view name="banner"></ion-nav-view>
+<ion-tabs class="tabs-icon-top tabs-color-active-ilbang adTabs tabs-top">
+	<ion-tab title="AD 배너" ui-sref="adTabs.banner" class="f16 leftRd"></ion-tab>
+	<ion-tab title="AD 동영상" ui-sref="adTabs.video" class="f16 rightRd">
+		<ion-nav-view name="video" style="margin-top:-10px"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>

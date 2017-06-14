@@ -1,0 +1,60 @@
+<ion-view view-title="긴급매칭중">
+<!-- <div class="bar bar-header bar-ilbang">
+	  <div class="title fw">긴급매칭중</div>
+</div> -->
+	<ion-content class="content has-header has-footer bg_fa tc pt50 padding20" has-bouncing="false">
+	<style media="screen">
+	.rotate {
+		position:absolute;
+		width:201px; height: 201px;
+		border-radius:100px;
+		text-align: center;
+	animation:rint 2.5s linear none infinite;
+	}
+	.rotate img{height: 51px; margin:1px 0 0 -1px}
+	.wrap{position:absolute; width:201px; height: 201px; left:50%; margin-left: -100px;background-image:url('img/rotate1.png'); background-size: 201px 201px}
+	.spinnerArea{height: 250px}
+	@keyframes rint {
+		from{left:0; transform:rotate(0deg);}
+		100%{left:0;}
+		to{left:0; transform: rotate(360deg);}
+	}
+
+	</style>
+
+	<div class="row pr spinnerArea mt30">
+		<div class="wrap">
+			<div class="rotate">
+				<img src="img/rotate.png" alt="">
+			</div>
+		</div>
+	</div>
+		<div class="col-75 di padding">
+			반경 <b class="fo">5KM</b> 거리내 <b class="fo">맞춤 연결중...</b>
+			<p class="fg f12 lh1 mt20">요청하신 조건으로 구직자를 찾고있습니다. <br> 잠시만 기다려 주세요</p>
+		</div>
+		<div class="padding tc">
+			<ul class="col-80 bg_wh m0a f12 border2">
+				<li class="row margin-vertical">
+					<span class="col-33">회사</span>
+					<span>MMC피플</span>
+				</li>
+				<li class="row margin-vertical">
+					<span class="col-33">지역</span>
+					<span>경상북도 > 포항시 북구</span>
+				</li>
+				<li class="row margin-vertical">
+					<span class="col-33">특성별</span>
+					<span>건설일방</span>
+				</li>
+				<li class="row margin-vertical">
+					<span class="col-33">금액</span>
+					<span><b class="fo f16">30,000 </b></span>
+				</li>
+			</ul>
+		</div>
+
+			<a ui-sref="#" class="button button-ilbang button-full fw bg_grey mt30">연결취소</a>
+
+	</ion-content>
+</ion-view>

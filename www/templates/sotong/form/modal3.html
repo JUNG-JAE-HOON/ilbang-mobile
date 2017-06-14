@@ -1,0 +1,59 @@
+<ion-modal-view>
+	<div class="bar bar-ilbang jcc tc lh36 f16 fw guinTab1Head" ng-click="closeModal(3)">
+		<i class="icon f16 ion-ios-arrow-back button pa" style="color:white; background-color:#eb5f43;left:0"></i>{{ kindScholarship }}
+ 	</div>
+	<ion-content class="has-header padding" delegate-handle="mainScroll" has-bouncing="false">
+		<div class="oh">
+			<h5>{{ kindScholarship }}</h5>
+			<div class="oh bb mb20 pb15" ng-repeat="modifyScholarship in modifyScholars" item="modifyScholars">
+				<input type="hidden" ng-model="modifyScholarship.no" />
+				<div class="list oh">
+   					<label class="item item-input col item-select left noMargin pdTop40 graduate-select">
+   						<select class="ionicSel" ng-model="modifyScholarship.startYear" ng-options="year for year in Years">
+   							<option value="">년도</option>
+   						</select>
+   					</label>
+  					<span class="left artist-modal-wave">~</span>
+   					<label class="item item-input col item-select left noMargin pdTop40 graduate-select">
+   						<select class="ionicSel" ng-model="modifyScholarship.endYear" ng-options="year for year in Years">
+   							<option value="">년도</option>
+   						</select>
+   					</label>
+   				</div>
+  				<div class="list list-inset">
+  					<label class="item item-input">
+						<input type="text" ng-model="modifyScholarship.content" placeholder="{{ kindScholarship }}을 입력해주세요." />
+					</label>
+  				</div>
+			</div>
+			<div class="oh bb mb20 pb15" ng-repeat="scholarship in scholars" item="scholars">
+				<div class="list oh">
+   					<label class="item item-input col item-select left noMargin pdTop40 graduate-select">
+   						<select class="ionicSel" ng-model="scholarship.startYear" ng-options="year for year in Years">
+   							<option value="">년도</option>
+   						</select>
+   					</label>
+  					<span class="left artist-modal-wave">~</span>
+   					<label class="item item-input col item-select left noMargin pdTop40 graduate-select">
+   						<select class="ionicSel" ng-model="scholarship.endYear" ng-options="year for year in Years">
+   							<option value="">년도</option>
+   						</select>
+   					</label>
+   				</div>
+  				<div class="list list-inset">
+  					<label class="item item-input">
+						<input type="text" ng-model="scholarship.content" placeholder="{{ kindScholarship }}을 입력해주세요." />
+					</label>
+  				</div>
+			</div>
+			<div class="tc oh w100">
+				<a class="di oh">
+					<img src="img/sotong-signup.png" alt="" width="50px" ng-click="addScholar()">
+				</a>
+			</div>
+		</div>
+		<a ng-click="extendAdd('scholarship')">
+			<div class="red_btn tc f16 bold mt20" style="padding: 12px 0; border-radius: 5px;">{{ cultureBtn }}</div>
+		</a>
+	</ion-content>
+</ion-modal-view>

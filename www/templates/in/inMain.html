@@ -1,0 +1,17 @@
+<ion-view view-title="인증">
+	<ion-content  ng-controller="InCtrl" >
+
+<form  method="post" accept-charset="euc-kr" action="https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb" class="check_form">
+			<input type="hidden" name="m" value="checkplusSerivce" />				<!-- 필수 데이타로, 누락하시면 안됩니다. -->
+			<input type="hidden" name="EncodeData"  value="{{codeData}}" />		<!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
+				<input type="submit" id="submit" value="Submit" />
+			<div>
+
+			</div>
+
+			</form>
+
+
+
+	</ion-content>
+</ion-view>

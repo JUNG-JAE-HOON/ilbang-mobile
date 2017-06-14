@@ -1,0 +1,22 @@
+<ion-view ng-controller="ListCtrl" view-title="FAQ 자주묻는 질문">
+    <ion-content has-bouncing="false">
+        <div class="bg">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="faqList pd15 cb" ng-click="toggleGroup(group)" ng-class="{ active:isGroupShown(group) }">
+                        <div class="left faqTitleWrap" ng-repeat="title in group.titles">
+                            <img src="img/FAQ_q.png" class="left faqimg" ng-class="isGroupShown(group)" />&nbsp;
+                            <div class="left faqTitle">{{ title }}</div>
+                        </div>
+                        <span class="right" ng-show="!isGroupShown(group)"><img src="img/FAQ_right.png" class="faqArrow_ri" /></span>
+                        <span class="right" ng-show="isGroupShown(group)"><img src="img/FAQ_bottom.png" class="faqArrow_bo" /></span>
+                    </ion-item>
+                    <div class="faqContent_wrap" ng-repeat="item in group.items" ng-show="isGroupShown(group)">
+                        <img class="faqa" src="img/FAQ_a.png" class="faqimg left" />
+                        <div class="faqContent pb10 fr">{{ item }}</div>
+                    </div>
+                </div>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

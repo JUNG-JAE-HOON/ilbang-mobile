@@ -1,0 +1,44 @@
+<ion-view view-title="{{ title }} 일방 프로필 {{ cultureBtn }}" class="bg_wh" ng-controller="sotongApplyCtrl" cache-view="false">
+	<ion-content class="content has-header has-footer sotong-content-box" scroll="true" has-bouncing="false">
+		<div class="di pr sotong-person-info w100" style="z-index:0">
+      		<div class="tc" style="margin-top:2.5em">
+        		<ul class="col col-33 di">
+          			<li class="oh artist pr">
+						<form id="artistForm" method="post" enctype="multipart/form-data" class="oh pr">
+							<div class="hex hex-apply" style="height:6em">
+								<img src="{{ imgUrl1 }}" id="artistImg" width="100%" />
+							</div>
+							<input class="artist-photo pa" type="file" id="FILE_TAG" name="FILE_TAG"  onchange="angular.element(this).scope().uploadArtistImage()"  accept="image/*" ng-click="getPath()"/>
+						</form>
+          			</li>
+          			<li class="tc bold f12 artist-name">{{ profileName }}</li>
+          			<li class="artist-content tc text-cut f8">{{ profileMessage }}</li>
+        		</ul>
+      		</div>
+		</div>
+    	<div class="apply-menu mt30">
+      		<ul class="list">
+          		<li class="item">
+            		<b class="f12">개인 프로필</b>
+            		<span class="fr f12" ng-click="openModal(1)">{{ addBtn1 }}</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">경력 사항</b>
+            		<span class="fr f12" ng-click="openModal(2)">{{ addBtn2 }}</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">학력 사항</b>
+            		<span class="fr f12" ng-click="openModal(3)">{{ addBtn3 }}</span>
+          		</li>
+          		<li class="item">
+            		<b class="f12">수상 내역</b>
+            		<span class="fr f12" ng-click="openModal(4)">{{ addBtn4 }}</span>
+            	</li>
+          		<li class="item">
+            		<b class="f12">전체 작품 활동 내역</b>
+            		<span class="fr f12" ng-click="openModal(5)">{{ addBtn5 }}</span>
+          		</li>
+      		</ul>
+    	</div>
+	</ion-content>
+</ion-view>

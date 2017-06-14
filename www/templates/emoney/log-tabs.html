@@ -1,0 +1,23 @@
+
+      <div class="item bg_fa logMyInfo">
+        <p class="f14 fl mr10 pt16">나의 E-머니</p><b class="assertive"><span class="f14 fl pt16">5,700 P</span> </b>
+        <a ui-sref="#" class="f14 fr fo pt16">E-머니 충전하기 ></a>
+      </div>
+        <ion-nav-view name="logTab1"></ion-nav-view>
+      <ion-tabs class="tabs-icon-top tabs-color-active-ilbang logTabs">
+
+        <!-- Dashboard Tab -->
+        <ion-tab title="충전내역" ui-sref="#logTab.logTab1">
+
+        </ion-tab>
+
+        <!-- Chats Tab -->
+        <ion-tab title="사용내역" ui-sref="logTab.logTab2">
+          <ion-nav-view name="logTab2"></ion-nav-view>
+        </ion-tab>
+
+        <ion-tab title="구매내역" ui-sref="logTab.logTab3">
+          <ion-nav-view name="logTab3"></ion-nav-view>
+        </ion-tab>
+
+      </ion-tabs>

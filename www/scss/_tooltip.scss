@@ -1,0 +1,10 @@
+.artsit-tooltip{
+  @include padding(10px,20px,0,20px);
+  font-size:18px;
+  display: inline-block;
+  width:100%;
+  img{
+    vertical-align: middle;
+    margin-top: -5px;
+  }
+}

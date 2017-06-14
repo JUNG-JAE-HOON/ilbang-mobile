@@ -1,0 +1,43 @@
+<ion-view ng-controller="MapCtrl" title="세렌디피">
+    <ion-content class="pr" scroll='false'>
+
+      <div id="map_update" class="mapWrap" style="width:100%;height:590px;">
+        <!-- 업체 상세정보 시작-->
+        <div class="padding oh pa w100 mapCompInfo" style="bottom:1em;">
+          <div class="list mb10">
+            <a class="item item-circle" ui-sref="#">
+                <h2 style="border-bottom:.3px solid #ccc; padding:.5em 0 .5em">
+                <span class="border pa circle f12 tc">사진</span>
+                <span class="recent_list w85 di f12">타이틀</span>
+                <img ng-if ="gujik.isNew" src="img/newBadge.png" alt="" width="6%" class="vm newBadge" style="margin:0 0 -6px 5px" />
+                    <span class="fr dateMobile">
+                  <img src="img/listTime.png" alt="" width="16px" class="vm newBadge" style="margin:0 0 -6px 5px" />
+                  <span class="mb_7 vm di f10">2016.10.10</span>
+                </span>
+              </h2>
+                <div class="padding-top">
+                <!-- <span class="badge badge-light ilbangBadge smBadge mr10 f10">~~일방</span> -->
+                <span class="f12 ls vm di mapCont textCut" style="margin-top:-6px">화장품 포장 단순 업무입니다다다다다.</span>
+                <p class="pa mapIcon wdMobile f8">
+        					<img class="di vm" src="img/mapIcon.png" alt="" width="12px"> 1.23KM
+        				</p>
+                <p class="padding-top f12">
+                  <b>특성별</b>
+                  <span> > 서비스일방</span>
+                </p>
+                <p class="f12" >
+                  <b>지역</b>
+                  <span> > 경기도 > 부천시 오정구</span>
+                </p>
+              </div>
+              <p class="pa ee_pee"><b class="fo f16" style="margin-right:3px">30,000</b>원</p>
+            </a>
+          </div>
+        </div>
+        <!-- 업체 상세정보 끝-->
+      </div>
+
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,31 @@
+<ion-modal-view class="wirte-modal-wrap">
+    <ion-header-bar class="bar-ilbang">
+        <div class="buttons">
+            <i class="icon ion-ios-arrow-back button pa" style="color:white; background-color: #eb5f43;" ng-click="closeModalWrite()"></i>
+        </div>
+        <h1 class="title fw">{{ writeTitle }}</h1>
+        <div class="write-fin" ng-click="sotongWrite()" style="position: absolute; right: 0; padding: 2px 0 0 0;">
+            <img src="img/write-fin.png" width="40%" />
+        </div>
+    </ion-header-bar>
+    <ion-content style="background-color: #fff;" has-bouncing="false">
+        <div class="item" style="padding: 5px 10px;">
+            <input class="title wid100" type="text" ng-model="sotongForm.title" placeholder="제목을 입력해주세요." />
+        </div>
+        <div style="padding: 5px 2px; overflow: hidden;">
+            <div style="width: 32.3%; height: 120px; float: left; margin: 0 0.5%;" ng-repeat="image in sotongForm.imageList" item="sotongForm.imageList" ng-click="imageChange('modify', $index)">
+                <img ng-src="http://il-bang.com/pc_renewal/sotongBoardFile/{{ image }}" width="100%" height="100%" />
+            </div>
+        </div>
+        <textarea class="content" ng-model="sotongForm.content" rows="15" placeholder="내용을 입력해주세요." style="width: 100%; padding: 5px;"></textarea>
+        <hr style="border: 1px solid #ddd;" />
+        <div style="padding: 0 15px; overflow: hidden; margin-bottom: 50px;">
+            <div style="float: left; padding-top: 8px; margin-right: 10px; width:2em" ng-click="getPicture('push')">
+              <img src="img/camera.png" alt="" width="100%">
+            </div>
+            <div style="float: left; width: 80%;">
+                <input type="text" ng-model="sotongForm.videoUrl" placeholder="동영상 주소를 입력해주세요." style="width: 100%;" />
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,55 @@
+<ion-view view-title="아이템샵" ng-controller="itemshopCtrl">
+	<ion-content class="content has-header has-footer" has-bouncing="false">
+		<a class="itemImg tc">
+			<img src="img/itemshop_02.png" alt="" width="100%" class="di">
+		</a>
+		<div class="list mb20">
+			<div class="row">
+				<div ng-click="loginCheck(1)" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_05.png" class="wid70 mb10" alt="" />
+					<p class="f22 bold padding-vertical">열람 서비스</p>
+					<p class="mb30 f10">구인자가 구직자의<br>구직 정보 전체를 열람 할 수<br>있습니다.</p>
+					<span class="rd15 f16 white_btn itemBtn">구매하기</span>
+				</div>
+				<div ng-click="loginCheck(2)" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_05.png" alt="" class="wid70 mb10" />
+					<p class="f22 bold padding-vertical">긴급 구인</p>
+					<p class="mb30 f10">긴급 구인 등록시<br>반경 5km의 구직자에게<br>알림이 가는 서비스입니다.</p>
+					<span class="rd15 f16 white_btn itemBtn">구매하기</span>
+				</div>
+			</div>
+			<div class="row">
+				<div ng-click="prepareAlert()" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_05.png" alt="" class="wid70 mb10" />
+					<p class="f22 bold padding-vertical">기업 뽐내기</p>
+					<p class="mb30 f10">구직자가 기업에 대한 신뢰를<br>쌓을 수 있도록 신청서에<br>기업 동영상을 등록합니다.</p>
+					<span class="rd15 f16 white_btn itemBtn">구매하기</span>
+				</div>
+				<!-- <div ng-click="prepareAlert()" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_05.png" alt="" class="wid70 mb10" />
+					<p class="f22 bold padding-vertical">구인 상품 구매</p>
+					<p class="mb30 f10">구인시 필요한<br>신청서를 추가로 등록 할 수<br>있습니다.</p>
+					<span class="rd15 f16 white_btn itemBtn">구매하기</span>
+				</div>
+			</div>
+			<div class="row">
+				<div ng-click="prepareAlert()" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_08.png" alt="" class="wid70 mb10" />
+					<p class="f22 bold padding-vertical">구직 상품 구매</p>
+					<p class="mb20 f10">구직시 필요한<br>신청서를 추가로 등록 할 수<br>있습니다.</p>
+					<span class="rd15 f16 itemBtn itemNavy">구매하기</span>
+				</div> -->
+				<div ng-click="loginCheck(4)" class="item col noPadding tc itemBox" style="padding-bottom: 2em !important;">
+					<img src="img/itemshop_10.png" alt="" class="wid70 mb10" />
+					<p class="f22 bold padding-vertical">악평 지우기</p>
+					<p class="mb20 f10">내 평가에 대한 부정적인<br>별점 및 평가를 지우실 수<br>있습니다.</p>
+					<span class="rd15 f16 itemBtn itemBlack">구매하기</span>
+				</div>
+			</div>
+		</div>
+		<div class="padding mb10" ng-click = "loginCheck(5)">
+	    <a class="button button-block red_btn" style="border-radius: 0;">아이템 내역 확인하기</a>
+	  </div>
+	</ion-content>
+
+</ion-view>

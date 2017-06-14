@@ -1,0 +1,27 @@
+
+<ion-view view-title="긴급구인 구매" ng-controller="InAppPurchasesCtrl">
+  <ion-content class="has-header" has-bouncing="false">
+    <div class="padding tc pt20">
+      <img src="img/itemshop.png" alt="" width="20%">
+      <h3>긴급 구인</h3>
+      <p class="dark">긴급 구인 등록시<br>반경 5km의 구직자에게<br>알림이 가는 서비스입니다.</p>
+    </div>
+    <ul class="list padding">
+      <li class="item item-divider bg_grey fw f16 bold">
+        상품정보
+     </li>
+      <li class="item pt16">
+        <div class="fl f14 bold dark">1회 이용권</div>
+        <div class="di fr assertive">
+          5,000<span class="f12">원</span>
+          <button type="button" class="fr button noRadius button-ilbang buyBtn ml10" ng-click=buy('net.saltfactory.il_bang.emergency1buy') name="button">구매</button>
+        </div>
+      </li>
+    </ul>
+    <p>
+      <div>
+        <img src="img/urgent-guide.png" alt="" width="100%">
+      </div>
+    </p>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,128 @@
+<ion-view view-title="내 신청서">
+	<ion-content class="content has-header has-footer" has-bouncing="false">
+    <div>
+      <div class="di pr">
+				<li class="pa viewMap" ui-sref="#">
+		      	<a ui-sref="#" class="f10 fw"><b>열람상품 사용</b></a>
+		    </li>
+				<li class="pa viewMap" ui-sref="#">
+		      	<a ui-sref="#" class="f10 fw"><b>열람상품 미사용</b></a>
+		    </li>
+        <img src="img/eeInfo.png" alt="" / width="100%">
+		<ul class="pa fw ee_detail" style="margin-left:30px">
+			<li class="oh">
+				<h3 class="fw fl bold">마지현</h3>
+			</li>
+			<li class="padding-bottom">
+				취업대란! 오히려 제게는 기회입니다.
+			</li>
+			<li>
+				<ul class="pr fl iconCircle">
+					<li class="pa text-center iconArea">
+						<img src="img/gender.png" alt="" width="45%" class="di" style="margin-top:18px">
+					</li>
+					<li>성별무관</li>
+				</ul>
+				<ul class="pr fl iconCircle">
+					<li class="pa text-center iconArea">
+						<img src="img/age.png" alt="" width="70%" class="di" style="margin-top:17px;margin-left:3px">
+					</li>
+					<li>40세이상</li>
+				</ul>
+				<ul class="pr fl iconCircle">
+					<li class="pa text-center iconArea">
+						<img src="img/howmany.png" alt="" width="45%" class="di" style="margin-top:17px; margin-left:3px">
+					</li>
+					<li>3명</li>
+				</ul>
+				<ul class="pr fl iconCircle">
+					<li class="pa text-center iconArea">
+						<img src="img/career.png" alt="" width="45%" class="di" style="margin-top:18px; margin-left:6px">
+					</li>
+					<li>1년 이상</li>
+				</ul>
+			</li>
+		</ul>
+      </div>
+	  <div class="list" style="top:-5px">
+
+	    <div class="item item-divider">
+	      구직자 정보
+	    </div>
+
+	    <div class="item noPadding" ui-sref="#">
+	      <div class="row">
+	      	<span class="col col-25 f12">제목</span>
+	      	<span class="col col f12">취업대란! 오히려 제게는 기회입니다.</span>
+	      </div>
+	    </div>
+		<div class="item noPadding" ui-sref="#">
+		  <div class="row">
+		  	<span class="col col-25 f12">연락처</span>
+		  	<span class="col f12">010-123-1234</span>
+		  </div>
+		</div>
+		<div class="item noPadding" ui-sref="#">
+		  <div class="row">
+		  	<span class="col col-25 f12">거주지</span>
+		  	<span class="col f12">경기도 부천시 소사구 괴안동</span>
+		  </div>
+		</div>
+		<div class="item noPadding" ui-sref="#">
+		  <div class="row">
+		  	<span class="col col-25 f12">이메일</span>
+		  	<span class="col f12">ggolla4@naver.com</span>
+		  </div>
+		</div>
+		<div class="item noPadding" ui-sref="#">
+		  <div class="row">
+		  	<span class="col col-25 f12">희망 근무지역</span>
+		  	<span class="col f12">무슨동, 무슨동, 무슨동</span>
+		  </div>
+		</div>
+		<div class="item noPadding" ui-sref="#">
+		  <div class="row">
+		  	<span class="col col-25 f12">희망직종</span>
+		  	<span class="col f12">IT일방</span>
+		  </div>
+		</div>
+
+	    <div class="tc padding-top">
+	    	<span>희망 근무 일자</span>
+	    	<p>여기에 데이트피커 들어갑니다.</p>
+	    </div>
+	    <div class="list">
+	    	<div class="item noPadding" ui-sref="#">
+	    	  <div class="row">
+	    	  	<span class="col col-25 f12">경력사항</span>
+	    	  	<span class="col f12">1년</span>
+	    	  </div>
+	    	</div>
+	    	<div class="item noPadding" ui-sref="#">
+	    	  <div class="row">
+	    	  	<span class="col col-25 f12">희망금액(일당)</span>
+	    	  	<span class="col f12">$ <b class="fo">30,000</b></span>
+	    	  </div>
+	    	</div>
+	    	<div class="padding f12 textArea">
+	    		택스트area블라블라블라블라블라
+	    	</div>
+
+
+	    	<div class="padding" ng-controller="PopCtrl">
+	    		<button class="button button-block button-ilbang2 border" ng-click="showEstimate();">
+	    		  내 평가보기
+	    		</button>
+	    		<button class="button button-block button-ilbang2 border">
+	    		  신청서 삭제
+	    		</button>
+	    		<button class="button button-block button-ilbang">
+	    		  수정하기
+	    		</button>
+	    	</div>
+	    </div>
+
+	  </div>
+    </div>
+	</ion-content>
+</ion-view>
